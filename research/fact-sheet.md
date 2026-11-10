@@ -84,12 +84,35 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Absher activation channels | Self-service kiosk, bank channels, Jawazat office | [Absher](https://www.absher.sa) | A |
 | Nafath | Uses Absher account; no separate registration | Saudi Life Guide quoting Nafath FAQ | B |
 
+## Batch 3 (10 Nov 2026): family iqama, newborns, traffic, Absher mobile, passports, Saudization
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Family iqama renewal path | Absher > Family Members Services > Resident Services > member > Renew Iqama (domestic workers: Domestic Workers Services) | [Ajel](https://english.ajel.sa/news/zzy857uk3) | B |
+| Renewal while family abroad | Allowed if head of household is in KSA | [Gulf News, Apr 2025](https://gulfnews.com/world/gulf/saudi/saudi-arabia-allows-iqama-renewal-for-residents-even-if-family-members-are-abroad-1.500087024) | A |
+| Fee for renewal from abroad | Double the domestic fee (dependents/companions) | [SG 628476](https://saudigazette.com.sa/article/628476) | A |
+| Quarterly renewal / dependent fee | Iqama and SAR 400/month dependent fee payable quarterly via bank government payments | [SG 613358](https://saudigazette.com.sa/article/613358) | A |
+| Late iqama renewal fine | SAR 500 first, SAR 1,000 second, deportation third | [SG 568501](https://saudigazette.com.sa/article/568501) | A |
+| Iqama expiry check | Absher app digital ID; Absher expiry inquiry; MHRSD portal with iqama + DOB | Absher; MHRSD | B |
+| Newborn registration | Absher > Civil Affairs > Newborn Registration; within 30 days or fine; certificate delivered to national address | [Ajel](https://english.ajel.sa/news/xqco0fcem), [Gulf News 2023](https://gulfnews.com/world/gulf/saudi/saudi-arabia-launches-e-registration-for-expat-newborns-1.94618447) | B |
+| Newborn dependent fee | No exemption; charged from date of birth | [SG 512296](https://saudigazette.com.sa/article/512296) | A |
+| Newborn without iqama | Not eligible for exit re-entry visa | [Middle East Briefing, Jan 2024](https://www.middleeastbriefing.com/news/saudi-arabia-lifts-3-year-ban-on-expats-violating-re-entry-visa/) | B |
+| Traffic fine objection | Within 30 days of the violation | [Gulf News, Sep 2024](https://gulfnews.com/living-in-uae/transport/saudi-traffic-fines-how-you-can-extend-the-deadline-on-your-fine-1.1727704673550), Ajel | A |
+| Traffic fine discount | 25% if paid within 30 days | [Ajel](https://english.ajel.sa/news/2on57q7yk) | B |
+| Traffic fine extension | Via Absher; timing and length differ by source (60 vs 90 days; request within 15 days) | Ajel; Gulf News | C (guide says check Absher) |
+| Exit re-entry needs fines paid | Yes | [SG 639701](https://saudigazette.com.sa/article/639701) | A |
+| Absher mobile change (app) | Before login: Digital Identity Management > Change Mobile Number > ID + DOB > new number > biometric | [Origami summary of Absher on X, 6 Oct 2026](https://origami.sa/en/blog/customer-mobile-number-change/) | B |
+| Absher mobile change (other) | Nafath app settings; Absher kiosk with fingerprints; new SIM must be in own name | [KSA Expats](https://ksaexpats.com/how-to-update-mobile-number-with-moi-absher-eservices/) | B |
+| Pakistani passport renewal online | DGIP portal; expired or < 1 year validity; scans of passport + iqama | [Pakistan Observer](https://pakobserver.net/online-passport-renewal-fee-update-for-pakistanis-in-saudi-arabia-mach-2024/) | B |
+| Pakistani passport fees at mission | 36pp 5y SAR 84 / 140 urgent; 10y 126 / 210; 72pp 154/252, 231/378; 100pp 168/336, 252/504 | [Aaj, Apr 2025](https://english.aaj.tv/news/330413754), ARY Jul 2024 | B |
+| Project management Saudization | 70% from 14 Feb 2027, firms with 3+ such workers, up from 40% | [MHRSD](https://www.hrsd.gov.sa/en/media-center/news/%D8%B1%D9%81%D8%B9-%D9%86%D8%B3%D8%A8-%D8%AA%D9%88%D8%B7%D9%8A%D9%86-%D9%85%D9%87%D9%86-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9), [Vialto](https://vialtopartners.com/regional-alerts/saudi-arabia-immigration-saudization-update-project-management-roles) | A |
+| Procurement Saudization | 70% in 12 procurement jobs, enforced from 31 May 2026 | [Arab News PK](https://www.arabnews.pk/business/saudi-arabia-to-impose-70-localization-on-project-management-roles-2654943) | B |
+| Project management min. salary | SAR 6,000 reported by one outlet only; not used in the guide | ProPakistani | C |
+
 ## Still to research (next batch)
 
-- Traffic fines list: sources disagree on categories. Use the General Department of Traffic (Moroor) official table only.
-- Iqama for a baby born in Saudi Arabia: current Absher steps and fees.
+- Traffic fines list: use the General Department of Traffic (Moroor) official table only.
 - Permanent family visa: eligibility (profession, salary). Sources disagree; confirm on Absher.
-- Iqama expiry check without Absher (MOI inquiry service).
-- Absher mobile number change.
-- Traffic violations: check, pay, object (Absher, Efaa).
-- Remittance to Pakistan / India, bank account opening, Ejar, property ownership, schools, health insurance (CHI), passport renewal (Pakistan, India).
+- Indian passport renewal (VFS Global), embassy appointments for Pakistan and India.
+- Sending money to Pakistan and India (bank vs exchange-house apps, fees).
+- Bank account opening, Ejar rental contracts, property ownership, schools, health insurance (CHI).
