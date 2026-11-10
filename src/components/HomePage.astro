@@ -4,6 +4,7 @@ import Icon from './Icon.astro';
 import { SITE, url, formatDate } from '../site';
 import { HUBS, hubBySlug } from '../data/hubs';
 import { TASKS, POPULAR, SEASONAL, FIRST_90_DAYS } from '../data/home';
+import { TOOLS } from '../data/tools';
 import { getGuides, guidePath } from '../lib/guides';
 import { T } from '../i18n';
 
@@ -115,30 +116,14 @@ const schema = [
         </div>
       </div>
       <div class="cards">
-        <div class="card">
-          <span class="icon"><Icon name="idcard" size={28} /></span>
-          <h3>{L('Iqama and dependent fee calculator', 'اقامہ اور فیملی فیس کیلکولیٹر')}</h3>
-          <p>{L('Your yearly cost for yourself and each family member.', 'آپ اور فیملی کے ہر فرد کا سالانہ خرچ۔')}</p>
-          <span class="badge badge-amber">{t.comingSoon}</span>
-        </div>
-        <div class="card">
-          <span class="icon"><Icon name="calculator" size={28} /></span>
-          <h3>{L('End-of-service calculator', 'اختتامِ سروس کیلکولیٹر')}</h3>
-          <p>{L('Based on the Saudi labor law formula for resignation or termination.', 'استعفیٰ یا برطرفی پر لیبر قانون کے فارمولے کے مطابق۔')}</p>
-          <span class="badge badge-amber">{t.comingSoon}</span>
-        </div>
-        <div class="card">
-          <span class="icon"><Icon name="pin" size={28} /></span>
-          <h3>{L('Postal code finder', 'پوسٹل کوڈ تلاش کریں')}</h3>
-          <p>{L('Type a city or district and get its postal code.', 'شہر یا محلے کا نام لکھیں اور کوڈ حاصل کریں۔')}</p>
-          <span class="badge badge-amber">{t.comingSoon}</span>
-        </div>
-        <div class="card">
-          <span class="icon"><Icon name="calendar" size={28} /></span>
-          <h3>{L('Hijri and Gregorian converter', 'ہجری اور عیسوی تاریخ')}</h3>
-          <p>{L('Convert any date and count the days left on your iqama.', 'تاریخ تبدیل کریں اور اقامہ کی میعاد کے باقی دن گنیں۔')}</p>
-          <span class="badge badge-amber">{t.comingSoon}</span>
-        </div>
+        {TOOLS.map((tool) => (
+          <a class="card" href={url(`tools/${tool.slug}/`)}>
+            <span class="icon"><Icon name={tool.icon} size={28} /></span>
+            <h3>{L(tool.en, tool.ur)}</h3>
+            <p>{L(tool.desc, tool.descUr)}</p>
+            <span class="badge badge-green">{L('Open tool', 'ٹول کھولیں')}</span>
+          </a>
+        ))}
       </div>
       {SITE.adsEnabled && <div class="ad-slot"><!-- AdSense unit --></div>}
     </div>

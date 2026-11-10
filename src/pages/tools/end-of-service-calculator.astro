@@ -1,0 +1,147 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+const sources = [
+  { name: 'Ministry of Human Resources and Social Development — End-of-service award', url: 'https://hrsd.gov.sa/en/knowledge-centre/articles/317' },
+  { name: 'Ministry of Human Resources — Saudi Labor Law (English text)', url: 'https://www.hrsd.gov.sa/sites/default/files/2023-02/Labor.pdf' },
+  { name: 'Qoyod — Articles 80 and 81: dismissal without award, and leaving without notice while keeping full rights', url: 'https://www.qoyod.com/en/learn/article-80-81-saudi-labor-law-dismissal/' },
+];
+---
+<ToolLayout
+  title="End-of-service calculator (Saudi labor law)"
+  description="Calculate your end-of-service award in Saudi Arabia: half a month per year for the first five years, a full month after that, and the resignation reductions."
+  slug="end-of-service-calculator"
+  intro="Enter your dates, last monthly wage and why the job is ending. The calculator applies Articles 84, 85 and 87 of the Saudi labor law."
+  sources={sources}
+  lastChecked="10 November 2026"
+>
+  <div class="tool-grid">
+    <form class="form-card" id="eos-form" onsubmit="return false">
+      <h2>Your job</h2>
+      <div class="field-row">
+        <div class="field">
+          <label for="start">Start date</label>
+          <input id="start" type="date" required />
+        </div>
+        <div class="field">
+          <label for="end">Last working day</label>
+          <input id="end" type="date" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="wage">Last monthly wage (SAR)</label>
+        <input id="wage" type="number" min="0" step="1" inputmode="decimal" placeholder="e.g. 6000" />
+        <p class="hint">Basic salary plus regular allowances such as housing and transport.</p>
+      </div>
+      <div class="field">
+        <label for="reason">Why is the job ending?</label>
+        <select id="reason">
+          <option value="employer">Employer ended the contract, or the fixed-term contract ended</option>
+          <option value="resign">I resigned</option>
+          <option value="art81">I left because the employer broke the contract (Article 81)</option>
+          <option value="women">Woman resigning within 6 months of marriage or 3 months of giving birth</option>
+          <option value="force">Force majeure beyond my control</option>
+          <option value="art80">Dismissed for serious misconduct (Article 80)</option>
+        </select>
+      </div>
+    </form>
+
+    <div class="result-card" aria-live="polite">
+      <h2>Your end-of-service award</h2>
+      <div class="result-big" id="eos-total">SAR 0</div>
+      <p class="result-sub" id="eos-sub">Enter your dates and wage.</p>
+      <table class="breakdown">
+        <thead><tr><th>Item</th><th>Amount</th></tr></thead>
+        <tbody id="eos-rows"></tbody>
+      </table>
+      <p class="warn" id="eos-warn" hidden></p>
+      <p class="result-note">Your employer must pay within one week of the contract ending, or two weeks if you resigned.</p>
+    </div>
+  </div>
+
+  <Fragment slot="notes">
+    <h2>How it's calculated</h2>
+    <ul>
+      <li><strong>Full award:</strong> half a month's wage for each of the first five years, then one month's wage for each later year. Part years count in proportion.</li>
+      <li><strong>If you resign:</strong> nothing under 2 years; one third of the award for 2 to 5 years; two thirds for 5 to 10 years; the full award after 10 years.</li>
+      <li><strong>Full award even on resignation:</strong> force majeure, and a woman who resigns within six months of marrying or three months of giving birth.</li>
+      <li><strong>Wage used:</strong> your last wage, including regular allowances.</li>
+    </ul>
+    <p>Unpaid leave, contract terms that give you more than the law, and disputes can change the amount. If your employer disagrees, you can file a claim through the Ministry's labor dispute service.</p>
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const fmt = (n: number) => 'SAR ' + Math.round(n).toLocaleString('en-US');
+  const today = new Date();
+  $<HTMLInputElement>('end').value = today.toISOString().slice(0, 10);
+
+  function duration(a: Date, b: Date) {
+    let y = b.getFullYear() - a.getFullYear();
+    let m = b.getMonth() - a.getMonth();
+    let d = b.getDate() - a.getDate();
+    if (d < 0) { m -= 1; d += new Date(b.getFullYear(), b.getMonth(), 0).getDate(); }
+    if (m < 0) { y -= 1; m += 12; }
+    return { y, m, d };
+  }
+
+  function calc() {
+    const startV = $<HTMLInputElement>('start').value;
+    const endV = $<HTMLInputElement>('end').value;
+    const wage = Number($<HTMLInputElement>('wage').value) || 0;
+    const reason = $<HTMLSelectElement>('reason').value;
+    const warn = $<HTMLElement>('eos-warn');
+    warn.hidden = true;
+    if (!startV || !endV || !wage) {
+      $('eos-total').textContent = 'SAR 0';
+      $('eos-sub').textContent = 'Enter your dates and wage.';
+      $('eos-rows').innerHTML = '';
+      return;
+    }
+    const a = new Date(startV + 'T00:00:00');
+    const b = new Date(endV + 'T00:00:00');
+    if (b <= a) {
+      $('eos-total').textContent = 'SAR 0';
+      $('eos-sub').textContent = 'The last working day must be after the start date.';
+      $('eos-rows').innerHTML = '';
+      return;
+    }
+    const days = Math.round((b.getTime() - a.getTime()) / 86400000) + 1;
+    const years = days / 365;
+    const first = Math.min(years, 5) * 0.5 * wage;
+    const later = Math.max(years - 5, 0) * wage;
+    const full = first + later;
+
+    let share = 1;
+    let shareLabel = 'Employer ended or contract ended: full award';
+    if (reason === 'resign') {
+      if (years < 2) { share = 0; shareLabel = 'Resigned under 2 years: no award'; }
+      else if (years < 5) { share = 1 / 3; shareLabel = 'Resigned after 2–5 years: one third'; }
+      else if (years < 10) { share = 2 / 3; shareLabel = 'Resigned after 5–10 years: two thirds'; }
+      else { share = 1; shareLabel = 'Resigned after 10+ years: full award'; }
+    } else if (reason === 'art80') {
+      share = 0; shareLabel = 'Article 80 dismissal: no award';
+      warn.textContent = 'Article 80 dismissals have strict conditions, such as an investigation. If you dispute it, you can file a labor claim.';
+      warn.hidden = false;
+    } else if (reason === 'women' || reason === 'force' || reason === 'art81') {
+      shareLabel = 'Full award (Article ' + (reason === 'art81' ? '81' : '87') + ')';
+    }
+
+    const total = full * share;
+    const d = duration(a, b);
+    $('eos-total').textContent = fmt(total);
+    $('eos-sub').textContent = `For ${d.y} years, ${d.m} months and ${d.d} days of service (${years.toFixed(2)} years).`;
+    const rows: [string, string][] = [
+      [`First ${Math.min(years, 5).toFixed(2)} years × ½ month`, fmt(first)],
+      [`Later ${Math.max(years - 5, 0).toFixed(2)} years × 1 month`, fmt(later)],
+      ['Full award', fmt(full)],
+      [shareLabel, share === 1 ? '100%' : share === 0 ? '0%' : `${Math.round(share * 100)}%`],
+      ['You receive', fmt(total)],
+    ];
+    $('eos-rows').innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+  }
+  document.getElementById('eos-form')!.addEventListener('input', calc);
+  document.getElementById('eos-form')!.addEventListener('change', calc);
+  calc();
+</script>

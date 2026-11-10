@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../site';
+import { TOOLS } from '../../data/tools';
+---
+<Base title="Free tools for expats in Saudi Arabia" description="Free calculators and lookups for expats in Saudi Arabia: iqama and dependent fees, end-of-service award, postal codes and Hijri dates." path="tools/">
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href={url('')}>Home</a></li></ol></nav>
+      <h1>Free tools</h1>
+      <p class="sub">Quick answers in seconds. Results are estimates to help you plan; each tool links the official source.</p>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 32px; padding-bottom: 56px">
+    <div class="cards">
+      {TOOLS.map((tool) => (
+        <a class="card" href={url(`tools/${tool.slug}/`)}>
+          <span class="icon"><Icon name={tool.icon} size={28} /></span>
+          <h2 style="font-size: 18px">{tool.en}</h2>
+          <p>{tool.desc}</p>
+          <span class="badge badge-green">Open tool</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

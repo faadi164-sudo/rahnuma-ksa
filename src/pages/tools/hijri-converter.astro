@@ -1,0 +1,207 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+const sources = [
+  { name: 'Saudi Gazette — Expats face fines for failure to renew resident IDs (SAR 500, then SAR 1,000)', url: 'https://saudigazette.com.sa/article/568501' },
+  { name: 'Absher — iqama expiry inquiry', url: 'https://www.absher.sa' },
+];
+---
+<ToolLayout
+  title="Hijri and Gregorian date converter, with iqama days left"
+  description="Convert Hijri (Umm al-Qura) and Gregorian dates both ways, and count how many days are left before your iqama expires."
+  slug="hijri-converter"
+  intro="Saudi Arabia uses the Umm al-Qura Hijri calendar. Convert a date either way, or count the days left on your iqama."
+  sources={sources}
+  lastChecked="11 November 2026"
+>
+  <div class="result-card" aria-live="polite" style="text-align:center">
+    <h2>Today</h2>
+    <div class="result-big" id="today-h">…</div>
+    <p class="result-sub" id="today-g"></p>
+  </div>
+
+  <div class="tool-grid">
+    <form class="form-card" id="g2h" onsubmit="return false">
+      <h2>Gregorian to Hijri</h2>
+      <div class="field">
+        <label for="gdate">Gregorian date</label>
+        <input id="gdate" type="date" />
+      </div>
+      <div class="result-card">
+        <div class="result-big" id="g2h-out" style="font-size:28px">…</div>
+        <p class="result-sub" id="g2h-ar" lang="ar" dir="rtl"></p>
+      </div>
+    </form>
+
+    <form class="form-card" id="h2g" onsubmit="return false">
+      <h2>Hijri to Gregorian</h2>
+      <div class="field-row">
+        <div class="field">
+          <label for="hd">Day</label>
+          <input id="hd" type="number" min="1" max="30" inputmode="numeric" />
+        </div>
+        <div class="field">
+          <label for="hm">Month</label>
+          <select id="hm"></select>
+        </div>
+        <div class="field">
+          <label for="hy">Year (AH)</label>
+          <input id="hy" type="number" min="1343" max="1500" inputmode="numeric" />
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-big" id="h2g-out" style="font-size:28px">…</div>
+        <p class="result-sub" id="h2g-sub"></p>
+      </div>
+    </form>
+  </div>
+
+  <form class="form-card" id="iq" onsubmit="return false">
+    <h2>Days left on your iqama</h2>
+    <div class="field">
+      <span class="label">The expiry date on your iqama is in</span>
+      <div class="seg">
+        <label><input type="radio" name="cal" value="g" checked /> Gregorian</label>
+        <label><input type="radio" name="cal" value="h" /> Hijri</label>
+      </div>
+      <p class="hint">Find the date in the Absher app (your digital ID) or on the iqama card.</p>
+    </div>
+    <div class="field" id="iq-g">
+      <label for="iqg">Expiry date</label>
+      <input id="iqg" type="date" />
+    </div>
+    <div class="field-row" id="iq-h" hidden>
+      <div class="field"><label for="iqhd">Day</label><input id="iqhd" type="number" min="1" max="30" inputmode="numeric" /></div>
+      <div class="field"><label for="iqhm">Month</label><select id="iqhm"></select></div>
+      <div class="field"><label for="iqhy">Year (AH)</label><input id="iqhy" type="number" min="1440" max="1500" inputmode="numeric" /></div>
+    </div>
+    <div class="result-card" aria-live="polite">
+      <div class="result-big" id="iq-out">Enter your expiry date</div>
+      <p class="result-sub" id="iq-sub"></p>
+      <p class="warn" id="iq-warn" hidden></p>
+    </div>
+  </form>
+
+  <Fragment slot="notes">
+    <h2>About Hijri dates</h2>
+    <ul>
+      <li>This converter uses the Umm al-Qura calendar, the official calendar for government business in Saudi Arabia. The conversion runs in your browser using its built-in Umm al-Qura calendar data.</li>
+      <li>Religious dates such as the start of Ramadan and Eid depend on moon sighting and can differ by a day from Umm al-Qura.</li>
+      <li>A Hijri year has 354 or 355 days, about 11 days shorter than a Gregorian year.</li>
+    </ul>
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const MONTHS = ['Muharram', 'Safar', "Rabi' al-Awwal", "Rabi' al-Thani", 'Jumada al-Ula', 'Jumada al-Akhirah', 'Rajab', "Sha'ban", 'Ramadan', 'Shawwal', "Dhu al-Qa'dah", 'Dhu al-Hijjah'];
+  const NUM = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura-nu-latn', { day: 'numeric', month: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  const AR = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const GREG = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+
+  type H = { y: number; m: number; d: number };
+  function toHijri(date: Date): H {
+    const parts = NUM.formatToParts(date);
+    const get = (t: string) => Number(parts.find((p) => p.type === t)?.value);
+    return { y: get('year'), m: get('month'), d: get('day') };
+  }
+  const hStr = (h: H) => `${h.d} ${MONTHS[h.m - 1]} ${h.y} AH`;
+  const utcNoon = (y: number, m: number, d: number) => new Date(Date.UTC(y, m, d, 12));
+
+  // Hijri → Gregorian: estimate, then search nearby days for an exact match.
+  function toGregorian(h: H): Date | null {
+    const epoch = Date.UTC(622, 6, 19, 12);
+    const approx = epoch + ((h.y - 1) * 354.36707 + (h.m - 1) * 29.530588 + (h.d - 1)) * 86400000;
+    for (let off = 0; off <= 20; off++) {
+      for (const sign of [1, -1]) {
+        const dt = new Date(approx + sign * off * 86400000);
+        const c = toHijri(dt);
+        if (c.y === h.y && c.m === h.m && c.d === h.d) return dt;
+      }
+    }
+    return null;
+  }
+
+  function riyadhToday(): Date {
+    const p = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Riyadh', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+    const [y, m, d] = p.split('-').map(Number);
+    return utcNoon(y, m - 1, d);
+  }
+  const today = riyadhToday();
+  const todayH = toHijri(today);
+
+  // Today
+  $('today-h').textContent = hStr(todayH);
+  $('today-g').textContent = GREG.format(today);
+
+  // Month selects
+  for (const id of ['hm', 'iqhm']) {
+    $<HTMLSelectElement>(id).innerHTML = MONTHS.map((m, i) => `<option value="${i + 1}">${i + 1}. ${m}</option>`).join('');
+  }
+
+  // Gregorian → Hijri
+  const gInput = $<HTMLInputElement>('gdate');
+  gInput.value = today.toISOString().slice(0, 10);
+  function g2h() {
+    if (!gInput.value) return;
+    const [y, m, d] = gInput.value.split('-').map(Number);
+    const dt = utcNoon(y, m - 1, d);
+    $('g2h-out').textContent = hStr(toHijri(dt));
+    $('g2h-ar').textContent = AR.format(dt);
+  }
+  $('g2h').addEventListener('input', g2h);
+  g2h();
+
+  // Hijri → Gregorian
+  $<HTMLInputElement>('hd').value = String(todayH.d);
+  $<HTMLSelectElement>('hm').value = String(todayH.m);
+  $<HTMLInputElement>('hy').value = String(todayH.y);
+  function h2g() {
+    const h = { d: Number($<HTMLInputElement>('hd').value), m: Number($<HTMLSelectElement>('hm').value), y: Number($<HTMLInputElement>('hy').value) };
+    if (!h.d || !h.m || !h.y || h.y < 1343 || h.y > 1500) { $('h2g-out').textContent = '…'; $('h2g-sub').textContent = 'Enter a year between 1343 and 1500.'; return; }
+    const dt = toGregorian(h);
+    if (!dt) { $('h2g-out').textContent = 'Not a valid date'; $('h2g-sub').textContent = `${MONTHS[h.m - 1]} ${h.y} may have only 29 days.`; return; }
+    $('h2g-out').textContent = GREG.format(dt);
+    $('h2g-sub').textContent = hStr(h);
+  }
+  $('h2g').addEventListener('input', h2g);
+  $('h2g').addEventListener('change', h2g);
+  h2g();
+
+  // Iqama days left
+  $<HTMLSelectElement>('iqhm').value = String(todayH.m);
+  function iq() {
+    const cal = ($('iq').querySelector('input[name="cal"]:checked') as HTMLInputElement).value;
+    $('iq-g').hidden = cal !== 'g';
+    $('iq-h').hidden = cal !== 'h';
+    const warn = $('iq-warn');
+    warn.hidden = true;
+    let exp: Date | null = null;
+    if (cal === 'g') {
+      const v = $<HTMLInputElement>('iqg').value;
+      if (v) { const [y, m, d] = v.split('-').map(Number); exp = utcNoon(y, m - 1, d); }
+    } else {
+      const h = { d: Number($<HTMLInputElement>('iqhd').value), m: Number($<HTMLSelectElement>('iqhm').value), y: Number($<HTMLInputElement>('iqhy').value) };
+      if (h.d && h.m && h.y >= 1440 && h.y <= 1500) exp = toGregorian(h);
+    }
+    if (!exp) { $('iq-out').textContent = 'Enter your expiry date'; $('iq-sub').textContent = ''; return; }
+    const days = Math.round((exp.getTime() - today.getTime()) / 86400000);
+    $('iq-sub').textContent = `Expiry: ${GREG.format(exp)} (${hStr(toHijri(exp))})`;
+    if (days > 0) {
+      $('iq-out').textContent = `${days} day${days === 1 ? '' : 's'} left`;
+      if (days <= 30) { warn.textContent = 'Less than a month left. Remind your employer, or renew your family\'s iqamas in Absher now.'; warn.hidden = false; }
+    } else if (days === 0) {
+      $('iq-out').textContent = 'Expires today';
+      warn.textContent = 'Renew today. A late-renewal fine applies from three days after expiry.'; warn.hidden = false;
+    } else {
+      $('iq-out').textContent = `Expired ${-days} day${days === -1 ? '' : 's'} ago`;
+      warn.textContent = -days > 3
+        ? 'Late-renewal fines apply: SAR 500 the first time, SAR 1,000 the second. Renew as soon as possible.'
+        : 'Renew now. A late-renewal fine applies from three days after expiry.';
+      warn.hidden = false;
+    }
+  }
+  $('iq').addEventListener('input', iq);
+  $('iq').addEventListener('change', iq);
+  iq();
+</script>

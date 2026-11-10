@@ -1,0 +1,60 @@
+---
+import Base from './Base.astro';
+import { url } from '../site';
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  intro: string;
+  sources: { name: string; url: string }[];
+  lastChecked: string;
+}
+
+const { title, description, slug, intro, sources, lastChecked } = Astro.props;
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: title,
+    description,
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Any',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'SAR' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(url(''), Astro.site).href },
+      { '@type': 'ListItem', position: 2, name: 'Free tools', item: new URL(url('tools/'), Astro.site).href },
+      { '@type': 'ListItem', position: 3, name: title },
+    ],
+  },
+];
+---
+<Base title={title} description={description} path={`tools/${slug}/`} schema={schema}>
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li><a href={url('')}>Home</a></li>
+          <li><a href={url('tools/')}>Free tools</a></li>
+        </ol>
+      </nav>
+      <h1>{title}</h1>
+      <p class="sub">{intro}</p>
+    </div>
+  </div>
+  <div class="container tool-wrap">
+    <slot />
+    <section class="tool-notes prose">
+      <slot name="notes" />
+      <h2>Sources</h2>
+      <ul>
+        {sources.map((s) => <li><a href={s.url} rel="noopener" target="_blank">{s.name}</a></li>)}
+      </ul>
+      <p class="tool-checked">Rules last checked: {lastChecked}. Results are estimates to help you plan; the official portal decides the final amount.</p>
+    </section>
+  </div>
+</Base>

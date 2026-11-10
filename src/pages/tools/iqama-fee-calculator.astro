@@ -1,0 +1,122 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+const sources = [
+  { name: 'Middle East Briefing — Iqama fees: SAR 650 a year, work permit SAR 800 a month, dependents SAR 400 a month', url: 'https://www.middleeastbriefing.com/news/saudi-arabia-iqama-residence-permit-what-businesses-need-to-know' },
+  { name: 'Saudi Gazette — Dependents\' fee payable quarterly; employer pays SR800 a month work permit fee', url: 'https://saudigazette.com.sa/article/613358' },
+  { name: 'Saudi Gazette — Expat and dependent levy schedule (2017)', url: 'https://www.saudigazette.com.sa/article/181421' },
+  { name: 'Wego — Iqama fee by period, SAR 700 levy where Saudis are not outnumbered, domestic workers SAR 600', url: 'https://blog.wego.com/iqama-renewal/' },
+  { name: 'Absher — Ministry of Interior', url: 'https://www.absher.sa' },
+];
+---
+<ToolLayout
+  title="Iqama and dependent fee calculator"
+  description="Work out iqama fees in Saudi Arabia: the SAR 650 iqama fee, SAR 800 work permit levy and SAR 400 a month for each dependent, for 3 to 12 months."
+  slug="iqama-fee-calculator"
+  intro="See what you pay for your family and what your employer pays for your iqama and work permit, for 3, 6, 9 or 12 months."
+  sources={sources}
+  lastChecked="10 November 2026"
+>
+  <div class="tool-grid">
+    <form class="form-card" id="iqama-form" onsubmit="return false">
+      <h2>Your details</h2>
+      <div class="field">
+        <span class="label">Renewal period</span>
+        <div class="seg" role="radiogroup" aria-label="Renewal period">
+          <label><input type="radio" name="months" value="3" /> 3 months</label>
+          <label><input type="radio" name="months" value="6" /> 6 months</label>
+          <label><input type="radio" name="months" value="9" /> 9 months</label>
+          <label><input type="radio" name="months" value="12" checked /> 12 months</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="worker">Your job type</label>
+        <select id="worker" name="worker">
+          <option value="private">Private-sector employee</option>
+          <option value="domestic">Domestic worker (house driver, maid)</option>
+        </select>
+      </div>
+      <div class="field" id="levy-field">
+        <label for="levy">Your employer's Saudi and expat staff</label>
+        <select id="levy" name="levy">
+          <option value="800">More expats than Saudis (SAR 800 a month)</option>
+          <option value="700">Saudis equal to or more than expats (SAR 700 a month)</option>
+        </select>
+        <p class="hint">Not sure? Leave the first option. Most employers pay SAR 800.</p>
+      </div>
+      <div class="field">
+        <label for="family">Family members on your iqama</label>
+        <input id="family" name="family" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" />
+        <p class="hint">Wife, children, and companions such as parents or sons over 18. Each one is SAR 400 a month.</p>
+      </div>
+    </form>
+
+    <div class="result-card" aria-live="polite">
+      <h2>You pay for your family</h2>
+      <div class="result-big" id="you-total">SAR 0</div>
+      <p class="result-sub" id="you-sub">No family members added.</p>
+      <table class="breakdown">
+        <thead><tr><th>Item</th><th>Amount</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="result-note" id="employer-note"></p>
+      <p class="warn">Not included: each family member's own iqama document fee and health insurance, which Absher shows when you pay. Renewing a family member who is outside Saudi Arabia costs double.</p>
+    </div>
+  </div>
+
+  <Fragment slot="notes">
+    <h2>How it's calculated</h2>
+    <ul>
+      <li><strong>Iqama fee (worker):</strong> SAR 650 a year for private-sector workers (SAR 163, 325 and 488 for 3, 6 and 9 months). Domestic workers: SAR 600 a year, renewed yearly.</li>
+      <li><strong>Work permit levy:</strong> SAR 800 a month, or SAR 700 where the employer's Saudi staff are not outnumbered. Not charged for domestic workers.</li>
+      <li><strong>Dependent and companion fee:</strong> SAR 400 a month for each person on your iqama.</li>
+    </ul>
+    <p>Under Article 40 of the labor law, the employer pays the worker's iqama fee, work permit levy and any late-renewal fines. The dependent fee is yours unless your contract says otherwise.</p>
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const IQAMA_FEE: Record<string, Record<number, number>> = {
+    private: { 3: 163, 6: 325, 9: 488, 12: 650 },
+    domestic: { 12: 600 },
+  };
+  const form = document.getElementById('iqama-form') as HTMLFormElement;
+  const fmt = (n: number) => 'SAR ' + n.toLocaleString('en-US');
+
+  function calc() {
+    const worker = (form.querySelector('#worker') as HTMLSelectElement).value;
+    const radios = form.querySelectorAll<HTMLInputElement>('input[name="months"]');
+    // Domestic workers' iqamas are renewed for a full year.
+    radios.forEach((r) => {
+      r.disabled = worker === 'domestic' && r.value !== '12';
+      if (worker === 'domestic' && r.value === '12') r.checked = true;
+    });
+    const months = Number((form.querySelector('input[name="months"]:checked') as HTMLInputElement).value);
+    const levyRate = Number((form.querySelector('#levy') as HTMLSelectElement).value);
+    const family = Math.max(0, Math.min(20, Math.floor(Number((form.querySelector('#family') as HTMLInputElement).value) || 0)));
+    (document.getElementById('levy-field') as HTMLElement).hidden = worker === 'domestic';
+
+    const iqama = IQAMA_FEE[worker][months];
+    const levy = worker === 'domestic' ? 0 : levyRate * months;
+    const dep = 400 * months * family;
+
+    document.getElementById('you-total')!.textContent = fmt(dep);
+    document.getElementById('you-sub')!.textContent = family
+      ? `${family} family member${family > 1 ? 's' : ''} × SAR 400 × ${months} months. That's ${fmt(Math.round(dep / months))} a month.`
+      : 'No family members added.';
+
+    const rows: [string, number][] = [];
+    if (family) rows.push([`Dependent fee (${family} × SAR 400 × ${months})`, dep]);
+    rows.push([`Your iqama fee, ${months} months (employer)`, iqama]);
+    if (levy) rows.push([`Work permit levy (SAR ${levyRate} × ${months}) (employer)`, levy]);
+    rows.push(['Total, all fees', dep + iqama + levy]);
+    document.getElementById('rows')!.innerHTML = rows
+      .map(([k, v]) => `<tr><td>${k}</td><td>${fmt(v)}</td></tr>`)
+      .join('');
+    document.getElementById('employer-note')!.textContent =
+      `Your employer should pay ${fmt(iqama + levy)} for your own iqama and work permit. These must not be deducted from your salary.`;
+  }
+  form.addEventListener('input', calc);
+  form.addEventListener('change', calc);
+  calc();
+</script>
