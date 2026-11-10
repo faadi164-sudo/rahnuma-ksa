@@ -109,10 +109,32 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Procurement Saudization | 70% in 12 procurement jobs, enforced from 31 May 2026 | [Arab News PK](https://www.arabnews.pk/business/saudi-arabia-to-impose-70-localization-on-project-management-roles-2654943) | B |
 | Project management min. salary | SAR 6,000 reported by one outlet only; not used in the guide | ProPakistani | C |
 
+## Batch 4 (10 Nov 2026): traffic fines, family visa, Indian passport, money, Ejar, insurance
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Traffic fine ranges | 100–150; 150–300; 300–500; 500–900; 1,000–2,000; 3,000–6,000; 5,000–10,000; speeding 150–2,000 | [Gulf News 2023 (GDT list)](https://gulfnews.com/living-in-uae/relocate/traffic-fines-and-violations-you-should-keep-in-mind-while-driving-in-saudi-arabia-1.1673277697720), [KSA Expats 2026](https://ksaexpats.com/saudi-arabia-traffic-fine-list/) | B |
+| Red light; school bus overtaking; no plates | SAR 3,000–6,000 | Both lists agree | B |
+| Wrong way | SAR 3,000–6,000 per Moroor statements; Gulf News 2023 list says 500–900 | [Saudi Expatriates (Moroor)](https://www.saudi-expatriates.com/2023/02/14-traffic-violations-with-fine-of-3000-to-6000-riyals.html) | B (conflict noted in guide) |
+| Phone while driving | 150–300 (Gulf News 2023) vs 500–900 (KSA Expats 2026) | — | C (guide says check Absher) |
+| Speeding bands (≤120 km/h roads) | 10–20: 150–300; 20–30: 300–500; 30–40: 800–1,000; 40–50: 1,200–1,500; 50+: 1,500–2,000 | KSA Expats 2026 | B |
+| Drifting | SAR 20,000 / 40,000 / 60,000; impound; confiscation on third | Gulf News; KSA Expats | B |
+| 25% discount exclusions | 9 violations incl. drifting, accidents from overtaking/speeding, weight/size/inspection, workshops, showrooms | [KSA Expats citing @eMoroor, Apr 2024](https://ksaexpats.com/25-traffic-fine-discount-excludes-nine-violations/) | B |
+| Permanent family visa fee | SAR 2,000 via SADAD; Chamber attestation of Istiqdam form | [KSA Expats](https://ksaexpats.com/permanent-family-visa-saudi-arabia/) | B |
+| Family visa salary/profession rule | SAR 3,500 reported by KSA Expats; others differ | — | C (guide says Absher decides) |
+| Skilled hires: family visas alongside work visa | MOI announcement; spouses, sons under 25, unmarried daughters | [Khaleej Times, 6 Oct 2026](https://www.khaleejtimes.com/gulf/saudi-arabia-skilled-expats-process-family-visas-work-permits) | A |
+| Indian passport fees from 1 Jul 2026 | 36pp re-issue 460 / Tatkal 919; 60pp 644 / 1,103; minor 331 / 791; lost 36pp 919 / 1,379 | [KSA Expats](https://ksaexpats.com/updated-indian-passport-fees-saudi-arabia/), [Saudi Life Guide](https://saudilifeguide.com/indian-passport-renewal-fee-saudi-arabia/) | B |
+| Indian passport extras | ICWF SAR 8; VFS service fee (SAR 13 per one source) | Saudi Life Guide | B/C |
+| Bank account requirements | Iqama, Absher, Nafath, mobile in own name, national address, 18+ | [KSA Expats](https://ksaexpats.com/open-bank-account-in-saudi-arabia), Al Rajhi | B |
+| Riyadh rent freeze | 5 years from 25 Sep 2025, existing and new contracts | [Arab News](https://www.arabnews.com/node/2616697/amp), [Arabian Business](https://www.arabianbusiness.com/industries/real-estate/saudi-arabia-freezes-rent-increases-in-riyadh-for-5-years) | A |
+| Ejar rules (Sep 2025) | All leases in Ejar; either party may register; 60-day objection window; auto-renewal unless 60 days' notice; fines up to 12 months' rent | Arab News; Arabian Business | A |
+| Riyadh renewal refusal | Only non-payment, structural safety defects, or own/first-degree relative use | [Gulf Construction Online citing SG](https://www.gulfconstructiononline.com/Article/387833/New_rules_cap_Riyadh_rents_for_five_years) | B |
+| Health insurance check | CHI inquiry and IA Check Health Insurance; iqama, border no. or passport | [Saudi Life Guide, Oct 2026](https://saudilifeguide.com/?p=2087) | B |
+| Roshan Digital Account | Pakistani account opened online from abroad, funded from outside Pakistan | [Arab News PK](https://www.arabnews.pk/node/1815526/pakistan) | A |
+
 ## Still to research (next batch)
 
-- Traffic fines list: use the General Department of Traffic (Moroor) official table only.
-- Permanent family visa: eligibility (profession, salary). Sources disagree; confirm on Absher.
-- Indian passport renewal (VFS Global), embassy appointments for Pakistan and India.
-- Sending money to Pakistan and India (bank vs exchange-house apps, fees).
-- Bank account opening, Ejar rental contracts, property ownership, schools, health insurance (CHI).
+- Official Moroor violations table (primary source) to replace the B-graded traffic list.
+- Driving licence: converting a foreign licence, renewing, Saudi driving school.
+- Premium Residency, Hajj for residents, final exit for family members only, huroob.
+- Schools for expat children (Pakistani and Indian community schools), GOSI for expats, National address registration.
