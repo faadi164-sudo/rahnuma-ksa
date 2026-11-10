@@ -1,0 +1,51 @@
+---
+import { SITE, url } from '../site';
+import { HUBS } from '../data/hubs';
+import { T } from '../i18n';
+
+interface Props {
+  lang: 'en' | 'ur';
+}
+const { lang } = Astro.props;
+const t = T[lang];
+const ur = lang === 'ur';
+const topicBase = ur ? 'ur/topics/' : 'topics/';
+const L = (en: string, urText: string) => (ur ? urText : en);
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="brand-name" lang="en">{SITE.name}</span>
+        <p>{t.footerAbout}</p>
+      </div>
+      <nav aria-label={t.guides}>
+        <strong>{t.guides}</strong>
+        {HUBS.slice(0, 6).map((h) => <a href={url(`${topicBase}${h.slug}/`)}>{ur ? h.ur : h.en}</a>)}
+      </nav>
+      <nav aria-label={t.tools}>
+        <strong>{t.tools}</strong>
+        <a href={url('tools/')}>{L('Iqama fee calculator', 'اقامہ فیس کیلکولیٹر')}</a>
+        <a href={url('tools/')}>{L('End-of-service calculator', 'اختتامِ سروس کیلکولیٹر')}</a>
+        <a href={url('tools/')}>{L('Postal code finder', 'پوسٹل کوڈ')}</a>
+        <a href={url('tools/')}>{L('Hijri converter', 'ہجری کیلنڈر')}</a>
+      </nav>
+      <nav aria-label={t.about}>
+        <strong>{t.about}</strong>
+        <a href={url('about/')}>{L('About us', 'ہمارے بارے میں')}</a>
+        <a href={url('editorial-policy/')}>{L('Editorial policy', 'ادارتی پالیسی')}</a>
+        <a href={url('corrections/')}>{L('Corrections', 'تصحیح')}</a>
+        <a href={url('contact/')}>{L('Contact', 'رابطہ')}</a>
+      </nav>
+      <nav aria-label={t.legal}>
+        <strong>{t.legal}</strong>
+        <a href={url('privacy-policy/')}>{L('Privacy policy', 'پرائیویسی پالیسی')}</a>
+        <a href={url('terms/')}>{L('Terms of use', 'شرائطِ استعمال')}</a>
+        <a href={url('disclaimer/')}>{L('Disclaimer', 'دستبرداری')}</a>
+        <a href={url('advertising-disclosure/')}>{L('Advertising disclosure', 'اشتہارات کی وضاحت')}</a>
+      </nav>
+    </div>
+    <p class="footer-bottom">© {year} <span lang="en">{SITE.name}</span> · {t.footerNote}</p>
+  </div>
+</footer>

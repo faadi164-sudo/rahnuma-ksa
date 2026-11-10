@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import { SITE, url, formatDate } from '../site';
+import { type Hub } from '../data/hubs';
+import { getGuides, guidePath } from '../lib/guides';
+import { T } from '../i18n';
+
+interface Props {
+  hub: Hub;
+  lang: 'en' | 'ur';
+}
+const { hub, lang } = Astro.props;
+const ur = lang === 'ur';
+const t = T[lang];
+const guides = (await getGuides(lang)).filter((g) => g.data.hub === hub.slug);
+const path = `${ur ? 'ur/' : ''}topics/${hub.slug}/`;
+const altPath = `${ur ? '' : 'ur/'}topics/${hub.slug}/`;
+---
+<Base
+  lang={lang}
+  path={path}
+  altPath={altPath}
+  title={ur ? hub.ur : hub.en}
+  description={ur ? `${hub.ur}: سعودی عرب میں مقیم افراد کے لیے مرحلہ وار رہنمائی۔` : hub.blurb}
+>
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb"><li><a href={url(ur ? 'ur/' : '')}>{t.home}</a></li></ol>
+      </nav>
+      <h1>{ur ? hub.ur : hub.en}</h1>
+      {!ur && <p class="sub">{hub.blurb}</p>}
+    </div>
+  </div>
+  <div class="container" style="padding-top: 32px; padding-bottom: 56px; max-width: 900px">
+    {guides.length > 0 ? (
+      <div class="link-list">
+        {guides.map((g) => (
+          <a class="link-row" href={url(guidePath(g))}>
+            <span class="title">{g.data.title}</span>
+            <span class="checked"><Icon name="check" size={16} stroke={2} />{formatDate(g.data.lastChecked, lang)}</span>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="empty">
+        <p style="margin: 0">
+          {ur
+            ? 'اس موضوع پر پہلی رہنمائیاں لکھی جا رہی ہیں۔ شائع ہوتے ہی اطلاع کے لیے واٹس ایپ چینل جوائن کریں۔'
+            : 'We are writing and checking the first guides for this topic. Join the WhatsApp channel to hear when they go live.'}
+        </p>
+        <p style="margin: 14px 0 0"><a class="btn btn-primary" href={SITE.whatsappUrl}><Icon name="chat" size={18} />{t.whatsapp}</a></p>
+      </div>
+    )}
+  </div>
+</Base>

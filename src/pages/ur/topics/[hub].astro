@@ -1,0 +1,10 @@
+---
+import TopicPage from '../../../components/TopicPage.astro';
+import { HUBS } from '../../../data/hubs';
+
+export function getStaticPaths() {
+  return HUBS.map((hub) => ({ params: { hub: hub.slug }, props: { hub } }));
+}
+const { hub } = Astro.props;
+---
+<TopicPage hub={hub} lang="ur" />

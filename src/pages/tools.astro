@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { url } from '../site';
+
+const tools = [
+  { icon: 'idcard', name: 'Iqama and dependent fee calculator', desc: 'Your yearly cost for yourself and each family member.' },
+  { icon: 'calculator', name: 'End-of-service calculator', desc: 'Based on the Saudi labor law formula for resignation or termination.' },
+  { icon: 'pin', name: 'Postal code finder', desc: 'Type a city or district and get its postal code.' },
+  { icon: 'calendar', name: 'Hijri and Gregorian converter', desc: 'Convert any date and count the days left on your iqama.' },
+] as const;
+---
+<Base title="Free tools for expats in Saudi Arabia" description="Free calculators and lookups for expats in Saudi Arabia: iqama fees, end-of-service benefit, postal codes and Hijri dates." path="tools/">
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href={url('')}>Home</a></li></ol></nav>
+      <h1>Free tools</h1>
+      <p class="sub">Quick answers in seconds. Results are estimates; each tool links the official calculator where one exists.</p>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 32px; padding-bottom: 56px">
+    <div class="cards">
+      {tools.map((tool) => (
+        <div class="card">
+          <span class="icon"><Icon name={tool.icon} size={28} /></span>
+          <h2 style="font-size: 18px">{tool.name}</h2>
+          <p>{tool.desc}</p>
+          <span class="badge badge-amber">Coming soon</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</Base>

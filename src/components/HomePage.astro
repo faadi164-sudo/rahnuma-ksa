@@ -1,0 +1,284 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import { SITE, url, formatDate } from '../site';
+import { HUBS, hubBySlug } from '../data/hubs';
+import { TASKS, POPULAR, SEASONAL, FIRST_90_DAYS } from '../data/home';
+import { getGuides, guidePath } from '../lib/guides';
+import { T } from '../i18n';
+
+interface Props {
+  lang: 'en' | 'ur';
+}
+const { lang } = Astro.props;
+const ur = lang === 'ur';
+const t = T[lang];
+const L = (en: string, urText: string) => (ur ? urText : en);
+const topicBase = ur ? 'ur/topics/' : 'topics/';
+
+const recent = (await getGuides(lang, 'guide')).slice(0, 5);
+const news = ur ? [] : (await getGuides('en', 'news')).slice(0, 4);
+const urduGuides = ur ? [] : (await getGuides('ur')).slice(0, 4);
+const season = ur ? SEASONAL.ur : SEASONAL.en;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: new URL(url(''), Astro.site).href,
+    inLanguage: ['en', 'ur'],
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: new URL(url('search/'), Astro.site).href + '?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  },
+];
+---
+<Base
+  lang={lang}
+  path={ur ? 'ur/' : ''}
+  altPath={ur ? '' : 'ur/'}
+  title={L(`${SITE.name}: Saudi procedures explained step by step`, `${SITE.name}: سعودی سرکاری کام، آسان اردو میں`)}
+  description={ur ? SITE.descriptionUr : SITE.description}
+  schema={schema}
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">{L('For expats living and working in Saudi Arabia', 'سعودی عرب میں رہنے اور کام کرنے والوں کے لیے')}</p>
+      <h1>{L('Saudi procedures, explained step by step.', 'سعودی سرکاری کام، آسان اردو میں')}</h1>
+      <p class="sub">
+        {L(
+          'Iqama, visas, Absher, labor law and daily life. Every guide links the official source and shows when it was last checked. In English and Urdu.',
+          'اقامہ، ویزا، ابشر اور لیبر قانون۔ ہر رہنمائی میں سرکاری ذریعے کا لنک اور آخری تصدیق کی تاریخ درج ہوتی ہے۔'
+        )}
+      </p>
+      <form class="search-form" role="search" action={url('search/')} method="get">
+        <label class="search-field">
+          <Icon name="search" />
+          <span class="sr-only">{t.searchLabel}</span>
+          <input type="search" name="q" placeholder={t.searchPlaceholder} autocomplete="off" />
+        </label>
+        <button class="btn btn-primary" type="submit">{t.search}</button>
+      </form>
+      <div class="chips">
+        <span class="label">{L('Popular:', 'مقبول:')}</span>
+        {POPULAR.map((p) => (
+          <a class="chip" href={url(`search/?q=${encodeURIComponent(p.en)}`)}>{ur ? p.ur : p.en}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>{L('What do you need to do?', 'آپ کیا کرنا چاہتے ہیں؟')}</h2>
+      </div>
+      <div class="tiles">
+        {TASKS.map((task) => (
+          <a class="tile" href={task.href ? url(task.href) : url(`${topicBase}${task.hub}/`)}>
+            <span class="tile-icon"><Icon name={task.icon} /></span>
+            <span class="tile-text">
+              <span class="tile-title">{ur ? task.ur : task.en}</span>
+              <span class="tile-desc">{ur ? task.urDesc : task.enDesc}</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {SEASONAL.show && (
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="banner">
+          <span class="banner-icon"><Icon name="moon" size={28} /></span>
+          <div class="banner-text">
+            <span class="banner-kicker">{season.kicker}</span>
+            <h3>{season.title}</h3>
+            <p>{season.text}</p>
+          </div>
+          <a class="btn btn-amber" href={url(`${topicBase}${SEASONAL.hub}/`)}>{season.cta}</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>{L('Free tools', 'مفت ٹولز')}</h2>
+          <p class="lead">{L('Quick answers in seconds. Estimates only, with the official calculator linked where one exists.', 'چند سیکنڈ میں جواب۔ صرف اندازہ، جہاں سرکاری کیلکولیٹر موجود ہو وہاں اس کا لنک بھی۔')}</p>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="icon"><Icon name="idcard" size={28} /></span>
+          <h3>{L('Iqama and dependent fee calculator', 'اقامہ اور فیملی فیس کیلکولیٹر')}</h3>
+          <p>{L('Your yearly cost for yourself and each family member.', 'آپ اور فیملی کے ہر فرد کا سالانہ خرچ۔')}</p>
+          <span class="badge badge-amber">{t.comingSoon}</span>
+        </div>
+        <div class="card">
+          <span class="icon"><Icon name="calculator" size={28} /></span>
+          <h3>{L('End-of-service calculator', 'اختتامِ سروس کیلکولیٹر')}</h3>
+          <p>{L('Based on the Saudi labor law formula for resignation or termination.', 'استعفیٰ یا برطرفی پر لیبر قانون کے فارمولے کے مطابق۔')}</p>
+          <span class="badge badge-amber">{t.comingSoon}</span>
+        </div>
+        <div class="card">
+          <span class="icon"><Icon name="pin" size={28} /></span>
+          <h3>{L('Postal code finder', 'پوسٹل کوڈ تلاش کریں')}</h3>
+          <p>{L('Type a city or district and get its postal code.', 'شہر یا محلے کا نام لکھیں اور کوڈ حاصل کریں۔')}</p>
+          <span class="badge badge-amber">{t.comingSoon}</span>
+        </div>
+        <div class="card">
+          <span class="icon"><Icon name="calendar" size={28} /></span>
+          <h3>{L('Hijri and Gregorian converter', 'ہجری اور عیسوی تاریخ')}</h3>
+          <p>{L('Convert any date and count the days left on your iqama.', 'تاریخ تبدیل کریں اور اقامہ کی میعاد کے باقی دن گنیں۔')}</p>
+          <span class="badge badge-amber">{t.comingSoon}</span>
+        </div>
+      </div>
+      {SITE.adsEnabled && <div class="ad-slot"><!-- AdSense unit --></div>}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      {!ur && (
+        <div>
+          <div class="section-head">
+            <h2>Latest rule changes</h2>
+            <a class="more-link" href={url('news/')}>All news</a>
+          </div>
+          {news.length > 0 ? (
+            <div class="link-list">
+              {news.map((n) => (
+                <a class="link-row news-row" href={url(guidePath(n))}>
+                  <span class="badge badge-amber">{hubBySlug(n.data.hub)?.short}</span>
+                  <span class="title">{n.data.title}</span>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <p class="empty">Rule-change updates start at launch. Join the WhatsApp channel to get them first.</p>
+          )}
+        </div>
+      )}
+      <div>
+        <div class="section-head">
+          <h2>{L('Recently checked guides', 'حال ہی میں تصدیق شدہ رہنمائی')}</h2>
+          <a class="more-link" href={url('editorial-policy/')}>{L('How we check', 'ہم کیسے تصدیق کرتے ہیں')}</a>
+        </div>
+        {recent.length > 0 ? (
+          <div class="link-list">
+            {recent.map((g) => (
+              <a class="link-row" href={url(guidePath(g))}>
+                <span class="title">{g.data.title}</span>
+                <span class="checked"><Icon name="check" size={16} stroke={2} />{formatDate(g.data.lastChecked, lang)}</span>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="empty">{L('The first guides are being checked now.', 'پہلی رہنمائیاں ابھی تصدیق کے مرحلے میں ہیں۔')}</p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-surface">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">{L('New to Saudi Arabia?', 'سعودی عرب میں نئے ہیں؟')}</p>
+        <h2 style="font-size: clamp(26px, 3.4vw, 34px); font-weight: 800">{L('Your first 90 days, in the right order', 'پہلے 90 دن، صحیح ترتیب سے')}</h2>
+        <p class="lead">{L('The setup steps every new arrival needs, each linked to its guide.', 'ہر نئے آنے والے کے لیے ضروری مراحل، ہر ایک کی رہنمائی کے لنک کے ساتھ۔')}</p>
+      </div>
+      <ol class="steps">
+        {FIRST_90_DAYS.map((s, i) => (
+          <li>
+            <span class="step-num">{i + 1}</span>
+            <span class="step-text">
+              <a class="step-title" href={url(`${topicBase}${s.hub}/`)}>{ur ? s.ur : s.en}</a>
+              {!ur && <span class="step-desc">{s.enDesc}</span>}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>{L('Browse by topic', 'موضوعات')}</h2></div>
+      <div class="topics">
+        {HUBS.map((h) => <a class="topic" href={url(`${topicBase}${h.slug}/`)}>{ur ? h.ur : h.en}</a>)}
+      </div>
+    </div>
+  </section>
+
+  {!ur && (
+    <section class="section section-tint">
+      <div class="container two-col" style="align-items: center">
+        <div>
+          <p class="eyebrow">Read in Urdu</p>
+          <h2 style="font-size: clamp(26px, 3.4vw, 32px); font-weight: 800">The top guides, in Urdu</h2>
+          <p class="lead">The most-searched procedures in clear Urdu, with the same official sources and the same checks.</p>
+          <p style="margin-top: 14px"><a class="more-link" href={url('ur/')}>Open the Urdu site</a></p>
+        </div>
+        <div class="ur-card" lang="ur" dir="rtl">
+          {urduGuides.length > 0 ? (
+            urduGuides.map((g) => <a href={url(guidePath(g))}>{g.data.title}</a>)
+          ) : (
+            <>
+              <a href={url('ur/topics/iqama/')}>اقامہ اور رہائش</a>
+              <a href={url('ur/topics/visas/')}>ویزا اور سفر</a>
+              <a href={url('ur/topics/work/')}>ملازمت اور لیبر قانون</a>
+              <a href={url('ur/topics/driving/')}>ڈرائیونگ اور ٹریفک جرمانے</a>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section band-dark">
+    <div class="container two-col" style="align-items: center">
+      <div>
+        <h2>{L('Hear about rule changes first.', 'نئے قوانین کی خبر سب سے پہلے')}</h2>
+        <p>{L('One or two short updates a day on WhatsApp, in English and Urdu.', 'واٹس ایپ پر روزانہ ایک دو مختصر اپڈیٹس، اردو اور انگریزی میں۔')}</p>
+      </div>
+      <div class="band-actions">
+        <a class="btn btn-light" href={SITE.whatsappUrl}><Icon name="chat" size={20} />{L('Join the WhatsApp channel', 'واٹس ایپ چینل جوائن کریں')}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>{L('How we keep guides accurate', 'ہم رہنمائی کو درست کیسے رکھتے ہیں')}</h2></div>
+      <div class="trust">
+        <div>
+          <Icon name="shield" size={26} />
+          <h3>{L('Official sources', 'سرکاری ذرائع')}</h3>
+          <p>{L('Every guide links the portal or ministry it relies on: Absher, Qiwa, MOFA, MHRSD.', 'ہر رہنمائی میں متعلقہ پورٹل یا وزارت کا لنک ہوتا ہے۔')}</p>
+        </div>
+        <div>
+          <Icon name="calendar" size={26} />
+          <h3>{L('Last-checked dates', 'آخری تصدیق کی تاریخ')}</h3>
+          <p>{L('You can always see when a guide was last verified.', 'ہر صفحے پر نظر آتی ہے کہ رہنمائی آخری بار کب چیک ہوئی۔')}</p>
+        </div>
+        <div>
+          <Icon name="pencil" size={26} />
+          <h3>{L('Open corrections', 'کھلی تصحیح')}</h3>
+          <p>{L('Report an error from any page. Fixes are noted on the guide.', 'کسی بھی صفحے سے غلطی کی اطلاع دیں۔ تصحیح رہنمائی پر درج کی جاتی ہے۔')}</p>
+        </div>
+        <div>
+          <Icon name="info" size={26} />
+          <h3>{L('Not legal advice', 'قانونی مشورہ نہیں')}</h3>
+          <p>{L('We explain procedures. Always confirm on the official portal before you act.', 'ہم طریقہ کار سمجھاتے ہیں۔ کوئی قدم اٹھانے سے پہلے سرکاری پورٹل پر تصدیق کریں۔')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

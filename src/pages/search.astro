@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { url } from '../site';
+import { HUBS } from '../data/hubs';
+---
+<Base title="Search guides" description="Search step-by-step guides for expats in Saudi Arabia." path="search/" noindex>
+  <div class="page-head">
+    <div class="container">
+      <h1>Search guides</h1>
+      <form class="search-form" role="search" action={url('search/')} method="get">
+        <label class="search-field">
+          <Icon name="search" />
+          <span class="sr-only">Search guides</span>
+          <input id="q" type="search" name="q" placeholder="e.g. renew iqama, exit re-entry" autocomplete="off" />
+        </label>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 28px; padding-bottom: 56px; max-width: 900px">
+    <p id="status" aria-live="polite" style="color: var(--muted)"></p>
+    <div id="results" class="link-list"></div>
+    <div id="fallback" hidden>
+      <p class="empty">No guide matches yet. Try a shorter word, or browse a topic below.</p>
+      <div class="topics" style="margin-top: 20px">
+        {HUBS.map((h) => <a class="topic" href={url(`topics/${h.slug}/`)}>{h.en}</a>)}
+      </div>
+    </div>
+  </div>
+  <script define:vars={{ indexUrl: url('search-index.json') }}>
+    const params = new URLSearchParams(location.search);
+    const q = (params.get('q') || '').trim();
+    const input = document.getElementById('q');
+    const status = document.getElementById('status');
+    const results = document.getElementById('results');
+    const fallback = document.getElementById('fallback');
+    input.value = q;
+    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    fetch(indexUrl)
+      .then((r) => r.json())
+      .then((items) => {
+        if (!words.length) { fallback.hidden = false; return; }
+        const scored = items
+          .map((it) => {
+            const hay = (it.t + ' ' + it.d + ' ' + it.h).toLowerCase();
+            const title = it.t.toLowerCase();
+            let score = 0;
+            for (const w of words) {
+              if (title.includes(w)) score += 3;
+              else if (hay.includes(w)) score += 1;
+            }
+            return { it, score };
+          })
+          .filter((x) => x.score > 0)
+          .sort((a, b) => b.score - a.score);
+        status.textContent = scored.length ? `${scored.length} result${scored.length === 1 ? '' : 's'} for “${q}”` : '';
+        for (const { it } of scored) {
+          const a = document.createElement('a');
+          a.className = 'link-row news-row';
+          a.href = it.u;
+          if (it.l === 'ur') { a.lang = 'ur'; a.dir = 'rtl'; }
+          const t = document.createElement('span');
+          t.className = 'title';
+          t.textContent = it.t;
+          const d = document.createElement('span');
+          d.style.color = 'var(--muted)';
+          d.style.fontSize = '15px';
+          d.textContent = it.d;
+          a.append(t, d);
+          results.append(a);
+        }
+        if (!scored.length) fallback.hidden = false;
+      })
+      .catch(() => { fallback.hidden = false; });
+  </script>
+</Base>

@@ -1,0 +1,54 @@
+---
+import Icon from './Icon.astro';
+import { SITE, url } from '../site';
+import { NAV_HUBS, hubBySlug } from '../data/hubs';
+import { T } from '../i18n';
+
+interface Props {
+  lang: 'en' | 'ur';
+  enPath?: string;
+  urPath?: string;
+}
+const { lang, enPath, urPath } = Astro.props;
+const t = T[lang];
+const home = lang === 'ur' ? url('ur/') : url('');
+const enHref = url(enPath ?? '');
+const urHref = url(urPath ?? 'ur/');
+const topicBase = lang === 'ur' ? 'ur/topics/' : 'topics/';
+---
+<div class="topbar">
+  <div class="container">
+    <span class="note"><Icon name="shield" size={16} color="#9FD3BE" />{t.trustNote}</span>
+    <div class="links">
+      <a href={url('tools/')}>{t.hijri}</a>
+      <span class="lang-switch">
+        <a class="en" lang="en" href={enHref} aria-current={lang === 'en' ? 'page' : undefined}>English</a>
+        <span aria-hidden="true">|</span>
+        <a class="ur" lang="ur" href={urHref} aria-current={lang === 'ur' ? 'page' : undefined}>اردو</a>
+      </span>
+    </div>
+  </div>
+</div>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href={home}>
+      <span class="brand-mark"><Icon name="compass" color="#fff" /></span>
+      <span>
+        <span class="brand-name" lang="en">{SITE.name}</span>
+        <span class="brand-tag">{lang === 'ur' ? 'سعودی عرب کی آسان رہنمائی' : SITE.tagline}</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label={t.menu}>
+      {NAV_HUBS.map((slug) => {
+        const h = hubBySlug(slug)!;
+        return <a href={url(`${topicBase}${slug}/`)}>{lang === 'ur' ? h.shortUr : h.short}</a>;
+      })}
+      <a href={url('news/')}>{t.news}</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href={SITE.whatsappUrl}>
+      <Icon name="chat" size={18} />
+      <span class="label-long">{t.whatsapp}</span>
+      <span class="label-short">WhatsApp</span>
+    </a>
+  </div>
+</header>

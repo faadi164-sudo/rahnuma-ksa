@@ -1,0 +1,19 @@
+---
+import Prose from '../layouts/Prose.astro';
+import { SITE, url } from '../site';
+---
+<Prose title="Terms of use" description={`The terms for using ${SITE.name}.`} path="terms/" updated="10 November 2026">
+  <p>By using {SITE.name} you agree to these terms. If you do not agree, please do not use the site.</p>
+  <h2>Information only</h2>
+  <p>Our guides explain general procedures for expats in Saudi Arabia. They are not legal, financial or immigration advice and do not create any professional relationship. Rules, fees and systems change; always confirm on the official portal or with the relevant authority before you act. See our <a href={url('disclaimer/')}>disclaimer</a>.</p>
+  <h2>Accuracy</h2>
+  <p>We check guides against official sources and show the date of the last check, but we cannot guarantee that every detail is complete or current. Report errors through the link on each guide.</p>
+  <h2>External links</h2>
+  <p>We link to government portals and other websites. We do not control them and are not responsible for their content or availability.</p>
+  <h2>Copyright</h2>
+  <p>The text, design and tools on this site belong to {SITE.name}. You may share links and quote short passages with a link back. Please do not copy whole guides.</p>
+  <h2>Liability</h2>
+  <p>To the extent the law allows, {SITE.name} is not liable for any loss arising from use of the site or reliance on its content.</p>
+  <h2>Changes</h2>
+  <p>We may update these terms; the date above shows the latest version.</p>
+</Prose>

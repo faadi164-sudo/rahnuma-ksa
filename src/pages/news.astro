@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { SITE, url, formatDate } from '../site';
+import { hubBySlug } from '../data/hubs';
+import { getGuides, guidePath } from '../lib/guides';
+
+const news = await getGuides('en', 'news');
+---
+<Base title="Latest rule changes for expats in Saudi Arabia" description="New rules, fees and procedures that affect expats in Saudi Arabia, each linked to its official source." path="news/">
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href={url('')}>Home</a></li></ol></nav>
+      <h1>Latest rule changes</h1>
+      <p class="sub">New rules, fees and procedures that affect expats, each linked to its official source.</p>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 32px; padding-bottom: 56px; max-width: 900px">
+    {news.length > 0 ? (
+      <div class="link-list">
+        {news.map((n) => (
+          <a class="link-row news-row" href={url(guidePath(n))}>
+            <span class="badge badge-amber">{hubBySlug(n.data.hub)?.short} · {formatDate(n.data.published)}</span>
+            <span class="title">{n.data.title}</span>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="empty">
+        <p style="margin: 0">Rule-change updates start at launch. Join the WhatsApp channel to get them first.</p>
+        <p style="margin: 14px 0 0"><a class="btn btn-primary" href={SITE.whatsappUrl}><Icon name="chat" size={18} />Get WhatsApp updates</a></p>
+      </div>
+    )}
+  </div>
+</Base>

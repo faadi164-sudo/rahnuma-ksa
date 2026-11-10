@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Site address: https://<user>.github.io/<repo>/ by default.
+      # With a custom domain, add a repository variable CUSTOM_DOMAIN (e.g. rahnumaksa.com)
+      # under Settings > Secrets and variables > Actions > Variables.
+      - name: Set site URL
+        run: |
+          if [ -n "${{ vars.CUSTOM_DOMAIN }}" ]; then
+            echo "SITE_URL=https://${{ vars.CUSTOM_DOMAIN }}" >> "$GITHUB_ENV"
+            echo "BASE_PATH=/" >> "$GITHUB_ENV"
+          else
+            echo "SITE_URL=https://${{ github.repository_owner }}.github.io" >> "$GITHUB_ENV"
+            echo "BASE_PATH=/${{ github.event.repository.name }}" >> "$GITHUB_ENV"
+          fi
+
+      - name: Build with Astro
+        uses: withastro/action@v3
+        with:
+          node-version: 22
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

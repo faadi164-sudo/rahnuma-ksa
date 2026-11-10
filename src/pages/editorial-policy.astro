@@ -1,0 +1,25 @@
+---
+import Prose from '../layouts/Prose.astro';
+import { SITE, url } from '../site';
+---
+<Prose title="Editorial policy" description={`How ${SITE.name} researches, checks and updates its guides.`} path="editorial-policy/" updated="10 November 2026">
+  <p>Our goal is simple: a reader should be able to follow a guide and get the procedure right the first time.</p>
+  <h2>Sources</h2>
+  <ul>
+    <li>Every guide starts from the official source: the government portal, ministry announcement or platform where the procedure happens (for example Absher, Qiwa, MOFA, MHRSD, Jawazat, Najm, Ejar or Nusuk).</li>
+    <li>Official sources are linked at the end of each guide. News reports are used only to spot changes, and are confirmed against an official source where possible.</li>
+  </ul>
+  <h2>Checking and updating</h2>
+  <ul>
+    <li>Each guide shows a "last checked" date: the day we last verified its steps, fees and rules.</li>
+    <li>We recheck the most-read guides regularly, and any guide affected by a new rule as soon as the change is announced.</li>
+  </ul>
+  <h2>How we write</h2>
+  <ul>
+    <li>Plain English and Urdu, a quick answer at the top, numbered steps, a documents checklist and fees where they apply.</li>
+    <li>We use AI tools to help draft and translate. A person checks every fact, step and fee against the official source before a guide is published.</li>
+    <li>We do not accept payment to change the content of a guide. Advertising and affiliate links are kept separate from our advice; see our <a href={url('advertising-disclosure/')}>advertising disclosure</a>.</li>
+  </ul>
+  <h2>Corrections</h2>
+  <p>We correct confirmed errors and note the correction on the page. See our <a href={url('corrections/')}>corrections policy</a>.</p>
+</Prose>

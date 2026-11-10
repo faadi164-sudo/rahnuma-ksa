@@ -1,0 +1,11 @@
+---
+import Prose from '../layouts/Prose.astro';
+import { SITE } from '../site';
+---
+<Prose title="Disclaimer" description={`${SITE.name} is an independent guide, not a government website, and does not give legal advice.`} path="disclaimer/" updated="10 November 2026">
+  <p><strong>{SITE.name} is an independent website.</strong> It is not affiliated with, endorsed by, or operated by the Government of Saudi Arabia, any ministry or agency (including the Ministry of Interior, Jawazat, MHRSD, MOFA or Absher), or any embassy.</p>
+  <p><strong>Not legal advice.</strong> Our guides explain procedures in plain language. They are general information, not legal, immigration or financial advice. Your situation may differ.</p>
+  <p><strong>Rules change.</strong> Fees, eligibility and steps can change without notice. Each guide shows when it was last checked and links its official sources. Always confirm on the official portal before you pay, apply or travel.</p>
+  <p><strong>Tools give estimates.</strong> Our calculators show estimates based on published rules. The official amount is the one shown by the government platform or your employer.</p>
+  <p>If you find an error, please tell us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+</Prose>

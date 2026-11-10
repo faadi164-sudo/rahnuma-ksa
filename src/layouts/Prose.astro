@@ -1,0 +1,27 @@
+---
+import Base from './Base.astro';
+import { url } from '../site';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  updated?: string;
+  noindex?: boolean;
+}
+const { title, description, path, updated, noindex } = Astro.props;
+---
+<Base title={title} description={description} path={path} noindex={noindex}>
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href={url('')}>Home</a></li></ol></nav>
+      <h1>{title}</h1>
+      {updated && <p class="sub">Last updated: {updated}</p>}
+    </div>
+  </div>
+  <div class="container">
+    <div class="prose prose-page">
+      <slot />
+    </div>
+  </div>
+</Base>
