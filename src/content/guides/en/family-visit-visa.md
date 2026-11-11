@@ -8,7 +8,7 @@ quickAnswer: "Apply on the Ministry of Foreign Affairs visa platform (visa.mofa.
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: family-visit-visa
-draft: true
+draft: false
 sources:
   - name: "Ministry of Foreign Affairs — Visa platform"
     url: "https://visa.mofa.gov.sa"

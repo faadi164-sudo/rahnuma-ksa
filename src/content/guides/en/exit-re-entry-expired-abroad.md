@@ -8,7 +8,7 @@ quickAnswer: "Extend it before it expires. Your sponsor can extend it on Absher,
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: exit-re-entry-expired-abroad
-draft: true
+draft: false
 sources:
   - name: "Gulf News — No refunds for cancelled exit and re-entry visas (extension fees from abroad, 2025)"
     url: "https://gulfnews.com/world/gulf/saudi/saudi-arabia-no-refunds-for-canceled-exit-and-re-entry-visas-1.500163506"

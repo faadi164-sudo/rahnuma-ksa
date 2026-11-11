@@ -8,7 +8,7 @@ quickAnswer: "Residents don't need a visa for Umrah, but everyone must book an U
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: umrah-permit
-draft: true
+draft: false
 sources:
   - name: "Nusuk — official platform of the Ministry of Hajj and Umrah"
     url: "https://www.nusuk.sa"

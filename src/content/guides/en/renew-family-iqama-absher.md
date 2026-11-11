@@ -8,7 +8,7 @@ quickAnswer: "Pay the iqama fee and the SAR 400 monthly dependent fee for the pe
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: renew-family-iqama
-draft: true
+draft: false
 sources:
   - name: "Ajel — Residents can renew iqama online from outside Saudi Arabia via Absher (Jawazat, Aug 2026)"
     url: "https://english.ajel.sa/news/zzy857uk3"

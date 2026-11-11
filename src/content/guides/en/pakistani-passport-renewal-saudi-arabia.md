@@ -8,7 +8,7 @@ quickAnswer: "Renew online on the DGIP portal (onlinemrp.dgip.gov.pk) if your pa
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: pakistani-passport-renewal
-draft: true
+draft: false
 sources:
   - name: "Aaj News — Updated passport renewal fees for Pakistanis in Saudi Arabia (26 Apr 2025)"
     url: "https://english.aaj.tv/news/330413754"

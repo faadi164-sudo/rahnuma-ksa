@@ -8,7 +8,7 @@ quickAnswer: "The quickest way is the Absher app: your digital iqama shows the e
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: iqama-expiry
-draft: true
+draft: false
 sources:
   - name: "Absher — Ministry of Interior"
     url: "https://www.absher.sa"

@@ -7,7 +7,7 @@ type: news
 quickAnswer: "From 18 November 2026, men's and women's private gyms and sports centres with four or more employees must have Saudi nationals in at least 15% of 12 designated jobs, including sports coach, personal trainer, football coach, athletics coach and sports supervisor. The Ministry of Human Resources announced it with the Ministry of Sport in November 2025."
 published: 2026-11-10
 lastChecked: 2026-11-10
-draft: true
+draft: false
 sources:
   - name: "Ministry of Human Resources and Social Development — Localization of professions in private sports centres and gyms"
     url: "https://www.hrsd.gov.sa/en/media-center/news/توطين-المهن-في-المراكز-والصالات-الرياضية-بالقطاع-الخاص"

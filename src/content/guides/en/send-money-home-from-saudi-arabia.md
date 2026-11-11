@@ -8,7 +8,7 @@ quickAnswer: "Use your bank's app, a licensed exchange-house app or a licensed d
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: send-money-home
-draft: true
+draft: false
 sources:
   - name: "Arab News PK — Roshan Digital Accounts: open a Pakistani bank account online from abroad"
     url: "https://www.arabnews.pk/node/1815526/pakistan"

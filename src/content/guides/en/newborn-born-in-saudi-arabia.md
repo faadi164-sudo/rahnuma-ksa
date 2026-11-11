@@ -8,7 +8,7 @@ quickAnswer: "Register the birth on Absher (Civil Affairs, newborn registration)
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: newborn-in-ksa
-draft: true
+draft: false
 sources:
   - name: "Ajel — Civil Affairs launches online newborn registration service (Jul 2026)"
     url: "https://english.ajel.sa/news/xqco0fcem"

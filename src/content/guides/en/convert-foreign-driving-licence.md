@@ -8,7 +8,7 @@ quickAnswer: "If your licence is from one of about 48 approved countries (includ
 published: 2026-11-11
 lastChecked: 2026-11-11
 translationKey: convert-driving-licence
-draft: true
+draft: false
 sources:
   - name: "KSA Expats — How to get a driving licence in Saudi Arabia (May 2026)"
     url: "https://ksaexpats.com/driving-license-in-saudi-arabia/"

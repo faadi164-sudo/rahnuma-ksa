@@ -8,7 +8,7 @@ quickAnswer: "Fill in the re-issue form on the Global Passport Seva portal, book
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: indian-passport-renewal
-draft: true
+draft: false
 sources:
   - name: "KSA Expats — Updated Indian passport fees in Saudi Arabia from July 2026 (Embassy of India, Riyadh)"
     url: "https://ksaexpats.com/updated-indian-passport-fees-saudi-arabia/"

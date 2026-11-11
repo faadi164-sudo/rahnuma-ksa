@@ -8,7 +8,7 @@ quickAnswer: "Amendments in force since 19 February 2025 changed 38 articles of 
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: labor-law-2025
-draft: true
+draft: false
 sources:
   - name: "Clyde & Co — KSA Labour Law amendments: resignations (Mar 2025)"
     url: "https://www.clydeco.com/zh/insights/2025/03/ksa-labour-law-amendments-resignations"

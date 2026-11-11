@@ -8,7 +8,7 @@ quickAnswer: "Every lease should be registered on Ejar. Usually the landlord or 
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: ejar-contract
-draft: true
+draft: false
 sources:
   - name: "Arab News — Saudi Arabia freezes rents in Riyadh for 5 years (SPA, Sep 2025)"
     url: "https://www.arabnews.com/node/2616697/amp"

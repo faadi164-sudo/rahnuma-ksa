@@ -8,7 +8,7 @@ quickAnswer: "A final exit visa is valid for 60 days and cannot be extended; you
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: final-exit
-draft: true
+draft: false
 sources:
   - name: "Saudi Gazette — Jawazat links issuance of final-exit visas with settlement of all dues (2 Jun 2021)"
     url: "https://www.saudigazette.com.sa/article/607321"

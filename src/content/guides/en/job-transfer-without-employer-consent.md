@@ -8,7 +8,7 @@ quickAnswer: "Under the 2021 labor reforms you can move to a new employer throug
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: job-transfer
-draft: true
+draft: false
 sources:
   - name: "Saudi Gazette — Conditions for expat job mobility outlined; no additional fee (5 Nov 2020)"
     url: "https://saudigazette.com.sa/article/599970"

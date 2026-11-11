@@ -8,7 +8,7 @@ quickAnswer: "A private-sector worker's iqama fee is SAR 650 a year and can be p
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: iqama-fees
-draft: true
+draft: false
 sources:
   - name: "Saudi Gazette — Expats can pay dependents' fee quarterly (who counts as a dependent or companion; SR400 a month)"
     url: "https://saudigazette.com.sa/article/613358"

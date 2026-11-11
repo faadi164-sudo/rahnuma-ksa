@@ -8,7 +8,7 @@ quickAnswer: "Log in to Absher as the head of family, open Family Members → Vi
 published: 2026-11-11
 lastChecked: 2026-11-11
 translationKey: final-exit-family
-draft: true
+draft: false
 sources:
   - name: "Ajel — Passports Directorate: SAR 1,000 fine if a final exit visa holder does not leave; iqama must be valid to cancel (10 Aug 2026)"
     url: "https://english.ajel.sa/news/xoks55vym"

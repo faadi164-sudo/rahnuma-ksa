@@ -8,7 +8,7 @@ quickAnswer: "Register on absher.sa or the Absher app with your iqama number and
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: absher-registration
-draft: true
+draft: false
 sources:
   - name: "Absher — Ministry of Interior"
     url: "https://www.absher.sa"

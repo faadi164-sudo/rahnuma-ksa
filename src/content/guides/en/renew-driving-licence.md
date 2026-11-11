@@ -8,7 +8,7 @@ quickAnswer: "Within 180 days of expiry, do the Efada medical check, pay any tra
 published: 2026-11-11
 lastChecked: 2026-11-11
 translationKey: renew-driving-licence
-draft: true
+draft: false
 sources:
   - name: "Saudi Life Guide — Absher driving licence renewal: SAR 40 a year, medical required (Ministry of Interior fee schedule)"
     url: "https://saudilifeguide.com/?p=1863"

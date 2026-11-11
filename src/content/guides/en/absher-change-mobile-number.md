@@ -8,7 +8,7 @@ quickAnswer: "The new number must be registered under your own iqama. In the Abs
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: absher-mobile-number
-draft: true
+draft: false
 sources:
   - name: "Origami — summary of Absher's official steps on X (6 Oct 2026), also covered by Ajel"
     url: "https://origami.sa/en/blog/customer-mobile-number-change/"

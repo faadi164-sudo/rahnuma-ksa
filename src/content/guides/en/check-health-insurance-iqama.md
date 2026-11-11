@@ -8,7 +8,7 @@ quickAnswer: "Use the Council of Health Insurance (CHI) insurance inquiry or the
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: check-health-insurance
-draft: true
+draft: false
 sources:
   - name: "Saudi Life Guide — Health insurance check by iqama, border number or passport (CHI and IA screens, Oct 2026)"
     url: "https://saudilifeguide.com/?p=2087"

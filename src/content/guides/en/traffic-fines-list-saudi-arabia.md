@@ -8,7 +8,7 @@ quickAnswer: "Saudi traffic fines sit in fixed ranges: SAR 100–150, 150–300,
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: traffic-fines-list
-draft: true
+draft: false
 sources:
   - name: "Gulf News — Traffic fines and violations in Saudi Arabia (General Department of Traffic list, Jan 2023)"
     url: "https://gulfnews.com/living-in-uae/relocate/traffic-fines-and-violations-you-should-keep-in-mind-while-driving-in-saudi-arabia-1.1673277697720"

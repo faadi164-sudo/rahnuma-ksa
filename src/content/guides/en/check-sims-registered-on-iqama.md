@@ -8,7 +8,7 @@ quickAnswer: "Go to the Communications, Space and Technology Commission's Mutasi
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: sims-on-iqama
-draft: true
+draft: false
 sources:
   - name: "CST — Mutasil individuals service"
     url: "https://mutasil.cst.gov.sa/individuals"

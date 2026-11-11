@@ -8,7 +8,7 @@ quickAnswer: "Apply in Absher (Expatriates Services, family visa), then have you
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: permanent-family-visa
-draft: true
+draft: false
 sources:
   - name: "KSA Expats — Permanent family visa Saudi Arabia 2026 (updated Apr 2026)"
     url: "https://ksaexpats.com/permanent-family-visa-saudi-arabia/"

@@ -8,7 +8,7 @@ quickAnswer: "Check your fines in Absher under traffic services, or on the Efaa 
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: traffic-violations
-draft: true
+draft: false
 sources:
   - name: "Ajel — Absher lets drivers extend traffic fine deadlines (Traffic Department, Aug 2026)"
     url: "https://english.ajel.sa/news/2on57q7yk"

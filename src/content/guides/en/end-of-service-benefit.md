@@ -8,7 +8,7 @@ quickAnswer: "You earn half a month's wage for each of your first five years and
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: end-of-service-benefit
-draft: true
+draft: false
 sources:
   - name: "Ministry of Human Resources and Social Development — End-of-service award"
     url: "https://hrsd.gov.sa/en/knowledge-centre/articles/317"

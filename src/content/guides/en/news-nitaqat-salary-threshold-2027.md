@@ -7,7 +7,7 @@ type: news
 quickAnswer: "Announced on 25 October 2026: a Saudi employee will count as one full worker towards an employer's Saudization (Nitaqat) rate only if paid at least SAR 5,000 a month from 25 April 2027, and SAR 6,000 from 25 April 2028. The current threshold is SAR 4,000. It is not a general minimum wage, and it does not change expat salaries directly."
 published: 2026-11-10
 lastChecked: 2026-11-10
-draft: true
+draft: false
 sources:
   - name: "Gulf News — Saudi Arabia raises minimum wage thresholds to SR5,000 in 2027 and SR6,000 in 2028"
     url: "https://gulfnews.com/world/gulf/saudi/saudi-arabia-raises-minimum-wage-thresholds-to-sr5000-in-2027-and-sr6000-in-2028-1.500724456"

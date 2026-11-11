@@ -8,7 +8,7 @@ quickAnswer: "When an employer reports you absent, or your contract ends without
 published: 2026-11-11
 lastChecked: 2026-11-11
 translationKey: huroob
-draft: true
+draft: false
 sources:
   - name: "Gulf News — Saudi Arabia grants expat workers 60 days to avoid being classified as absconders (Jul 2025)"
     url: "https://gulfnews.com/world/gulf/saudi/saudi-arabia-grants-expat-workers-60-days-to-avoid-being-classified-as-absconders-1.500217793"

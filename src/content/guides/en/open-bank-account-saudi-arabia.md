@@ -8,7 +8,7 @@ quickAnswer: "You need a valid iqama, an activated Absher account, Nafath, a mob
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: open-bank-account
-draft: true
+draft: false
 sources:
   - name: "KSA Expats — How to open a bank account in Saudi Arabia (requirements)"
     url: "https://ksaexpats.com/open-bank-account-in-saudi-arabia"

@@ -8,7 +8,7 @@ quickAnswer: "Premium Residency lets you live in Saudi Arabia without an employe
 published: 2026-11-11
 lastChecked: 2026-11-11
 translationKey: premium-residency
-draft: true
+draft: false
 sources:
   - name: "Vialto Partners — Five new Premium Residency categories announced (23 Jan 2024)"
     url: "https://vialtopartners.com/regional-alerts/saudi-arabia-immigration-five-new-premium-residency-categories-announced"

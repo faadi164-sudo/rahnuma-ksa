@@ -8,7 +8,7 @@ quickAnswer: "If both parents live in Saudi Arabia on valid iqamas and the mothe
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: newborn-abroad
-draft: true
+draft: false
 sources:
   - name: "Arab News — Newborns of expats can get visas upon arrival in Saudi Arabia (Jawazat, Oct 2017)"
     url: "https://arabnews.com/node/1181466/amp"

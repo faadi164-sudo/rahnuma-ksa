@@ -8,7 +8,7 @@ quickAnswer: "A single exit re-entry visa costs SAR 200 for up to two months, pl
 published: 2026-11-10
 lastChecked: 2026-11-10
 translationKey: exit-re-entry-visa
-draft: true
+draft: false
 sources:
   - name: "Gulf News — No refunds for cancelled exit and re-entry visas (Jawazat fees and steps, 2025)"
     url: "https://gulfnews.com/world/gulf/saudi/saudi-arabia-no-refunds-for-canceled-exit-and-re-entry-visas-1.500163506"

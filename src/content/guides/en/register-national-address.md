@@ -8,7 +8,7 @@ quickAnswer: "Download the SPL app, log in with Nafath, open National Address an
 published: 2026-11-11
 lastChecked: 2026-11-11
 translationKey: national-address
-draft: true
+draft: false
 sources:
   - name: "Saudi Post (SPL) — Help and support: registering, editing and adding dependents to the national address"
     url: "https://portal.splonline.com.sa/en/faq"
