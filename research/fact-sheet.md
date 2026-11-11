@@ -132,9 +132,31 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Health insurance check | CHI inquiry and IA Check Health Insurance; iqama, border no. or passport | [Saudi Life Guide, Oct 2026](https://saudilifeguide.com/?p=2087) | B |
 | Roshan Digital Account | Pakistani account opened online from abroad, funded from outside Pakistan | [Arab News PK](https://www.arabnews.pk/node/1815526/pakistan) | A |
 
+## Batch 5 (11 Nov 2026): driving licence, Premium Residency, huroob, National Address, family final exit
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Direct licence conversion | ~48 approved countries (US, UK, EU, Canada, Australia, NZ, GCC); no test; Efada medical; Moroor appointment via Absher | [KSA Expats, May 2026](https://ksaexpats.com/driving-license-in-saudi-arabia/), NEOM services PDF | B |
+| Pakistan / India on list? | Not on the direct-conversion list; driving school route | Saudi Expat Guide; list examples | B |
+| Driving school costs | Full course ~SAR 2,500–3,000; shortened ~SAR 1,000–1,500; Efada ~SAR 150 | KSA Expats | C (estimates) |
+| Licence fee | SAR 40 a year (80 / 200 / 400 for 2 / 5 / 10 years) | [Saudi Life Guide (MOI fee schedule)](https://saudilifeguide.com/?p=1863), Syarah, YallaMotor | A |
+| Renewal window | Within 180 days of expiry; Efada report; no unpaid violations | [Wego](https://blog.wego.com/saudi-driving-license/) | B |
+| Expired licence late fee | SAR 100 per year expired | [KSA Expats](https://ksaexpats.com/replace-old-driving-license-with-new-visa/), YallaMotor | B |
+| Visitors on foreign licence | Up to 1 year from arrival | KSA Expats | B |
+| Residents' grace period | 3 months cited by some; others give none | — | C (guide says convert promptly) |
+| Premium Residency fees | SAR 800,000 unlimited; SAR 100,000/year limited; SAR 4,000 for five category products (Jan 2024) | [Mondaq](https://webiis08.mondaq.com/saudiarabia/general-immigration/1610370/premium-residency-in-saudi-arabia), [Vialto](https://vialtopartners.com/regional-alerts/saudi-arabia-immigration-five-new-premium-residency-categories-announced) | A |
+| Special talent salary thresholds | Executives SAR 80,000/month; healthcare/science SAR 35,000 | Batic (law firm blog) | C (FAQ says check PRC) |
+| Huroob 60-day rule | "Disconnected from work" for 60 days; transfer, final exit or new contract; then "absent from work" | [Gulf News, Jul 2025](https://gulfnews.com/world/gulf/saudi/saudi-arabia-grants-expat-workers-60-days-to-avoid-being-classified-as-absconders-1.500217793), DLA Piper | A |
+| Absence report conditions | >30 days in contract year or >15 consecutive; permit valid ≥60 days; no documented contract; transfer completed within 15 days of approval | [HRSD PDF](https://prod.hrsd.gov.sa/sites/default/files/2022-10/E23102022.pdf) | A |
+| Correction after 60 days | Some absent workers can transfer via Qiwa (12+ months in KSA, new employer pays overdue fees) | HRSD news; Gulf News Sep 2026 (via Saudi Life Guide) | B |
+| National Address | Register in SPL app/website with Nafath; free for individuals; dependents can be added; mandatory on parcels from 1 Jan 2026 | [SPL FAQ](https://portal.splonline.com.sa/en/faq), [OTO](https://help.tryoto.com/en/support/solutions/articles/150000213920-what-is-the-national-address-how-to-register-for-your-national-address-short-address-) | A |
+| Expat address limit | Up to two National Addresses | Middle East Briefing | B |
+| Family final exit | Absher > Family Members > Visa Services > Final Exit; free; traffic fines block it | Wego; [KSA Expats (Jawazat)](https://ksaexpats.com/issue-final-exit-visa-family-in-the-event-of-unpaid-traffic-violations/) | B |
+| Not leaving on final exit | SAR 1,000 fine; cancel only while iqama valid | [Ajel, 10 Aug 2026](https://english.ajel.sa/news/xoks55vym) | A |
+
 ## Still to research (next batch)
 
 - Official Moroor violations table (primary source) to replace the B-graded traffic list.
-- Driving licence: converting a foreign licence, renewing, Saudi driving school.
-- Premium Residency, Hajj for residents, final exit for family members only, huroob.
-- Schools for expat children (Pakistani and Indian community schools), GOSI for expats, National address registration.
+- Schools for expat children (Pakistani and Indian community schools), GOSI for expats.
+- Hajj for residents (Nusuk), Umrah rules for residents, Saudi e-visa for family from GCC.
+- Buying a car and ownership transfer, Istimara renewal, vehicle insurance check.
