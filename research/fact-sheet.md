@@ -173,9 +173,30 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | GOSI for expats | Employer pays 2% occupational hazards only; nothing deducted; no pension or SANED | [Qoyod](https://www.qoyod.com/en/learn/gosi-contribution-rates/), Teamed | A |
 | GOSI wage base | Basic + housing, capped SAR 45,000 a month; new law from 3 Jul 2024 | Mercans | B |
 
+## Batch 7 (13 Nov 2026): salary delays, labor claims, domestic workers, visas for relatives
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Mudad timeline | Day 1 upload request; day 10 second notice; day 15 final warning; day 20 inspection request | [ARY, 15 Jun 2026 (MHRSD)](https://arynews.tv/what-to-do-if-your-salary-is-delayed-30-day-rule-worker-rights), Gulf News | A |
+| Justification window | Employer 10 days to justify; employee 3 days to accept/reject; silence = accepted | ARY (MHRSD) | A |
+| Enforcement request | Wages unpaid 30 days after due → Najiz enforcement request; contract documented in Qiwa | ARY; Middle East Briefing | A |
+| Escalation | 2 months: most services suspended; 3 months: all suspended + transfer without consent | ARY; People Matters | A |
+| Mudad alerts | Deductions over 50%; unreasonable wages | Right Compound; GPA (citing Saudi Gazette) | B |
+| Friendly settlement | Mandatory before court; usually 2 sessions within 21 working days; referral then Najiz | Global Law Experts; Indian Embassy Riyadh | B |
+| Claim deadline | 12 months | Saudi Life Guide | B |
+| 19911 languages | Arabic, English, Hindi, Urdu and others | Commoner Law | B |
+| Musaned visa fee | SAR 2,000 per worker; disabled exempt | [Wego, May 2026](https://blog.wego.com/musaned-saudi/) | B |
+| Electronic salary | Mandatory via Musaned from 1 Jan 2026 | Wego | B |
+| Recruitment averages | Philippines SAR 14,299; Sri Lanka SAR 13,821 (June 2026, incl. VAT) | [KSA Expats citing Musaned](https://ksaexpats.com/?p=51634) | B |
+| Same-nationality rule | Expats can't recruit domestic workers from their own country | [Gulf News](https://gulfnews.com/world/gulf/saudi/expatriates-in-saudi-arabia-can-no-longer-employ-domestic-workers-of-same-nationality-1.98659166) | B |
+| Bachelor age | At least 24 | Gulf News | B |
+| Contract end (domestic) | <2 years: final exit within 60 days; >2 years: transfer or final exit | Wego; Saudi Life Guide | B |
+| Tourist e-visa | ~66 countries; US/UK/Schengen visa (used once) or residency; GCC residents (3+ months validity); no Hajj | [Wego](https://blog.wego.com/saudi-e-visa/), Outlook Traveller, Saudi Embassy UK | B |
+| Package visa pilot | Pakistan, India, Bangladesh, Egypt, Indonesia, Jordan, Mexico; visa + insurance SAR 402.21 | [ARY](https://arynews.tv/saudi-arabia-launches-new-visa-requirement-who-is-eligible-how-much-it-costs), Travel Tomorrow | B |
+
 ## Still to research (next batch)
 
 - Official Moroor violations table (primary source) to replace the B-graded traffic list.
-- Umrah rules for residents (permits, frequency), Saudi tourist e-visa for relatives, GCC resident visa.
-- Labor court and friendly settlement claims, wage protection (Mudad), salary delay rights.
-- Domestic worker hiring through Musaned, house driver visa.
+- Sons over 18 on a family iqama (sources conflict on whether they can stay as companions).
+- Changing profession on iqama, Saudi work visa for spouse, freelance permit.
+- Electricity and water bills (SEC account, Marafiq), internet and SIM plans for families.
