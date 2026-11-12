@@ -154,9 +154,28 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Family final exit | Absher > Family Members > Visa Services > Final Exit; free; traffic fines block it | Wego; [KSA Expats (Jawazat)](https://ksaexpats.com/issue-final-exit-visa-family-in-the-event-of-unpaid-traffic-violations/) | B |
 | Not leaving on final exit | SAR 1,000 fine; cancel only while iqama valid | [Ajel, 10 Aug 2026](https://english.ajel.sa/news/xoks55vym) | A |
 
+## Batch 6 (13 Nov 2026): cars, accidents, Hajj, schools, GOSI
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Vehicle sale on Absher | Seller starts Vehicle Sale; buyer pays into escrow; seller paid on completion | [Ajel, Aug 2026](https://english.ajel.sa/news/4f6r3rjim), CarSwitch (citing SPA) | A |
+| Transfer fees | SAR 150 transfer (private car) + SAR 230 Absher service fee incl. VAT | [CarSwitch Oct 2026](https://ksa.carswitch.com/newsroom/en/2026/10/07/guide-to-selling-your-car-in-riyadh/), Syarah, KSA Expats | B |
+| Istimara renewal | Valid Fahas, insurance in Absher, fines paid; SAR 100 a year; within 180 days | [CarSwitch](https://ksa.carswitch.com/newsroom/en/2025/01/15/renew-istimara-via-absher/), Motory, KSA Expats | B |
+| Fahas fee | ~SAR 115 incl. VAT, private cars over 3 years old | Sayarabay | C |
+| Accident numbers | Najm 199033; Najm WhatsApp 920000560; Moroor 993; ambulance 997 | [Gulf News, Sep 2024](https://gulfnews.com/living-in-uae/transport/saudi-arabia-involved-in-a-car-accident-heres-what-you-need-to-do-1.1726060913184) | A |
+| Remote inspection of minor accidents | Moroor and Najm, since Apr 2022 | [Arab News PK](https://www.arabnews.pk/node/2061406) | A |
+| Domestic Hajj | Valid iqama; register personally on Nusuk; licensed companies; pay via SADAD; priority to first-timers | [Arab News Feb 2026](https://www.arabnews.com/node/2634248/amp) | A |
+| Hajj 1447 timeline | Registration 23 Feb 2026; packages from 4 Mar; second phase (previous pilgrims) 18 Apr | Wego; [Saudi Gazette](https://saudigazette.com.sa/article/660481) | A |
+| Minimum age | 15 (2026 rule) | [Okaz](https://www.okaz.com.sa/local/na/2237531) | B |
+| Hajj 1448 dates | 1 Ramadan 8 Feb 2027; 1 Dhul Hijjah 7 May; Arafah 15 May; Eid 16 May (Umm al-Qura) | Computed with Umm al-Qura calendar | B (moon sighting) |
+| Indian community schools | CBSE, under Embassy of India patronage; Riyadh (2), Jeddah, Dammam, Alkhobar, Jubail, Taif, Tabuk, Buraidah, Majma; IISD ~16,000 students | [Arab News](https://www.arabnews.com/node/374914), IISD prospectus | B |
+| Pakistan International Schools | Government framework; Riyadh English section UK/IGCSE ages 3–18; PIS Jeddah English section SAR 10,350–23,000 a year | Doris, Schoozy | B |
+| GOSI for expats | Employer pays 2% occupational hazards only; nothing deducted; no pension or SANED | [Qoyod](https://www.qoyod.com/en/learn/gosi-contribution-rates/), Teamed | A |
+| GOSI wage base | Basic + housing, capped SAR 45,000 a month; new law from 3 Jul 2024 | Mercans | B |
+
 ## Still to research (next batch)
 
 - Official Moroor violations table (primary source) to replace the B-graded traffic list.
-- Schools for expat children (Pakistani and Indian community schools), GOSI for expats.
-- Hajj for residents (Nusuk), Umrah rules for residents, Saudi e-visa for family from GCC.
-- Buying a car and ownership transfer, Istimara renewal, vehicle insurance check.
+- Umrah rules for residents (permits, frequency), Saudi tourist e-visa for relatives, GCC resident visa.
+- Labor court and friendly settlement claims, wage protection (Mudad), salary delay rights.
+- Domestic worker hiring through Musaned, house driver visa.
