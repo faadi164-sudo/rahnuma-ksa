@@ -194,9 +194,26 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Tourist e-visa | ~66 countries; US/UK/Schengen visa (used once) or residency; GCC residents (3+ months validity); no Hajj | [Wego](https://blog.wego.com/saudi-e-visa/), Outlook Traveller, Saudi Embassy UK | B |
 | Package visa pilot | Pakistan, India, Bangladesh, Egypt, Indonesia, Jordan, Mexico; visa + insurance SAR 402.21 | [ARY](https://arynews.tv/saudi-arabia-launches-new-visa-requirement-who-is-eligible-how-much-it-costs), Travel Tomorrow | B |
 
+## Batch 8 (13 Nov 2026): profession change, dependents working, son at 18, Nitaqat colours, electricity
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Profession change | Employer requests in Qiwa; worker approves; SAR 1,000; valid iqama; no traffic fines | Etqan; [Siasat](https://www.siasat.com/heres-how-to-change-iqama-profession-in-saudi-arabia-2723231) | B |
+| Accreditation | Engineering (SCE), accounting (SOCPA), veterinary (Ministry of Agriculture) | [KSA Expats (Qiwa conditions)](https://ksaexpats.com/?p=21885) | B |
+| Restricted titles | 29 Jan 2026: Qiwa changes into GM, sales rep, marketing specialist, procurement manager suspended; GM still possible with conditions | [Deloitte](https://www.deloitte.com/middle-east/en/services/tax/perspectives/update-on-occupation-changes-for-expatriates.html), EY (Apr 2026) | A |
+| Dependents working | Ajeer dependents service: health and education; 18+; valid iqamas; accreditation; employer not red; free; no transfer | [Saudi Gazette, 30 Jul 2024](https://saudigazette.com.sa/article/644547) | A |
+| Dependents vs companions | Dependents: wife, sons under 18, daughters; companions: sons over 18, parents etc. | [KSA Expats (Jawazat)](https://ksaexpats.com/?p=32474) | B |
+| Age 25 rule | Dependents over 25 (except spouse) must transfer sponsorship to renew | [KSA Expats (Jawazat)](https://ksaexpats.com/dependent-aged-over-25-must-transfer-iqama-for-renewal) | B |
+| Daughters 18–25 | Renewed with proof unmarried | [Saudi Gazette](https://saudigazette.com.sa/article/549784) | B |
+| Nitaqat colours | Red: no visas or renewals; staff can transfer without consent; check via MHRSD inquiry or Qiwa | [Middle East Briefing 2026](https://www.middleeastbriefing.com/news/saudi-arabias-nitaqat-2026-update-latest-quotas-by-sector-and-what-foreign-employers-need-to-comply-now/), Wego | A |
+| Utilities in tenant's name | Ejar: linking meters to beneficiary mandatory (Dec 2024); SEC meter declaration (owner/tenant) | [Argaam](https://www.argaam.com/en/article/articledetail/id/1776583), [SEC](https://www.se.com.sa/en/Ourservices/ColumnB/Account-Management/Account-Registration) | A |
+| SADAD electricity | Biller code 002 in most bank apps; partial payment accepted | Saudi Life Guide | B |
+| Disconnection | Arrears above SAR 1,000 | KSA Expats (SEC statement) | B |
+| 2027 tariff | From 1 Jan 2027: 21 halalas/kWh up to 6,000 kWh, 33 above; fixed SAR 70/80/90/100 by breaker (20–100, 100–200, 200–300, 300+ A); replaces meter fees | [Saudi Life Guide (Saudi Energy, 25 Oct 2026)](https://saudilifeguide.com/?p=2477) | B (confirm on se.com.sa) |
+
 ## Still to research (next batch)
 
 - Official Moroor violations table (primary source) to replace the B-graded traffic list.
-- Sons over 18 on a family iqama (sources conflict on whether they can stay as companions).
-- Changing profession on iqama, Saudi work visa for spouse, freelance permit.
-- Electricity and water bills (SEC account, Marafiq), internet and SIM plans for families.
+- Water bills (NWC, Marafiq), internet and SIM plans for families.
+- Saudi work visa for a spouse, studying at Saudi universities for expat children.
+- The new 5-year physical iqama card and digital iqama.
