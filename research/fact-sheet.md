@@ -211,9 +211,28 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Disconnection | Arrears above SAR 1,000 | KSA Expats (SEC statement) | B |
 | 2027 tariff | From 1 Jan 2027: 21 halalas/kWh up to 6,000 kWh, 33 above; fixed SAR 70/80/90/100 by breaker (20–100, 100–200, 200–300, 300+ A); replaces meter fees | [Saudi Life Guide (Saudi Energy, 25 Oct 2026)](https://saudilifeguide.com/?p=2477) | B (confirm on se.com.sa) |
 
+## Batch 9 (13 Nov 2026): Life in Saudi Arabia gap topics
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Travel ban types | Enforcement (debt), precautionary, criminal, administrative | [HD Law Firm, Nov 2026](https://hd-lawfirm.com.sa/?p=27115) | B |
+| Check travel ban | Absher inquiry (travel restrictions / generalization report); Najiz → Enforcement → Inquire about enforcement applications | HD Law Firm (MOJ page Oct 2026); KSA Expats | B |
+| New Enforcement Law | In force end Oct 2026; debt bans only at creditor's request; 3 years per order, 6 total; grievance within 10 working days | HD Law Firm | B |
+| 5-year iqama card | Physical card valid 5 years; residency still renewed on usual cycle; delivered by Wasel to National Address, no walk-in | [Middle East Briefing Q1 2026](https://www.middleeastbriefing.com/news/?p=6092), Wego | A |
+| Resignation notice | 30 days (fixed-term and indefinite); employer 60 days for indefinite termination; fixed-term resignation deemed accepted after 30 days; employer may defer up to 60 days with written reasons | BCLP; Remote; CXC Global | A |
+| Non-Saudi property law | In force 22 Jan 2026; Saudi Properties platform (REGA) | [REGA](https://rega.gov.sa/en/media-center/news-announcements/rega-non-saudi-property-ownership-system-enters-into-force-as-of-today/) | A |
+| Property fees | 5% RETT; extra non-Saudi fee up to 5%, set at 2% in Riyadh, Jeddah, Makkah, Madinah | [Khaleej Times, Jul 2026](https://www.khaleejtimes.com/world/gulf/saudi-arabia-foreign-investors-guidelines-penalties-new-law), KSA Expats | B |
+| One home per family | Spouse and children under 25 count as one family for residential purchase | Khaleej Times | B |
+| Residents' extra right | One home for personal use outside zones (not Makkah/Madinah) | KSA Expats | B |
+| Property penalties | Up to 5% of value, max SAR 10 million; misleading info SAR 10m + auction | Khaleej Times | A |
+| NICOP online fees (Gulf) | USD 20 / 30 / 40 (normal / urgent / executive) via Pak-ID | [ARY, Sep 2025](https://arynews.tv/nadra-nicop-fee-for-pakistanis-living-in-oman-qatar-saudi-arabia-september-2025) | B |
+| Jeddah consulate | NADRA and passport services by appointment only from 1 Oct 2026 | [ProPakistani](https://propakistani.pk/2026/09/24/new-facility-launched-for-pakistanis-in-saudi-arabia/), TechJuice | A |
+| Traffic points | DUI 24; drifting 24; red light 12; wrong way 12; phone 2; seatbelt 2; speeding ≤25 km/h 4, >25 km/h 6 | [KSA Expats](https://ksaexpats.com/?p=38572) | B |
+| Points suspension | 24 points in a Hijri year: 3 months / 6 months / 1 year / revoked | MOI list (via ExpatWoman), Motory | A |
+| Water bill | NWC app/e-branch; SADAD National Water Company; Ejar link to tenant | Saudi Life Guide; [Amlak](https://amlak.net.sa/en/33043/) | B |
+| 2027 water tariff | From 1 Jan 2027: SAR 1/2/4/6 per m³ (0–15/15–30/30–45/45+); wastewater half; fixed SAR 30–150 by meter | [Saudi Life Guide (NWC, 25 Oct 2026)](https://saudilifeguide.com/?p=2489) | B (confirm on nwc.com.sa) |
+
 ## Still to research (next batch)
 
+- See research/competitor-gaps.md for the full prioritised list.
 - Official Moroor violations table (primary source) to replace the B-graded traffic list.
-- Water bills (NWC, Marafiq), internet and SIM plans for families.
-- Saudi work visa for a spouse, studying at Saudi universities for expat children.
-- The new 5-year physical iqama card and digital iqama.
