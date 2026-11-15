@@ -6,7 +6,7 @@ lang: en
 type: guide
 quickAnswer: "Your employer must pay through the Wage Protection System (Mudad), which flags late salaries. If it gives an excuse, you have 3 days to accept or reject it in the system. If your wage is still unpaid 30 days after the due date, you can file an enforcement request on Najiz. After 3 months unpaid, the employer loses all ministry services and you can move to a new employer without its consent."
 published: 2026-11-13
-lastChecked: 2026-11-13
+lastChecked: 2026-11-15
 translationKey: salary-delay
 draft: false
 sources:
@@ -22,11 +22,15 @@ sources:
     url: "https://rightcompound.com/blog/article/mudad-unfair-wages-late-salaries-guide-expats"
   - name: "KSA Expats — Accepting or rejecting the employer's justification on Mudad"
     url: "https://ksaexpats.com/?p=49411"
+  - name: "HRSD — Wage deductions and the percentage of deduction (written consent, half-wage ceiling)"
+    url: "https://hrsd.gov.sa/en/knowledge-centre/articles/311"
+  - name: "HRSD — Contract management: the employee can approve, reject or request to amend the contract on Qiwa"
+    url: "https://hrsd.gov.sa/en/ministry-services/services/https/authqiwasa/ar/sign"
 faq:
   - q: "Should I stop working if my salary is late?"
     a: "Not without advice. Stopping work can let the employer report you as absent. Keep working, document everything and use the official channels."
   - q: "Can my employer cut my salary to justify paying less?"
-    a: "Deductions over half the wage, and wages that are unreasonably low or high, trigger alerts in the wage protection system."
+    a: "Not on its own. Deductions need your written consent except in the cases the law lists, and lowering your agreed salary means changing your Qiwa contract, which you can reject. Deductions over half the wage also trigger alerts in the wage protection system."
   - q: "What if I've already left the job and wasn't paid?"
     a: "File a labor claim through the Ministry's friendly settlement service within 12 months. See our guide on filing a labor complaint."
 ---
@@ -51,6 +55,13 @@ faq:
 - **30 days after the due date:** you can file an electronic enforcement request on **Najiz** (Ministry of Justice). Your contract must be documented in Qiwa.
 - **2 months:** most Ministry services are suspended for the employer, except work permit renewal and issuance.
 - **3 months:** all Ministry services are suspended, and you can **transfer to a new employer without your current employer's consent**, even if your work permit is still valid.
+
+## Your employer can't cut your salary without your consent
+
+- **Deductions:** under the Labor Law, nothing may be deducted from your wage for the employer's private claims without your **written consent**, except in the cases the law lists (such as repaying a loan the employer gave you, social insurance contributions, and fines or damages under the law's procedures).
+- **Ceiling:** in all cases, total deductions can't exceed **half** of the wage due, unless the labor dispute authority decides otherwise.
+- **Lowering your agreed salary:** that is a change to your contract. Your employer has to create the amended contract on Qiwa, and you can **approve, reject or ask for changes** to it from your Qiwa account. Don't approve a lower salary you haven't agreed to.
+- **If money was deducted without a legal reason or your consent,** keep your payslips and bank statements and claim it through the Ministry's friendly settlement service.
 
 ## Step by step: protect yourself
 

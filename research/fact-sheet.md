@@ -232,7 +232,42 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Water bill | NWC app/e-branch; SADAD National Water Company; Ejar link to tenant | Saudi Life Guide; [Amlak](https://amlak.net.sa/en/33043/) | B |
 | 2027 water tariff | From 1 Jan 2027: SAR 1/2/4/6 per m³ (0–15/15–30/30–45/45+); wastewater half; fixed SAR 30–150 by meter | [Saudi Life Guide (NWC, 25 Oct 2026)](https://saudilifeguide.com/?p=2489) | B (confirm on nwc.com.sa) |
 
+## Batch 10 (15 Nov 2026): remaining Life in Saudi Arabia gap topics
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Absher Reports path | My Services → General Services → Absher Reports; vehicle data, licence data, accidents, violations, resident reports; QR verification | [Saudi Gazette 648111](https://saudigazette.com.sa/article/648111), Ajel | A |
+| Absher Reports fees | SAR 29 accidents / violations / resident report; SAR 50 criminal record report | [Saudi Expatriates, Dec 2024](https://www.saudi-expatriates.com/2024/12/absher-reports-now-allows-users-to-view-print-vehicle-data.html?m=1) | B |
+| 2027 holidays | Founding Day Mon 22 Feb; Eid al-Fitr exp. Tue 9 Mar (1 Shawwal 1448); Arafat Sat 15 May, Eid al-Adha Sun 16 May; National Day Thu 23 Sep | Umm al-Qura via [Saudi Life Guide](https://saudilifeguide.com/ramadan-2027-saudi-arabia-dates-eid-holidays/), Wego, makkahlive | B (Eid dates subject to sighting) |
+| Private-sector Eid leave | 4 paid days each Eid; Fitr from day after 29 Ramadan, Adha from Arafat Day (Art. 112; IR Art. 24) | [Jisr](https://www.jisr.net/en/glossary/public-holidays), Saudipedia, Pebl | A |
+| SAMA Eid al-Fitr 2027 | Banks 7–11 Mar 2027 | Saudi Life Guide citing SAMA | B |
+| Riyadh Metro | 6 lines, 176 km, 85 stations; line roads and lengths | [Argaam](https://www.argaam.com/en/article/articledetail/id/1772513), Gulf News | A |
+| Metro fares | Standard 4/20/40/140 (2h/3d/7d/30d); first class 10/50/100/350; contactless and Apple Pay at gate | [KKIA](https://www.kkia.sa/en/Parking-And-Transport/Metro) | A |
+| Darb card | SAR 10, reusable, top up at machines, works on buses | Fact Magazine | B |
+| Metro annual pass | SAR 1,260 standard from 1 Jan 2026 | Platinumlist | B |
+| Visit visa insurance | Emergencies only, up to SAR 100,000; emergency pregnancy/delivery SAR 5,000; dental SAR 500; cover starts on entry | [Saudi Gazette 621650](https://saudigazette.com.sa/article/621650/SAUDI-ARABIA/Visitor-insurance-policy-covers-emergency-cases-with-a-maximum-of-SR100000); IA FAQ via Saudi Life Guide | A (limit) / B (sub-limits) |
+| Visit visa insurance check | IA "Visit Visa Travel Insurance Inquiry" by passport number used for the visa | [IA](https://www.ia.gov.sa/en/eservices-ia/service-details/Visit-Visa-Travel-Insurance-Inquiry) | A |
+| Return after final exit | No ban for a clean final exit; return on any new visa (Jawazat) | [KSA Expats](https://ksaexpats.com/?p=14437), Saudi Life Guide | B |
+| Final exit needs valid iqama | Jawazat reply, Aug 2026 | [Ajel](https://english.ajel.sa/news/2jecbytvy) | A |
+| Transfer with expired iqama | Allowed in 2026 if new employer starts it in Qiwa and pays late fines | [Middle East Briefing Q1 2026](https://www.middleeastbriefing.com/news/?p=6092) | B |
+| Self-Deportation Platform | Announced by Jawazat Nov 2025 for residency/labor/border violators; steps and fees not published in our sources | [Saudi Gazette 656337](https://www.saudigazette.com.sa/article/656337), Gulf News | B |
+| Qiwa contract | Employee can approve, reject or request amendment; individual services free | [HRSD](https://hrsd.gov.sa/en/ministry-services/services/https/authqiwasa/ar/sign), Motaded | A |
+| Qiwa salary certificate | Services → Salary certificates; choose receiving entity; downloadable | KSA Expats | B |
+| Lost licence fee | SAR 100 for all categories | KSA Expats fee table, Wego, Syarah | B |
+| Motorcycle licence | SAR 20 a year; min age 16 on MOI pages vs 18 in some guides | KSA Expats, Saudi Life Guide | C (age conflict) |
+| Vehicle cancellation | Authorised scrap centres submit via Absher; owner gives SMS code; plates to traffic | [KSA Expats](https://ksaexpats.com/?p=35137) | B |
+| Digital iqama | Jawazat: digital iqama on phone is enough, no print-out needed | [Saudi Gazette 629417](https://saudigazette.com.sa/article/629417) | A |
+| Not carrying iqama | Immediate fine SR1,000 (2015 report); some guides cite SAR 3,000 | [Saudi Gazette 135165](https://saudigazette.com.sa/article/135165) | C (old, conflicting) |
+| Lost iqama | Fine SAR 1,000; replacement SAR 500 when ≤1 year left (Jawazat, Nov 2026) | Saudi Life Guide | B |
+| Article 83 | Access to clients/secrets; written; limited in time, place, work type; ≤2 years; claim within 1 year | [Qoyod](https://www.qoyod.com/en/glossary/noncompete-agreement/), Chambers | A |
+| Fahas | Online booking mandatory; SAR 115 incl. VAT; re-inspection SAR 37.95, two chances in 14 working days; valid 1 year; new private cars exempt 3 years | [Saudi Gazette 636342](https://www.saudigazette.com.sa/article/636342), KSA Expats, Saudi Life Guide | B (upgraded from C) |
+| Muqeem visa validity | Iqama number + one identifier (visa no., passport, DOB, name) | Saudi Expatriates, KSA Expats | B |
+| Nafath password | Same as Absher password; reset via Absher forgot password; support 8001221111 | Saudi Life Guide (iam.gov.sa) | B |
+| Wage deductions | No deduction for private claims without written consent except listed cases; total ≤ half the wage | [HRSD article 311](https://hrsd.gov.sa/en/knowledge-centre/articles/311) | A |
+
 ## Still to research (next batch)
 
 - See research/competitor-gaps.md for the full prioritised list.
+- Self-Deportation Platform: official steps, fees and whether an entry ban applies.
+- Driving licence restriction codes (no reliable source found yet).
 - Official Moroor violations table (primary source) to replace the B-graded traffic list.

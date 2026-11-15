@@ -6,7 +6,7 @@ lang: en
 type: guide
 quickAnswer: "Register on absher.sa or the Absher app with your iqama number and a Saudi mobile number linked to your iqama. Then activate the account at an Absher self-service kiosk, a bank channel or a Jawazat office. Once Absher is active, download the Nafath app and log in with your iqama number and Absher password; there is no separate Nafath registration."
 published: 2026-11-10
-lastChecked: 2026-11-10
+lastChecked: 2026-11-15
 translationKey: absher-registration
 draft: false
 sources:
@@ -14,8 +14,10 @@ sources:
     url: "https://www.absher.sa"
   - name: "Nafath — National Single Sign-On (Ministry of Interior)"
     url: "https://iam.gov.sa"
-  - name: "Saudi Life Guide — Nafath uses your Absher account; no separate registration (Oct 2026)"
+  - name: "Saudi Life Guide — Nafath uses your Absher account and password; reset and support line (Oct 2026)"
     url: "https://saudilifeguide.com/?p=2276"
+  - name: "KSA Expats — How to reset your Absher password online"
+    url: "https://ksaexpats.com/?p=24296"
 faq:
   - q: "Can a new arrival register before the iqama is issued?"
     a: "You can start with a border number, but most services, including Nafath, need your iqama to be issued and your Absher account activated."
@@ -56,6 +58,18 @@ Choose one channel:
 4. Set up the app on your own phone only.
 
 When a website asks you to log in "via Nafath", open the Nafath app and tap the matching number shown on the website.
+
+## Reset your Absher or Nafath password
+
+Your Nafath password is the same as your Absher password, so there is only one password to reset. The **Forgot/Change password** link on the Nafath website leads to the same process.
+
+1. Open the Absher login page or app and choose **Forgot password** (below the login button).
+2. Enter your iqama number.
+3. Enter the mobile number registered on your Absher account and the image code, then continue.
+4. Enter the code sent by SMS.
+5. Set a new password. It works on Absher and Nafath straight away.
+
+If the code goes to an old number, update your Absher mobile number first (see our guide to changing your Absher mobile number). For Nafath problems, the National Information Center's support line is 8001221111.
 
 ## Common mistakes
 

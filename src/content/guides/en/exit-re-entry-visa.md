@@ -6,7 +6,7 @@ lang: en
 type: guide
 quickAnswer: "A single exit re-entry visa costs SAR 200 for up to two months, plus SAR 100 for each extra month. A multiple visa costs SAR 500 for three months, plus SAR 200 for each extra month. Extra months must fall within your iqama's validity. Your passport needs at least 90 days of validity, traffic fines must be paid, and the fee is not refunded if you cancel."
 published: 2026-11-10
-lastChecked: 2026-11-10
+lastChecked: 2026-11-15
 translationKey: exit-re-entry-visa
 draft: false
 sources:
@@ -22,6 +22,10 @@ sources:
     url: "https://gulfnews.com/living-in-uae/relocate/moving-to-saudi-arabia-all-you-need-to-know-about-the-exitre-entry-visa-1.1673364074549"
   - name: "Global Compliance News — Labor Reform Initiative: workers can issue their own exit re-entry visa on Absher"
     url: "https://www.globalcompliancenews.com/2020/12/11/labor-update-labor-reforms-for-foreign-national-private-sector-workers-2-conditions-for-each-of-the-initiatives-16112020/"
+  - name: "KSA Expats — How to print your exit re-entry visa from Absher or Muqeem"
+    url: "https://ksaexpats.com/?p=35541"
+  - name: "Saudi Expatriates — Check exit re-entry visa status on Absher and Muqeem (Aug 2025)"
+    url: "https://www.saudi-expatriates.com/2025/08/how-to-check-saudi-exit-re-entry-visa-status-online.html?m=1"
   - name: "Absher — Ministry of Interior"
     url: "https://www.absher.sa"
 faq:
@@ -76,6 +80,23 @@ Before the visa can be issued:
 2. Go to **Services → Passports → Visa requests**.
 3. Create a new request and choose **Exit re-entry visa (single)** or **(multiple)**.
 4. Submit and wait for the period Absher shows. If your employer does not object, you can pay and issue the visa within the window that follows.
+
+## Check your visa and print a copy
+
+Check the "return before" date before you fly and again before you come back.
+
+**On Absher (inside or outside Saudi Arabia):**
+
+1. Log in to Absher Individuals.
+2. Your own visa shows on your dashboard. For a family member, open your dependents and choose the person.
+3. Print or save the visa details.
+
+**On Muqeem's visa validity page (no Absher login needed):**
+
+1. Open the visa validity service on muqeem.sa.
+2. Choose **Exit re-entry visa** and enter the iqama number.
+3. Verify with one more detail, such as the visa number, passport number or date of birth.
+4. Read the issue date and return-before date, and print the result.
 
 ## Cancelling a visa
 

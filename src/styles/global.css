@@ -47,6 +47,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; margin: 0; color: 
 [lang='ur'] { font-family: var(--font-ur); line-height: 2.1; }
 [lang='ur'] h1, [lang='ur'] h2, [lang='ur'] h3 { font-family: var(--font-ur); line-height: 1.9; font-weight: 600; }
 [lang='en'] { font-family: var(--font-body); }
+[lang='ar'] { font-family: 'Segoe UI', Tahoma, 'Geeza Pro', 'Noto Naskh Arabic', 'Noto Sans Arabic', sans-serif; line-height: 1.9; font-size: 17px; }
+[lang='ar'] p { font-size: inherit; }
 
 /* Buttons */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }

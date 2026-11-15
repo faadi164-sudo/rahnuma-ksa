@@ -6,7 +6,7 @@ lang: en
 type: guide
 quickAnswer: "A final exit visa is valid for 60 days and cannot be extended; you must leave within that time. Before it can be issued, your passport must be valid for at least 60 days, all your dues (including phone bills) must be cleared, no vehicle can be registered in your name, and you cannot have an unused visa on record. Your employer usually issues it on Absher Business or Muqeem."
 published: 2026-11-10
-lastChecked: 2026-11-10
+lastChecked: 2026-11-15
 translationKey: final-exit
 draft: false
 sources:
@@ -20,6 +20,8 @@ sources:
     url: "https://hrsd.gov.sa/en/knowledge-centre/articles/317"
   - name: "Saudi Expatriates — Jawazat: valid iqama required to issue or cancel a final exit (Aug 2024)"
     url: "https://www.saudi-expatriates.com/2024/08/is-it-possible-to-issue-final-exit-visa-after-iqama-expiry.html"
+  - name: "KSA Expats — 10 steps before your final exit (2026): vehicles, bank account and dues"
+    url: "https://ksaexpats.com/things-to-do-before-leaving-ksa-on-final-exit/"
   - name: "Absher — Ministry of Interior"
     url: "https://www.absher.sa"
 faq:
@@ -62,6 +64,23 @@ The visa is valid for 60 days from issue. You must leave within that period, and
 - [ ] Close your bank account, or keep it open only if your bank allows non-residents.
 - [ ] Book your flight within the 60-day window.
 - [ ] Keep copies of your iqama, final exit visa and salary certificate.
+
+## Bank account, loans and car finance
+
+**Bank account**
+
+- Keep your account open until your final salary and end-of-service benefit have arrived.
+- Then send the balance home and ask the bank to close the account, or ask in writing whether it can stay open once your iqama is cancelled. Accounts linked to an iqama that is no longer valid can be restricted.
+- Cancel standing orders and SADAD auto-payments, and destroy cards once the account is closed.
+
+**Loans and credit cards**
+
+- Pay them off or agree a settlement before the final exit is requested, and get a clearance letter. Unpaid debts can block the visa, and a creditor can open an enforcement case that leads to a travel ban.
+
+**Your car**
+
+- **Owned outright:** sell it and transfer ownership on Absher, or, if it is a wreck, cancel its registration through an authorised scrap centre. A car in your name blocks the final exit.
+- **On lease or finance:** the car is usually registered to the finance company, with you as the user. Ask the company to settle the contract early or transfer it to a buyer, and get a written clearance before you leave.
 
 ## Who issues it
 
