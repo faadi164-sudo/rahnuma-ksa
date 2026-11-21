@@ -1,0 +1,21 @@
+---
+// Full-bleed background photo for a header. Decorative, so the alt text is empty.
+import { url } from '../site';
+import { PHOTOS, photoKey } from '../data/photos';
+
+interface Props { name: string }
+const key = photoKey(Astro.props.name);
+const src = (w: number) => url(`img/photos/${key}-${w}.webp`);
+---
+<img
+  class="photo-bg"
+  src={src(1280)}
+  srcset={`${src(640)} 640w, ${src(1280)} 1280w, ${src(1920)} 1920w`}
+  sizes="100vw"
+  width="1920"
+  height="1280"
+  alt=""
+  fetchpriority="high"
+  decoding="async"
+  style={`object-position: ${PHOTOS[key].pos}`}
+/>

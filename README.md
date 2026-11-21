@@ -53,4 +53,11 @@ News items use `type: news` and appear under **Latest rule changes**.
 
 Every guide and tool has a 1200×630 preview image in `public/og/` (shown when a link is shared on WhatsApp, Facebook or X).
 After adding a guide, run `python3 scripts/make-og.py` to create the missing images (`--all` rebuilds every image).
-The script needs Python Playwright and Chrome. The background illustration is `scripts/og/bg.jpg`.
+The script needs Python Playwright and Chrome. Each image uses its topic's header photo.
+
+## Photos
+
+The homepage, topic and guide headers use free Pexels photos (pexels.com/license), one per topic.
+Masters are in `scripts/photos/`, and `src/data/photos.ts` lists the Pexels photo IDs and the crop position.
+After changing a master, run `python3 scripts/make-photos.py` to rebuild the web versions in `public/img/photos/`,
+then `python3 scripts/make-og.py --all` to rebuild the share previews.

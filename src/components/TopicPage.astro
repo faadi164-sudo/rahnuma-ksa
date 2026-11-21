@@ -1,4 +1,5 @@
 ---
+import PhotoBg from './PhotoBg.astro';
 import Base from '../layouts/Base.astro';
 import Icon from './Icon.astro';
 import { SITE, url, formatDate, HAS_WHATSAPP } from '../site';
@@ -29,7 +30,8 @@ const altPath = `${ur ? '' : 'ur/'}topics/${hub.slug}/`;
   title={ur ? hub.ur : hub.en}
   description={ur ? `${hub.ur}: سعودی عرب میں مقیم افراد کے لیے مرحلہ وار رہنمائی۔` : hub.blurb}
 >
-  <div class="page-head">
+  <div class="page-head has-photo">
+    <PhotoBg name={hub.slug} />
     <div class="container">
       <nav aria-label="Breadcrumb">
         <ol class="breadcrumb"><li><a href={url(ur ? 'ur/' : '')}>{t.home}</a></li></ol>

@@ -1,4 +1,5 @@
 ---
+import PhotoBg from './PhotoBg.astro';
 import Base from '../layouts/Base.astro';
 import Icon from './Icon.astro';
 import { SITE, url, formatDate, HAS_WHATSAPP, waShare } from '../site';
@@ -45,7 +46,8 @@ const schema = [
   description={ur ? SITE.descriptionUr : SITE.description}
   schema={schema}
 >
-  <section class="hero">
+  <section class="hero has-photo">
+    <PhotoBg name={ur ? 'home-rtl' : 'home'} />
     <div class="container">
       <p class="eyebrow">{L('For expats living and working in Saudi Arabia', 'سعودی عرب میں رہنے اور کام کرنے والوں کے لیے')}</p>
       <h1>{L('Saudi procedures, explained step by step.', 'سعودی سرکاری کام، آسان اردو میں')}</h1>
