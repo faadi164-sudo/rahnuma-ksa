@@ -31,6 +31,16 @@ const urPath = lang === 'ur' ? path : altPath;
 <html lang={lang} dir={lang === 'ur' ? 'rtl' : 'ltr'}>
   <head>
     <meta charset="utf-8" />
+    {SITE.googleTagId && import.meta.env.PROD && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtm.js?id=${SITE.googleTagId}`}></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        </script>
+      </>
+    )}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />

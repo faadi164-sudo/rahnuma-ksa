@@ -10,6 +10,8 @@ export const SITE = {
   owner: 'Fawad Ahmed',
   email: 'hello@example.com',
   whatsappUrl: '#whatsapp',
+  // Google tag (Google Analytics 4 property "Living KSA (livingksa.com)").
+  googleTagId: 'GTM-P3CLL7QQ',
   // Turn on only after AdSense approval.
   adsEnabled: false,
 };
