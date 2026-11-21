@@ -265,6 +265,15 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Nafath password | Same as Absher password; reset via Absher forgot password; support 8001221111 | Saudi Life Guide (iam.gov.sa) | B |
 | Wage deductions | No deduction for private claims without written consent except listed cases; total ≤ half the wage | [HRSD article 311](https://hrsd.gov.sa/en/knowledge-centre/articles/311) | A |
 
+## Batch 11 (21 Nov 2026): calculator rules
+
+| Fact | Value | Source | Conf. |
+| --- | --- | --- | --- |
+| Overtime (Art. 107) | Hourly wage + 50% of basic wage per overtime hour; holiday hours are all overtime; 720 h/yr cap unless worker agrees; paid days off instead with consent | [HRSD article 313](https://hrsd.gov.sa/en/knowledge-centre/articles/313), Qoyod, Jisr | A |
+| Hourly wage basis | (basic + allowances) ÷ 30 ÷ daily hours; basic hourly = basic ÷ 30 ÷ daily hours | Qoyod calculator, Jisr | B (method) |
+| Annual leave (Art. 109) | At least 21 days; 30 days after 5 consecutive years; paid in advance | [HRSD article 321](https://hrsd.gov.sa/en/knowledge-centre/articles/321), Chambers, HD Law Firm | A |
+| Unused leave (Art. 111) | Paid in cash on leaving, incl. part-year share; no encashment during employment | Qoyod, Chambers | A |
+
 ## Still to research (next batch)
 
 - See research/competitor-gaps.md for the full prioritised list.

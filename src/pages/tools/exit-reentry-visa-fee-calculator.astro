@@ -1,0 +1,120 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+const sources = [
+  { name: 'Gulf News — No refunds for cancelled exit and re-entry visas (Jawazat fees, 2025)', url: 'https://gulfnews.com/world/gulf/saudi/saudi-arabia-no-refunds-for-canceled-exit-and-re-entry-visas-1.500163506' },
+  { name: 'Saudi Gazette — Re-entry visa and residency renewal fees doubled for expats outside Saudi Arabia (30 Dec 2022)', url: 'https://saudigazette.com.sa/article/628476' },
+  { name: 'Saudi Gazette — Conditions for exit and re-entry visas (17 Jan 2024)', url: 'https://saudigazette.com.sa/article/639701' },
+  { name: 'Absher — Ministry of Interior', url: 'https://www.absher.sa' },
+];
+---
+<ToolLayout
+  title="Exit re-entry visa fee calculator"
+  description="Work out the exit re-entry visa fee in Saudi Arabia: single SAR 200 for 2 months, multiple SAR 500 for 3 months, extra months, family members, and extensions from abroad."
+  slug="exit-reentry-visa-fee-calculator"
+  intro="See what a single or multiple exit re-entry visa costs for the months you need, for yourself and your family, or what it costs to extend one from outside Saudi Arabia."
+  sources={sources}
+  lastChecked="21 November 2026"
+>
+  <div class="tool-grid">
+    <form class="form-card" id="visa-form" onsubmit="return false">
+      <h2>Your trip</h2>
+      <div class="field">
+        <span class="label">What do you need?</span>
+        <div class="seg" role="radiogroup" aria-label="New visa or extension">
+          <label><input type="radio" name="mode" value="new" checked /> New visa</label>
+          <label><input type="radio" name="mode" value="extend" /> Extend from abroad</label>
+        </div>
+      </div>
+      <div class="field">
+        <span class="label">Visa type</span>
+        <div class="seg" role="radiogroup" aria-label="Visa type">
+          <label><input type="radio" name="type" value="single" checked /> Single (one trip)</label>
+          <label><input type="radio" name="type" value="multiple" /> Multiple (several trips)</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="months" id="months-label">How many months?</label>
+        <input id="months" name="months" type="number" min="1" max="24" step="1" value="2" inputmode="numeric" />
+        <p class="hint" id="months-hint">Must end before your iqama expires.</p>
+      </div>
+      <div class="field">
+        <label for="people">How many people?</label>
+        <input id="people" name="people" type="number" min="1" max="15" step="1" value="1" inputmode="numeric" />
+        <p class="hint">Each traveller, including each child, needs their own visa.</p>
+      </div>
+    </form>
+
+    <div class="result-card" aria-live="polite">
+      <h2>Total fee</h2>
+      <div class="result-big" id="total">SAR 0</div>
+      <p class="result-sub" id="sub"></p>
+      <table class="breakdown">
+        <thead><tr><th>Item</th><th>Amount</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="warn">The fee is not refunded if you cancel the visa. Unpaid traffic fines, a passport with less than 90 days left, or unpaid family fees will stop the visa from being issued.</p>
+    </div>
+  </div>
+
+  <Fragment slot="notes">
+    <h2>How it's calculated</h2>
+    <ul>
+      <li><strong>Single exit re-entry:</strong> SAR 200 for up to 2 months, then SAR 100 for each extra month.</li>
+      <li><strong>Multiple exit re-entry:</strong> SAR 500 for up to 3 months, then SAR 200 for each extra month.</li>
+      <li><strong>Extending from outside Saudi Arabia:</strong> the fee is doubled, so SAR 200 a month for a single visa and SAR 400 a month for a multiple visa.</li>
+    </ul>
+    <p>Extra months can only be added within the iqama's remaining validity. The visa is issued by the sponsor on Absher (family members), by the employer on Absher Business or Muqeem, or requested by the worker on Absher.</p>
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const form = document.getElementById('visa-form') as HTMLFormElement;
+  const fmt = (n: number) => 'SAR ' + n.toLocaleString('en-US');
+  const val = (sel: string) => (form.querySelector(sel) as HTMLInputElement).value;
+  const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, Math.floor(n) || lo));
+
+  function newVisaFee(type: string, months: number) {
+    if (type === 'single') return 200 + Math.max(0, months - 2) * 100;
+    return 500 + Math.max(0, months - 3) * 200;
+  }
+
+  function calc() {
+    const mode = val('input[name="mode"]:checked');
+    const type = val('input[name="type"]:checked');
+    const months = clamp(Number(val('#months')), 1, 24);
+    const people = clamp(Number(val('#people')), 1, 15);
+    document.getElementById('months-label')!.textContent =
+      mode === 'new' ? 'How many months?' : 'Extra months needed';
+
+    const rows: [string, number][] = [];
+    let each: number;
+    if (mode === 'new') {
+      each = newVisaFee(type, months);
+      const baseMonths = type === 'single' ? 2 : 3;
+      const base = type === 'single' ? 200 : 500;
+      const rate = type === 'single' ? 100 : 200;
+      rows.push([`Base fee (up to ${baseMonths} months)`, base]);
+      const extra = Math.max(0, months - baseMonths);
+      if (extra) rows.push([`${extra} extra month${extra > 1 ? 's' : ''} × SAR ${rate}`, extra * rate]);
+      document.getElementById('sub')!.textContent =
+        `${type === 'single' ? 'Single' : 'Multiple'} visa for ${months} month${months > 1 ? 's' : ''}: ${fmt(each)} per person.`;
+    } else {
+      const rate = type === 'single' ? 200 : 400;
+      each = months * rate;
+      rows.push([`${months} month${months > 1 ? 's' : ''} × SAR ${rate} (doubled abroad)`, each]);
+      document.getElementById('sub')!.textContent =
+        `Extending a ${type} visa from abroad: ${fmt(each)} per person. Inside Saudi Arabia it would be ${fmt(each / 2)}.`;
+    }
+    if (people > 1) rows.push([`× ${people} people`, each * (people - 1)]);
+    const total = each * people;
+    rows.push(['Total', total]);
+    document.getElementById('total')!.textContent = fmt(total);
+    document.getElementById('rows')!.innerHTML = rows
+      .map(([k, v]) => `<tr><td>${k}</td><td>${fmt(v)}</td></tr>`)
+      .join('');
+  }
+  form.addEventListener('input', calc);
+  form.addEventListener('change', calc);
+  calc();
+</script>
