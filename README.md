@@ -6,7 +6,7 @@ Step-by-step guides for expats in Saudi Arabia, in English and Urdu. Built with 
 
 ```bash
 npm install
-npm run dev      # http://localhost:4321/rahnuma-ksa/  (drafts are visible here)
+npm run dev      # http://localhost:4321/  (drafts are visible here)
 npm run build    # builds the live site into dist/ (drafts are left out)
 ```
 
