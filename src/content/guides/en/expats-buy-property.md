@@ -1,5 +1,6 @@
 ---
 title: "Can expats buy property in Saudi Arabia? The 2026 non-Saudi ownership law explained"
+seoTitle: "Can expats buy property in Saudi Arabia? 2026 law"
 description: "Since 22 January 2026 non-Saudis can own property through the Saudi Properties platform. Who can buy, where, the one-home rule for residents, fees and how to apply."
 hub: housing
 lang: en

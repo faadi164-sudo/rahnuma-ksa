@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import ShareBar from '../components/ShareBar.astro';
 import { url } from '../site';
 
 interface Props {
@@ -33,7 +34,7 @@ const schema = [
   },
 ];
 ---
-<Base title={title} description={description} path={`tools/${slug}/`} schema={schema}>
+<Base title={title} description={description} path={`tools/${slug}/`} schema={schema} ogImage={`og/en/tool-${slug}.jpg`}>
   <div class="page-head">
     <div class="container">
       <nav aria-label="Breadcrumb">
@@ -48,6 +49,7 @@ const schema = [
   </div>
   <div class="container tool-wrap">
     <slot />
+    <ShareBar title={title} link={new URL(url(`tools/${slug}/`), Astro.site).href} />
     <section class="tool-notes prose">
       <slot name="notes" />
       <h2>Sources</h2>

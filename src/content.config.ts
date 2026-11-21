@@ -9,6 +9,8 @@ const guides = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/guides' }),
   schema: z.object({
     title: z.string(),
+    // Shorter title for search results and browser tabs (the page heading keeps `title`).
+    seoTitle: z.string().max(60).optional(),
     description: z.string().max(170),
     hub: z.enum(HUB_SLUGS),
     lang: z.enum(['en', 'ur']).default('en'),

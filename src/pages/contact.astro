@@ -1,13 +1,19 @@
 ---
 import Prose from '../layouts/Prose.astro';
-import { SITE, url } from '../site';
+import { SITE, url, HAS_EMAIL, HAS_WHATSAPP } from '../site';
 ---
 <Prose title="Contact" description={`How to contact ${SITE.name}.`} path="contact/">
-  <p>Email us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. We read every message.</p>
+  {HAS_EMAIL
+    ? <p>Email us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. We read every message.</p>
+    : <p>Our contact email address is being set up and will appear here shortly.</p>}
   <h2>Reporting an error</h2>
-  <p>If a guide is wrong or out of date, use the "Report an error" link at the bottom of that guide, or email us with the page link and what changed. See our <a href={url('corrections/')}>corrections policy</a>.</p>
+  <p>If a guide is wrong or out of date, tell us the page link, what changed and, if you can, the official source. See our <a href={url('corrections/')}>corrections policy</a>.</p>
   <h2>Personal cases</h2>
   <p>We cannot handle individual cases with government offices or employers, and we do not give legal advice. For a dispute, contact the relevant ministry, the labor office, your embassy or a licensed lawyer.</p>
-  <h2>Updates</h2>
-  <p>For rule changes as they happen, <a href={SITE.whatsappUrl}>join our WhatsApp channel</a>.</p>
+  {HAS_WHATSAPP && (
+    <>
+      <h2>Updates</h2>
+      <p>For rule changes as they happen, <a href={SITE.whatsappUrl}>join our WhatsApp channel</a>.</p>
+    </>
+  )}
 </Prose>

@@ -1,5 +1,6 @@
 ---
 title: "Do you have to carry your iqama? Digital iqama, fines, and what to do if you lose it"
+seoTitle: "Digital iqama, carrying your iqama and lost iqama fine"
 description: "Your digital iqama on Absher or Tawakkalna counts as ID. Fines for having no ID on you, and the SAR 1,000 fine and replacement steps if you lose the card."
 hub: iqama
 lang: en

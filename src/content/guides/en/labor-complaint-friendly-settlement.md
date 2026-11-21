@@ -1,5 +1,6 @@
 ---
 title: "File a labor complaint in Saudi Arabia: friendly settlement, then labor court"
+seoTitle: "File a labor complaint in Saudi Arabia"
 description: "How expats file a labor complaint: the Ministry's free friendly settlement service, what to prepare, what happens at the sessions, and moving to the labor court on Najiz."
 hub: work
 lang: en

@@ -1,5 +1,6 @@
 ---
 title: "Riyadh Metro and buses: lines, fares, the Darb card and how to ride"
+seoTitle: "Riyadh Metro: lines, fares and the Darb card"
 description: "Riyadh Metro's six lines, standard and first-class fares from SAR 4, how to pay with the Darb app, a Darb card or a bank card, and tips for the airport and buses."
 hub: driving
 lang: en

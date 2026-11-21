@@ -1,5 +1,6 @@
 ---
 title: "Exit re-entry visa running out while you are abroad: how to extend it, and what happens if it expires"
+seoTitle: "Extend an exit re-entry visa from abroad"
 description: "How to extend an exit re-entry visa from outside Saudi Arabia, the doubled fees, and your options if it has already expired."
 hub: visas
 lang: en

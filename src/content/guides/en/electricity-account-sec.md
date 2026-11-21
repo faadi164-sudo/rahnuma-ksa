@@ -1,5 +1,6 @@
 ---
 title: "Electricity bill in your name: SEC account, meter declaration, checking and paying"
+seoTitle: "SEC electricity account: meter, bill and payment"
 description: "Get the electricity account in your name when renting, declare the meter with Saudi Electricity, check your bill without logging in, and pay through SADAD."
 hub: housing
 lang: en

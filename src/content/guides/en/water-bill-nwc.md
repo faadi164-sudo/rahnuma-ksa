@@ -1,5 +1,6 @@
 ---
 title: "Water bill in Saudi Arabia: find your NWC account, check, pay and put it in your name"
+seoTitle: "Water bill in Saudi Arabia: NWC account and payment"
 description: "How to find your National Water Company account number, check and pay your water bill through SADAD or the NWC app, and move the account into your name through Ejar."
 hub: housing
 lang: en

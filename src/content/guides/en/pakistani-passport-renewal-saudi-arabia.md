@@ -1,5 +1,6 @@
 ---
 title: "Renew a Pakistani passport in Saudi Arabia: online or at the mission"
+seoTitle: "Renew a Pakistani passport in Saudi Arabia"
 description: "Two ways for Pakistanis in Saudi Arabia to renew a passport: the DGIP online renewal portal or the Pakistan Embassy and Consulate. Documents, SAR fees, Absher update."
 hub: embassy
 lang: en

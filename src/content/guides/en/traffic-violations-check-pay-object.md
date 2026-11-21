@@ -1,5 +1,6 @@
 ---
 title: "Traffic violations: how to check, pay, object or get more time"
+seoTitle: "Check, pay or object to traffic violations"
 description: "Check and pay Saudi traffic fines on Absher or Efaa, object within 30 days, get the 25% early-payment discount, extend the deadline or pay in instalments."
 hub: driving
 lang: en

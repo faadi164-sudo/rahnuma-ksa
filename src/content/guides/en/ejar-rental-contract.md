@@ -1,5 +1,6 @@
 ---
 title: "Ejar rental contract: register, accept and know your rights as a tenant"
+seoTitle: "Ejar rental contract: register, accept, tenant rights"
 description: "How Ejar works for tenants: the landlord or broker creates the contract, you accept it, what to check, renewal rules, and the five-year rent freeze in Riyadh."
 hub: housing
 lang: en

@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from './Icon.astro';
-import { SITE, url, formatDate } from '../site';
+import { SITE, url, formatDate, HAS_WHATSAPP } from '../site';
 import { type Hub } from '../data/hubs';
 import { getGuides, guidePath } from '../lib/guides';
 import { T } from '../i18n';
@@ -14,6 +14,11 @@ const { hub, lang } = Astro.props;
 const ur = lang === 'ur';
 const t = T[lang];
 const guides = (await getGuides(lang)).filter((g) => g.data.hub === hub.slug);
+// Urdu pages also list English guides that have no Urdu version yet, so no topic page is empty.
+const translatedKeys = new Set(guides.map((g) => g.data.translationKey).filter(Boolean));
+const englishOnly = ur
+  ? (await getGuides('en')).filter((g) => g.data.hub === hub.slug && !(g.data.translationKey && translatedKeys.has(g.data.translationKey)))
+  : [];
 const path = `${ur ? 'ur/' : ''}topics/${hub.slug}/`;
 const altPath = `${ur ? '' : 'ur/'}topics/${hub.slug}/`;
 ---
@@ -34,7 +39,7 @@ const altPath = `${ur ? '' : 'ur/'}topics/${hub.slug}/`;
     </div>
   </div>
   <div class="container" style="padding-top: 32px; padding-bottom: 56px; max-width: 900px">
-    {guides.length > 0 ? (
+    {guides.length > 0 && (
       <div class="link-list">
         {guides.map((g) => (
           <a class="link-row" href={url(guidePath(g))}>
@@ -43,14 +48,28 @@ const altPath = `${ur ? '' : 'ur/'}topics/${hub.slug}/`;
           </a>
         ))}
       </div>
-    ) : (
+    )}
+    {englishOnly.length > 0 && (
+      <>
+        <p class="fallback-note">{guides.length > 0 ? 'یہ رہنمائیاں ابھی صرف انگریزی میں ہیں، اردو ترجمہ جلد آ رہا ہے:' : 'اس موضوع پر اردو رہنمائی جلد آ رہی ہے۔ تب تک یہ انگریزی رہنمائیاں دیکھیں:'}</p>
+        <div class="link-list" lang="en" dir="ltr">
+          {englishOnly.map((g) => (
+            <a class="link-row" href={url(guidePath(g))}>
+              <span class="title">{g.data.title}</span>
+              <span class="checked">English</span>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+    {guides.length === 0 && englishOnly.length === 0 && (
       <div class="empty">
         <p style="margin: 0">
           {ur
-            ? 'اس موضوع پر پہلی رہنمائیاں لکھی جا رہی ہیں۔ شائع ہوتے ہی اطلاع کے لیے واٹس ایپ چینل جوائن کریں۔'
-            : 'We are writing and checking the first guides for this topic. Join the WhatsApp channel to hear when they go live.'}
+            ? 'اس موضوع پر پہلی رہنمائیاں لکھی جا رہی ہیں۔'
+            : 'We are writing and checking the first guides for this topic.'}
         </p>
-        <p style="margin: 14px 0 0"><a class="btn btn-primary" href={SITE.whatsappUrl}><Icon name="chat" size={18} />{t.whatsapp}</a></p>
+        {HAS_WHATSAPP && <p style="margin: 14px 0 0"><a class="btn btn-primary" href={SITE.whatsappUrl}><Icon name="chat" size={18} />{t.whatsapp}</a></p>}
       </div>
     )}
   </div>

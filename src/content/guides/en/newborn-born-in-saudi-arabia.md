@@ -1,5 +1,6 @@
 ---
 title: "Baby born in Saudi Arabia: birth certificate, passport and iqama, step by step"
+seoTitle: "Baby born in Saudi Arabia: birth certificate to iqama"
 description: "What expat parents do after a birth in Saudi Arabia: register the birth on Absher within 30 days, get a passport from your embassy, then add the baby to your iqama."
 hub: family
 lang: en

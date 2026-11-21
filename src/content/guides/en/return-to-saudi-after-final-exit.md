@@ -1,5 +1,6 @@
 ---
 title: "Coming back to Saudi Arabia after a final exit: is there a ban, and how to return"
+seoTitle: "Coming back to Saudi Arabia after final exit"
 description: "A clean final exit carries no ban. You can return on a new work, family or visit visa. What blocks a return, and what to do about your old licence and records."
 hub: visas
 lang: en

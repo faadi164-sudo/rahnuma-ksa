@@ -1,5 +1,6 @@
 ---
 title: "Huroob (absent from work): what it means, how to check, and your 60 days to act"
+seoTitle: "Huroob (absent from work): check it and act in 60 days"
 description: "What a huroob or absent-from-work report means in Saudi Arabia, how to check your status, and how to transfer, leave on final exit or object within 60 days."
 hub: work
 lang: en

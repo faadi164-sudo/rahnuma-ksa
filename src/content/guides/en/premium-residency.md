@@ -1,5 +1,6 @@
 ---
 title: "Saudi Premium Residency: the 7 products, costs and who can realistically apply"
+seoTitle: "Saudi Premium Residency: products and costs"
 description: "Saudi Premium Residency explained: SAR 800,000 permanent, SAR 100,000 a year, and the SAR 4,000 talent, investor, entrepreneur and real estate products."
 hub: iqama
 lang: en

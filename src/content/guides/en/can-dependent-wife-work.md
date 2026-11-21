@@ -1,5 +1,6 @@
 ---
 title: "Can a dependent wife work in Saudi Arabia? Ajeer, health, education and other jobs"
+seoTitle: "Can a dependent wife work in Saudi Arabia?"
 description: "How dependents on a family iqama can work legally: the free Ajeer dependents service for health and education jobs, or moving to the employer's sponsorship."
 hub: family
 lang: en

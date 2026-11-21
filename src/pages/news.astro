@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import { SITE, url, formatDate } from '../site';
+import { SITE, url, formatDate, HAS_WHATSAPP } from '../site';
 import { hubBySlug } from '../data/hubs';
 import { getGuides, guidePath } from '../lib/guides';
 
@@ -28,7 +28,7 @@ const news = await getGuides('en', 'news');
     ) : (
       <div class="empty">
         <p style="margin: 0">Rule-change updates start at launch. Join the WhatsApp channel to get them first.</p>
-        <p style="margin: 14px 0 0"><a class="btn btn-primary" href={SITE.whatsappUrl}><Icon name="chat" size={18} />Get WhatsApp updates</a></p>
+        {HAS_WHATSAPP && <p style="margin: 14px 0 0"><a class="btn btn-primary" href={SITE.whatsappUrl}><Icon name="chat" size={18} />Get WhatsApp updates</a></p>}
       </div>
     )}
   </div>

@@ -1,5 +1,6 @@
 ---
 title: "Pakistani and Indian community schools in Saudi Arabia: where they are and how to apply"
+seoTitle: "Pakistani and Indian schools in Saudi Arabia"
 description: "Pakistan International Schools and the Indian embassy-linked CBSE schools across Saudi Arabia: cities, curricula, typical fees and the documents you need to apply."
 hub: family
 lang: en
@@ -15,11 +16,11 @@ sources:
   - name: "International Indian School Dammam — Prospectus 2026–27 (CBSE affiliated, founded 1982)"
     url: "https://iisdammam.edu.sa/applicationform/IISDPROSPECTUS2026-27f.pdf"
   - name: "International Indian Public School Riyadh — Application form and eligibility 2026"
-    url: "https://iipsr.edu.sa/uploads/Application form & Eligibility criteria-2026-05-06-08-50-56.555.pdf"
+    url: "https://iipsr.edu.sa/uploads/Application%20form%20%26%20Eligibility%20criteria-2026-05-06-08-50-56.555.pdf"
   - name: "Doris — Pakistan International School Jeddah (English Section): fees SAR 10,350–23,000 a year"
     url: "https://www.doris.school/schools/saudi-arabia/pakistan-international-school-jeddah-(english-section)"
-  - name: "Schoozy — Pakistan International School Riyadh: UK curriculum and IGCSE, ages 3–18"
-    url: "https://schoozy.com/schools/pakistan-international-school-riyadh-riyadh"
+  - name: "doris — Pakistan International School Riyadh, English Section: British curriculum, Cambridge and Edexcel IGCSE, ages 3–18"
+    url: "https://www.doris.school/schools/saudi-arabia/pakistan-international-school-riyadh-english-section"
 faq:
   - q: "When does the school year start?"
     a: "Indian CBSE schools usually start the academic year in April. Pakistani and IGCSE sections vary, so check each school's calendar."

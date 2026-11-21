@@ -1,5 +1,6 @@
 ---
 title: "Home electricity prices rise from 1 January 2027, with a new SAR 70–100 monthly charge"
+seoTitle: "Electricity prices rise from 1 January 2027"
 description: "Residential electricity rises to 21 halalas per kWh up to 6,000 kWh from 1 January 2027, plus a new fixed monthly charge of SAR 70–100 based on breaker size."
 hub: housing
 lang: en

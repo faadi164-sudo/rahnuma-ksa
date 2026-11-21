@@ -1,5 +1,6 @@
 ---
 title: "Salary certificate in Saudi Arabia: get one from Qiwa or GOSI, or use our letter format"
+seoTitle: "Salary certificate: Qiwa, GOSI and letter format"
 description: "Issue a salary certificate on Qiwa for a bank, embassy or landlord, download your GOSI wage certificate, or give HR a ready English and Arabic letter format."
 hub: work
 lang: en

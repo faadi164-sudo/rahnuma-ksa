@@ -1,5 +1,6 @@
 ---
 title: "Saudi traffic fines list: amounts by category, speeding and drifting"
+seoTitle: "Saudi traffic fines list by category"
 description: "Saudi traffic fines grouped by category, from SAR 100 up to SAR 60,000 for repeat drifting, with speeding bands and the violations that don't get the 25% discount."
 hub: driving
 lang: en

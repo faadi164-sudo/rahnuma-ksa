@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from './Icon.astro';
-import { SITE, url, formatDate } from '../site';
+import { SITE, url, formatDate, HAS_WHATSAPP, waShare } from '../site';
 import { HUBS, hubBySlug } from '../data/hubs';
 import { TASKS, POPULAR, SEASONAL, FIRST_90_DAYS } from '../data/home';
 import { TOOLS } from '../data/tools';
@@ -229,12 +229,23 @@ const schema = [
 
   <section class="section band-dark">
     <div class="container two-col" style="align-items: center">
-      <div>
-        <h2>{L('Hear about rule changes first.', 'نئے قوانین کی خبر سب سے پہلے')}</h2>
-        <p>{L('One or two short updates a day on WhatsApp, in English and Urdu.', 'واٹس ایپ پر روزانہ ایک دو مختصر اپڈیٹس، اردو اور انگریزی میں۔')}</p>
-      </div>
+      {HAS_WHATSAPP ? (
+        <div>
+          <h2>{L('Hear about rule changes first.', 'نئے قوانین کی خبر سب سے پہلے')}</h2>
+          <p>{L('One or two short updates a day on WhatsApp, in English and Urdu.', 'واٹس ایپ پر روزانہ ایک دو مختصر اپڈیٹس، اردو اور انگریزی میں۔')}</p>
+        </div>
+      ) : (
+        <div>
+          <h2>{L('Know someone new to Saudi Arabia?', 'کوئی نیا سعودی عرب آیا ہے؟')}</h2>
+          <p>{L('Send them Living KSA on WhatsApp. Free guides and calculators, in English and Urdu.', 'انہیں واٹس ایپ پر Living KSA بھیجیں۔ مفت رہنمائی اور کیلکولیٹرز، اردو اور انگریزی میں۔')}</p>
+        </div>
+      )}
       <div class="band-actions">
-        <a class="btn btn-light" href={SITE.whatsappUrl}><Icon name="chat" size={20} />{L('Join the WhatsApp channel', 'واٹس ایپ چینل جوائن کریں')}</a>
+        {HAS_WHATSAPP ? (
+          <a class="btn btn-light" href={SITE.whatsappUrl}><Icon name="chat" size={20} />{L('Join the WhatsApp channel', 'واٹس ایپ چینل جوائن کریں')}</a>
+        ) : (
+          <a class="btn btn-light" href={waShare(L('Useful site for expats in Saudi Arabia: iqama, visas, Absher and labor law, step by step.', 'سعودی عرب میں رہنے والوں کے لیے مفید ویب سائٹ: اقامہ، ویزا، ابشر اور لیبر قانون، آسان اردو میں۔'), new URL(url(lang === 'ur' ? 'ur/' : ''), Astro.site).href)} rel="noopener" target="_blank"><Icon name="chat" size={20} />{L('Share on WhatsApp', 'واٹس ایپ پر شیئر کریں')}</a>
+        )}
       </div>
     </div>
   </section>

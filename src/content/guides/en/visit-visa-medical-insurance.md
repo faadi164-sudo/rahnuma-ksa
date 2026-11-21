@@ -1,5 +1,6 @@
 ---
 title: "Visit visa medical insurance: what it covers, how to check it and how to claim"
+seoTitle: "Visit visa medical insurance: cover and claims"
 description: "Saudi visit visa insurance covers emergencies only, up to SAR 100,000. Check a policy by passport number, use it at a hospital, and complain if a claim is refused."
 hub: health
 lang: en

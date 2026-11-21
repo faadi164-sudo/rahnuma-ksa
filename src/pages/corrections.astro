@@ -1,11 +1,11 @@
 ---
 import Prose from '../layouts/Prose.astro';
-import { SITE } from '../site';
+import { SITE, contactHref } from '../site';
 ---
 <Prose title="Corrections policy" description={`How to report an error on ${SITE.name} and how we fix it.`} path="corrections/">
   <p>If something in a guide is wrong or out of date, we want to know.</p>
   <h2>How to report</h2>
-  <p>Use the "Report an error" link at the bottom of any guide, or email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> with the page link, what is wrong, and, if possible, the official source that shows the correct information.</p>
+  <p>Use the "Report an error" link at the bottom of any guide, or <a href={contactHref('Correction')}>contact us</a> with the page link, what is wrong, and, if possible, the official source that shows the correct information.</p>
   <h2>What we do</h2>
   <ul>
     <li>We check the report against the official source.</li>

@@ -1,5 +1,6 @@
 ---
 title: "Iqama fees in 2026: renewal fee, work permit levy and dependent fee"
+seoTitle: "Iqama fees 2026: renewal, levy and dependent fee"
 description: "What it costs to keep an iqama valid in Saudi Arabia: the iqama fee, the employer's work permit levy, the SAR 400 dependent fee and late-renewal fines."
 hub: iqama
 lang: en

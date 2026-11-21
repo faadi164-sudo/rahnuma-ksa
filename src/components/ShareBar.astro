@@ -1,0 +1,54 @@
+---
+// Share buttons: WhatsApp first (how this audience shares), then Facebook, X and copy link.
+import Icon from './Icon.astro';
+import { waShare } from '../site';
+
+interface Props {
+  title: string;
+  link: string;
+  lang?: 'en' | 'ur';
+  compact?: boolean;
+}
+const { title, link, lang = 'en', compact = false } = Astro.props;
+const ur = lang === 'ur';
+const L = (en: string, u: string) => (ur ? u : en);
+const wa = waShare(title, link);
+const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`;
+const x = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(link)}`;
+---
+{compact ? (
+  <a class="share-wa-inline" href={wa} rel="noopener" target="_blank">
+    <Icon name="chat" size={16} stroke={2} />{L('Share on WhatsApp', 'واٹس ایپ پر شیئر کریں')}
+  </a>
+) : (
+  <div class="share-bar" role="group" aria-label={L('Share this page', 'یہ صفحہ شیئر کریں')}>
+    <p class="share-label">{L('Found this useful? Share it with someone who needs it.', 'مفید لگا؟ کسی ایسے شخص کو بھیجیں جسے اس کی ضرورت ہو۔')}</p>
+    <div class="share-buttons">
+      <a class="btn share-btn share-whatsapp" href={wa} rel="noopener" target="_blank"><Icon name="chat" size={18} />WhatsApp</a>
+      <a class="btn share-btn" href={fb} rel="noopener" target="_blank">Facebook</a>
+      <a class="btn share-btn" href={x} rel="noopener" target="_blank">X</a>
+      <button class="btn share-btn share-copy" type="button" data-link={link} data-done={L('Link copied', 'لنک کاپی ہو گیا')}>{L('Copy link', 'لنک کاپی کریں')}</button>
+    </div>
+  </div>
+)}
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.share-copy').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const link = btn.dataset.link || location.href;
+      try {
+        await navigator.clipboard.writeText(link);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = link;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch {}
+        ta.remove();
+      }
+      const old = btn.textContent;
+      btn.textContent = btn.dataset.done || 'Copied';
+      setTimeout(() => (btn.textContent = old), 2000);
+    });
+  });
+</script>

@@ -1,5 +1,6 @@
 ---
 title: "How to check if you have a travel ban in Saudi Arabia, and how bans are lifted"
+seoTitle: "How to check a travel ban in Saudi Arabia"
 description: "Check for a travel ban on Absher and Najiz before you book a flight, understand the four types of ban, and how a debt ban ends under the new Enforcement Law."
 hub: absher
 lang: en

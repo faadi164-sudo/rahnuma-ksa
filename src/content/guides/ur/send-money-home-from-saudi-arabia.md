@@ -12,8 +12,6 @@ draft: false
 sources:
   - name: "Arab News PK — Roshan Digital Accounts: open a Pakistani bank account online from abroad"
     url: "https://www.arabnews.pk/node/1815526/pakistan"
-  - name: "TransFi — Sending money from Saudi Arabia to Pakistan: compare the final payout (Sep 2026)"
-    url: "https://www.transfi.com/blog/how-to-send-money-from-saudi-arabia-to-pakistan"
   - name: "Saudi Central Bank (SAMA)"
     url: "https://www.sama.gov.sa"
 faq:

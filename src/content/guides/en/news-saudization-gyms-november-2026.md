@@ -1,5 +1,6 @@
 ---
 title: "Gyms and sports centres must fill 15% of 12 jobs with Saudis from 18 November 2026"
+seoTitle: "Gym jobs Saudization from 18 November 2026"
 description: "From 18 November 2026, private gyms and sports centres with four or more staff must have Saudis in 15% of 12 coaching and supervisory jobs."
 hub: work
 lang: en

@@ -1,5 +1,6 @@
 ---
 title: "Non-compete clause in Saudi Arabia (Article 83): can you join a competitor?"
+seoTitle: "Non-compete clause in Saudi Arabia (Article 83)"
 description: "When a non-compete clause is valid under Article 83 of the Saudi Labor Law: in writing, limited in time, place and type of work, and no more than two years."
 hub: work
 lang: en
@@ -14,8 +15,6 @@ sources:
     url: "https://www.qoyod.com/en/glossary/noncompete-agreement/"
   - name: "Qoyod — The non-compete and confidentiality clauses in Article 83"
     url: "https://www.qoyod.com/en/learn/non-compete-confidentiality-clause-saudi-labor-law/"
-  - name: "Chambers and Partners — Employment 2024: Saudi Arabia (enforceability of non-compete provisions)"
-    url: "https://practiceguides.chambers.com/practice-guides/employment-2024/saudi-arabia"
   - name: "Etqan Law Firm — Article 83 of the Saudi Labor Law"
     url: "https://etqanlawfirm-sa.com/en/article-83-saudi-labor-law/"
 faq:

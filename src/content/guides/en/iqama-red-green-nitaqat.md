@@ -1,5 +1,6 @@
 ---
 title: "Iqama red or green? What your employer's Nitaqat colour means and how to check it"
+seoTitle: "Iqama red or green? Nitaqat colour explained"
 description: "The red, yellow, green and platinum 'iqama colours' are your employer's Saudization band. How to check it, and what a red band means for your renewal and job transfer."
 hub: work
 lang: en

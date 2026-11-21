@@ -2,7 +2,8 @@
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Icon from './Icon.astro';
-import { SITE, url, formatDate } from '../site';
+import ShareBar from './ShareBar.astro';
+import { SITE, url, formatDate, contactHref, waShare } from '../site';
 import { hubBySlug } from '../data/hubs';
 import { T } from '../i18n';
 import { type Guide, getGuides, guidePath, findTranslation } from '../lib/guides';
@@ -23,7 +24,7 @@ const { Content } = await render(guide);
 const abs = (p: string) => new URL(url(p), Astro.site).href;
 const homePath = ur ? 'ur/' : '';
 const hubPath = `${ur ? 'ur/' : ''}topics/${hub.slug}/`;
-const reportHref = `mailto:${SITE.email}?subject=${encodeURIComponent('Error report: ' + d.title)}&body=${encodeURIComponent(abs(path))}`;
+const reportHref = contactHref('Error report: ' + d.title, abs(path));
 
 const schema: object[] = [
   {
@@ -61,10 +62,11 @@ if (d.faq.length > 0) {
   lang={lang}
   path={path}
   altPath={translation ? guidePath(translation) : undefined}
-  title={d.title}
+  title={d.seoTitle ?? d.title}
   description={d.description}
   schema={schema}
   ogType="article"
+  ogImage={`og/${lang}/${guide.id.split('/').pop()}.jpg`}
   noindex={d.draft}
 >
   <div class="page-head">
@@ -79,6 +81,7 @@ if (d.faq.length > 0) {
       <div class="meta">
         <span class="checked"><Icon name="check" size={16} stroke={2} />{t.lastChecked}: <time datetime={d.lastChecked.toISOString().slice(0, 10)}>{formatDate(d.lastChecked, lang)}</time></span>
         {translation && <a href={url(guidePath(translation))} lang={ur ? 'en' : 'ur'}>{t.readInOther}</a>}
+        {!d.draft && <ShareBar compact title={d.title} link={abs(path)} lang={lang} />}
         {d.draft && <span class="badge badge-amber">DRAFT — not published</span>}
       </div>
     </div>
@@ -94,6 +97,8 @@ if (d.faq.length > 0) {
       <article class="prose">
         <Content />
       </article>
+
+      {!d.draft && <ShareBar title={d.title} link={abs(path)} lang={lang} />}
 
       {d.faq.length > 0 && (
         <section class="faq" aria-labelledby="faq">

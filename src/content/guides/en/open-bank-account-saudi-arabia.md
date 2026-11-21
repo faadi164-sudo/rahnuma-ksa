@@ -1,5 +1,6 @@
 ---
 title: "Open a bank account in Saudi Arabia as an expat (online with Nafath)"
+seoTitle: "Open a bank account in Saudi Arabia as an expat"
 description: "What you need to open a Saudi bank account as an expat, how online opening with Nafath works, and what to do if the app won't let you finish."
 hub: money
 lang: en

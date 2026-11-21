@@ -1,5 +1,6 @@
 ---
 title: "How to send money home from Saudi Arabia (Pakistan, India and more)"
+seoTitle: "How to send money home from Saudi Arabia"
 description: "Ways to send money from Saudi Arabia: bank apps, exchange-house apps and digital wallets. How to compare the real cost, what details you need, and avoiding scams."
 hub: money
 lang: en
@@ -12,8 +13,6 @@ draft: false
 sources:
   - name: "Arab News PK — Roshan Digital Accounts: open a Pakistani bank account online from abroad"
     url: "https://www.arabnews.pk/node/1815526/pakistan"
-  - name: "TransFi — Sending money from Saudi Arabia to Pakistan: compare the final payout (Sep 2026)"
-    url: "https://www.transfi.com/blog/how-to-send-money-from-saudi-arabia-to-pakistan"
   - name: "Saudi Central Bank (SAMA)"
     url: "https://www.sama.gov.sa"
 faq:

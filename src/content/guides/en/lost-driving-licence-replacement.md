@@ -1,5 +1,6 @@
 ---
 title: "Lost or damaged Saudi driving licence: how to get a replacement (SAR 100)"
+seoTitle: "Replace a lost Saudi driving licence (SAR 100)"
 description: "Replace a lost, stolen or damaged Saudi driving licence: pay the SAR 100 fee, apply on Absher or at Muroor, and use your digital licence or a licence report meanwhile."
 hub: driving
 lang: en
@@ -14,8 +15,8 @@ sources:
     url: "https://www.yallamotor.com/en/news/how-to-obtain-a-replacement-driving-license-online-in-saudi-arabia-52562"
   - name: "KSA Expats — Driving licence fees: SAR 100 for a lost or damaged licence, by licence type"
     url: "https://ksaexpats.com/?p=76"
-  - name: "Wego — Saudi driving licence fees, including the SAR 100 replacement fee"
-    url: "https://blog.wego.com/saudi-driving-license/"
+  - name: "Driving Test KSA — Driving licence fees: SAR 100 for a lost or damaged licence"
+    url: "https://drivingtestksa.com/driving-license-fees"
   - name: "Ajel — Absher driving licence data report: steps"
     url: "https://english.ajel.sa/news/i5yj2s6yr"
   - name: "Absher — Ministry of Interior"

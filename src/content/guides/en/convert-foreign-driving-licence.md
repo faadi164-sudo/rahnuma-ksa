@@ -1,5 +1,6 @@
 ---
 title: "Convert a foreign driving licence in Saudi Arabia (and what Pakistanis and Indians do)"
+seoTitle: "Convert a foreign driving licence in Saudi Arabia"
 description: "How to swap a foreign driving licence for a Saudi one if your country is on the approved list, and the driving school route if it isn't, with documents and costs."
 hub: driving
 lang: en

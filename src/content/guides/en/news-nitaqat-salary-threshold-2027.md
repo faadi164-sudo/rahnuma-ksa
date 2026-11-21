@@ -1,5 +1,6 @@
 ---
 title: "Saudi staff must earn SAR 5,000 from April 2027 to count fully for Saudization"
+seoTitle: "SAR 5,000 Saudization salary rule from April 2027"
 description: "The Nitaqat salary threshold for counting a Saudi employee as one full worker rises to SAR 5,000 on 25 April 2027 and SAR 6,000 on 25 April 2028."
 hub: work
 lang: en

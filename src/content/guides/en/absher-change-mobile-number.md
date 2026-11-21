@@ -1,5 +1,6 @@
 ---
 title: "How to change your mobile number in Absher (app, Nafath or kiosk)"
+seoTitle: "Change your mobile number in Absher"
 description: "Three ways to update the mobile number registered in Absher: the Absher app before login with a face scan, the Nafath app, or an Absher self-service machine."
 hub: absher
 lang: en

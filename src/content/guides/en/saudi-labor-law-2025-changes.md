@@ -1,5 +1,6 @@
 ---
 title: "Saudi labor law changes from February 2025: what expat workers need to know"
+seoTitle: "Saudi labor law changes 2025 for expat workers"
 description: "The 2025 amendments to Saudi labor law explained: resignation through Qiwa, notice periods, probation, fixed-term contracts for expats and maternity leave."
 hub: work
 lang: en
@@ -14,8 +15,6 @@ sources:
     url: "https://www.clydeco.com/zh/insights/2025/03/ksa-labour-law-amendments-resignations"
   - name: "Al Tamimi & Co — Key amendments to Saudi Arabia's Labour Law (Aug 2024)"
     url: "https://www.tamimi.com/news/key-amendments-to-saudi-arabias-labour-law/"
-  - name: "Rödl & Partner — Saudi labor law 2025: the most important amendments (Apr 2025)"
-    url: "https://www.roedl.com/insights/saudi-arabia-labor-law-amendments-impact"
   - name: "Teamed — GOSI and the 2025 Labor Law amendments (in force 19 Feb 2025)"
     url: "https://www.teamed.global/gulf-employment-law/saudi-gosi-and-2025-amendments"
   - name: "Qiwa — Ministry of Human Resources and Social Development"

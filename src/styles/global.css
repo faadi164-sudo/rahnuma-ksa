@@ -282,3 +282,14 @@ a.card { text-decoration: none; color: inherit; transition: border-color .15s, b
 a.card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(11, 110, 79, .08); color: inherit; }
 
 [hidden] { display: none !important; }
+
+/* Share bar */
+.share-bar { margin: 28px 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--tint); }
+.share-label { margin: 0 0 12px; font-weight: 600; }
+.share-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.share-btn { min-height: 42px; padding: 0 16px; background: #fff; color: var(--ink); border: 1px solid var(--line); font-size: 14px; }
+.share-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
+.share-whatsapp { background: #0f7a41; border-color: #0f7a41; color: #fff; }
+.share-whatsapp:hover { background: #0e7a40; color: #fff; }
+.share-wa-inline { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.fallback-note { margin: 32px 0 12px; color: var(--muted); }

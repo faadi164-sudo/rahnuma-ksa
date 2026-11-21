@@ -1,9 +1,9 @@
 ---
 import Prose from '../layouts/Prose.astro';
-import { SITE } from '../site';
+import { SITE, contactHref } from '../site';
 ---
 <Prose title="Privacy policy" description={`How ${SITE.name} handles your data, cookies and advertising.`} path="privacy-policy/" updated="10 November 2026">
-  <p>This policy explains what information {SITE.name} collects when you use this website, and how it is used. If you have questions, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+  <p>This policy explains what information {SITE.name} collects when you use this website, and how it is used. If you have questions, <a href={contactHref('Privacy question')}>contact us</a>.</p>
 
   <h2>Information we collect</h2>
   <ul>

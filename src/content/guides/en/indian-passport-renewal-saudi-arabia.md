@@ -1,5 +1,6 @@
 ---
 title: "Renew an Indian passport in Saudi Arabia: Passport Seva, VFS and fees"
+seoTitle: "Renew an Indian passport in Saudi Arabia"
 description: "How Indians in Saudi Arabia renew a passport: fill the Global Passport Seva form, book VFS Global, documents to bring, and the SAR fees in force since 1 July 2026."
 hub: embassy
 lang: en

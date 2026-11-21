@@ -1,5 +1,6 @@
 ---
 title: "End-of-service benefit in Saudi Arabia: how it is calculated, with examples"
+seoTitle: "End-of-service benefit in Saudi Arabia, with examples"
 description: "How the end-of-service award works under Saudi labor law: half a month per year for five years, a full month after that, and the reductions if you resign."
 hub: work
 lang: en

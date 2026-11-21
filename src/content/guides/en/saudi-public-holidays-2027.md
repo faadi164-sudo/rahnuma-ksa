@@ -1,5 +1,6 @@
 ---
 title: "Saudi public holidays 2027: Founding Day, Eid al-Fitr, Eid al-Adha and National Day"
+seoTitle: "Saudi public holidays 2027: Eid and National Day"
 description: "Expected 2027 dates for Saudi public holidays, how many Eid days the private sector gets, and your rights if you work on a holiday or it falls on your day off."
 hub: work
 lang: en

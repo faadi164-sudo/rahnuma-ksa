@@ -1,5 +1,6 @@
 ---
 title: "Absher and Nafath: how to register and activate your accounts"
+seoTitle: "Absher and Nafath: register and activate"
 description: "Create your Absher account, activate it at a kiosk, bank or Jawazat, then switch on Nafath, the digital ID used to log in to government services."
 hub: absher
 lang: en

@@ -1,5 +1,6 @@
 ---
 title: "Register your National Address on the SPL app (free, step by step)"
+seoTitle: "Register your National Address (SPL app)"
 description: "How expats register a National Address with Saudi Post (SPL) using Nafath, add family members, update it after moving, and download the address proof."
 hub: absher
 lang: en

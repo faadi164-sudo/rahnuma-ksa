@@ -1,5 +1,6 @@
 ---
 title: "Bringing relatives to visit Saudi Arabia: family visit visa, e-visa or Umrah visa?"
+seoTitle: "Visas for relatives visiting Saudi Arabia"
 description: "Compare the ways relatives can visit you in Saudi Arabia: family visit visa, tourist e-visa, the package visa pilot for Pakistanis and Indians, and the Umrah visa."
 hub: visas
 lang: en
@@ -17,7 +18,7 @@ sources:
   - name: "ARY News — Package visa pilot for seven countries including Pakistan and India (visa and insurance SAR 402.21)"
     url: "https://arynews.tv/saudi-arabia-launches-new-visa-requirement-who-is-eligible-how-much-it-costs"
   - name: "Saudi Embassy in the UK — US, UK or Schengen visa must have been used at least once"
-    url: "https://embassies.mofa.gov.sa/sites/uk/EN/DiplomaticMissionServices/Consulates/ConsulatesServices/Other Visas Services e/Pages/UK-Travel-Agents-for-Visa-Services14.aspx"
+    url: "https://embassies.mofa.gov.sa/sites/uk/EN/DiplomaticMissionServices/Consulates/ConsulatesServices/Other%20Visas%20Services%20e/Pages/UK-Travel-Agents-for-Visa-Services14.aspx"
 faq:
   - q: "My parents are Pakistani and have no other visas. Which visa should they get?"
     a: "The family visit visa is usually the simplest: you apply from your Absher-linked account on the MOFA visa platform, and they get it stamped. See our family visit visa guide."

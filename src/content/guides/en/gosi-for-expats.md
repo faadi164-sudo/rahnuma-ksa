@@ -1,5 +1,6 @@
 ---
 title: "GOSI for expats: what it covers, what you pay and how to check your record"
+seoTitle: "GOSI for expats: coverage, contributions, records"
 description: "GOSI for expat workers in Saudi Arabia: the employer pays 2% for occupational hazards only, nothing comes off your salary, no pension, and how to check your record."
 hub: work
 lang: en

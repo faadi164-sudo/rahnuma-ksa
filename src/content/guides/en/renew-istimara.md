@@ -1,5 +1,6 @@
 ---
 title: "Renew your car registration (istimara) on Absher: Fahas, insurance and fees"
+seoTitle: "Renew your istimara on Absher: Fahas and fees"
 description: "Renew your istimara online: valid Fahas inspection, active insurance, fines paid, SAR 100 a year through SADAD, then renew in Absher. What to do if it has expired."
 hub: driving
 lang: en
@@ -10,8 +11,8 @@ lastChecked: 2026-11-15
 translationKey: renew-istimara
 draft: false
 sources:
-  - name: "CarSwitch — Renew istimara via Absher: Fahas, insurance in Absher, fines, SAR 100 a year"
-    url: "https://ksa.carswitch.com/newsroom/en/2025/01/15/renew-istimara-via-absher/"
+  - name: "ZigWheels KSA — Renewing your istimara through Absher (Fahas and insurance needed)"
+    url: "https://www.zigwheelsksa.com/car-news/easy-guide-to-renewing-your-istimara-in-saudi-arabia-through-absher"
   - name: "Motory — Renew istimara via Absher (SAR 100 for each year)"
     url: "https://ksa.motory.com/en/news/how-to-renew-istimara-in-ksa-via-absher-9782"
   - name: "KSA Expats — Istimara renewal conditions (less than 180 days validity, late fees)"

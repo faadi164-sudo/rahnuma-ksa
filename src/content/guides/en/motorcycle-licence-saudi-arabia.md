@@ -1,5 +1,6 @@
 ---
 title: "Motorcycle licence in Saudi Arabia for expats: requirements, steps and fees"
+seoTitle: "Motorcycle licence in Saudi Arabia for expats"
 description: "How an expat gets a Saudi motorcycle licence: age rules, driving school training and tests, converting a foreign motorcycle licence, and the SAR 20-a-year fee."
 hub: driving
 lang: en

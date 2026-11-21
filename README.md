@@ -48,3 +48,9 @@ News items use `type: news` and appear under **Latest rule changes**.
 | `src/components/` | Homepage, guide page, topic page, header, footer |
 | `src/pages/` | Routes, policy pages, search, robots.txt |
 | `src/styles/global.css` | Colours, fonts and layout |
+
+## Share preview images
+
+Every guide and tool has a 1200×630 preview image in `public/og/` (shown when a link is shared on WhatsApp, Facebook or X).
+After adding a guide, run `python3 scripts/make-og.py` to create the missing images (`--all` rebuilds every image).
+The script needs Python Playwright and Chrome. The background illustration is `scripts/og/bg.jpg`.

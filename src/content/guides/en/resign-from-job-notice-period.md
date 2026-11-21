@@ -1,5 +1,6 @@
 ---
 title: "How to resign in Saudi Arabia: notice period, fixed-term contracts and what you're owed"
+seoTitle: "How to resign in Saudi Arabia: notice period"
 description: "Resigning under the 2025 labor law: 30 days' notice, fixed-term contracts (Article 79 bis), deemed acceptance after 30 days, and your end-of-service award."
 hub: work
 lang: en

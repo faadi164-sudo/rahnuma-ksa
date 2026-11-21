@@ -1,5 +1,6 @@
 ---
 title: "Changing jobs in Saudi Arabia: Qiwa transfer and when you don't need your employer's consent"
+seoTitle: "Change jobs without employer consent (Qiwa transfer)"
 description: "The conditions for moving to a new employer through Qiwa, and the eight situations where you can transfer without your current employer's approval."
 hub: work
 lang: en

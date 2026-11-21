@@ -1,5 +1,6 @@
 ---
 title: "The new 5-year iqama card and your digital iqama: delivery, validity and what changes"
+seoTitle: "New 5-year iqama card and digital iqama explained"
 description: "The iqama card now lasts 5 years and is delivered by Saudi Post to your National Address, but residency is still renewed yearly. How to get it, and your digital iqama."
 hub: iqama
 lang: en

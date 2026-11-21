@@ -1,5 +1,6 @@
 ---
 title: "Hajj for residents of Saudi Arabia: Nusuk registration, eligibility and packages"
+seoTitle: "Hajj for residents: Nusuk registration and packages"
 description: "How expats in Saudi Arabia register for Hajj on Nusuk: valid iqama, priority for first-timers, choosing a licensed package, paying via SADAD, and the 1448 dates."
 hub: hajj-umrah
 lang: en

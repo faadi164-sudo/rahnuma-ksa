@@ -1,5 +1,6 @@
 ---
 title: "Exit re-entry visa: types, fees and how to issue it on Absher"
+seoTitle: "Exit re-entry visa: fees and how to issue on Absher"
 description: "Single and multiple exit re-entry visa fees, the conditions Jawazat checks, and step-by-step issuing on Absher for yourself or your family."
 hub: visas
 lang: en

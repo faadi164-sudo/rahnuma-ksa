@@ -1,5 +1,6 @@
 ---
 title: "Salary delayed in Saudi Arabia? Your rights under the wage protection rules"
+seoTitle: "Salary delayed in Saudi Arabia? Your rights"
 description: "What happens when your salary is late: Mudad alerts, accepting or rejecting the employer's excuse, the 30-day enforcement request and changing jobs after 3 unpaid months."
 hub: work
 lang: en
@@ -18,8 +19,8 @@ sources:
     url: "https://me.peoplemattersglobal.com/news/compensation-benefits/saudi-hr-ministry-makes-wage-protection-stricter-to-track-down-all-unreasonable-transfers-46501?page=4"
   - name: "Middle East Briefing — Wage enforcement: request enforcement when wages are unpaid for more than 30 days"
     url: "https://www.middleeastbriefing.com/news/?p=6104"
-  - name: "Right Compound — Mudad alerts: deductions over 50% and unrecorded wages"
-    url: "https://rightcompound.com/blog/article/mudad-unfair-wages-late-salaries-guide-expats"
+  - name: "Saudi Gazette — Unreasonable wages, deductions over 50% and salary delays trigger Mudad alerts (Aug 2025)"
+    url: "https://saudigazette.com.sa/article/654131/SAUDI-ARABIA/Unreasonable-wages-and-salary-delays-to-trigger-alerts-inspections-in-Saudi-Arabia"
   - name: "KSA Expats — Accepting or rejecting the employer's justification on Mudad"
     url: "https://ksaexpats.com/?p=49411"
   - name: "HRSD — Wage deductions and the percentage of deduction (written consent, half-wage ceiling)"

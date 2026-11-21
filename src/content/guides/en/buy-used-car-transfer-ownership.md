@@ -1,5 +1,6 @@
 ---
 title: "Buy or sell a used car in Saudi Arabia: checks, Absher transfer and fees"
+seoTitle: "Buy or sell a used car in Saudi Arabia: Absher transfer"
 description: "How to check a used car before buying, then transfer ownership on Absher's Vehicle Sale service with escrow payment. Fees: SAR 150 transfer plus SAR 230 service."
 hub: driving
 lang: en
@@ -12,10 +13,10 @@ draft: false
 sources:
   - name: "Ajel — Absher outlines vehicle sale and transfer steps for sellers and buyers (escrow payment, Aug 2026)"
     url: "https://english.ajel.sa/news/4f6r3rjim"
-  - name: "CarSwitch — Guide to selling your car in Riyadh: SAR 150 transfer fee, SAR 230 Absher service fee (Oct 2026)"
-    url: "https://ksa.carswitch.com/newsroom/en/2026/10/07/guide-to-selling-your-car-in-riyadh/"
-  - name: "CarSwitch — Selling your car in Jeddah (cites the Saudi Press Agency launch of the Absher Vehicle Sale service)"
-    url: "https://ksa.carswitch.com/newsroom/en/2026/10/07/guide-to-selling-your-car-in-jeddah/"
+  - name: "Saudi Expatriates — Absher Vehicle Sale fee: SAR 230 including VAT, paid by the buyer, refunded if the sale is cancelled"
+    url: "https://saudi-expatriates.com/2023/09/is-it-possible-to-transfer-car-ownership-for-resident-without-license.html"
+  - name: "Syarah — Absher sale service fee of SAR 230, paid by the buyer or as agreed"
+    url: "https://syarah.com/carsguide/en/questions-before-selling-car/"
   - name: "KSA Expats — Transfer vehicle ownership: national address and IBAN required"
     url: "https://ksaexpats.com/transfer-vehicle-ownership-saudi-arabia-absher/"
   - name: "Syarah — Transfer fee by vehicle type (private vehicle SAR 150)"

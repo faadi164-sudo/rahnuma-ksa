@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { SITE, url } from '../site';
+import { SITE, url, HAS_WHATSAPP } from '../site';
 import { NAV_HUBS, hubBySlug } from '../data/hubs';
 import { T } from '../i18n';
 
@@ -45,10 +45,18 @@ const topicBase = lang === 'ur' ? 'ur/topics/' : 'topics/';
       })}
       <a href={url('news/')}>{t.news}</a>
     </nav>
-    <a class="btn btn-primary header-cta" href={SITE.whatsappUrl}>
-      <Icon name="chat" size={18} />
-      <span class="label-long">{t.whatsapp}</span>
-      <span class="label-short">WhatsApp</span>
-    </a>
+    {HAS_WHATSAPP ? (
+      <a class="btn btn-primary header-cta" href={SITE.whatsappUrl}>
+        <Icon name="chat" size={18} />
+        <span class="label-long">{t.whatsapp}</span>
+        <span class="label-short">WhatsApp</span>
+      </a>
+    ) : (
+      <a class="btn btn-primary header-cta" href={url(lang === 'ur' ? 'tools/' : 'tools/')}>
+        <Icon name="calculator" size={18} />
+        <span class="label-long">{lang === 'ur' ? 'مفت کیلکولیٹرز' : 'Free calculators'}</span>
+        <span class="label-short">{lang === 'ur' ? 'کیلکولیٹر' : 'Tools'}</span>
+      </a>
+    )}
   </div>
 </header>

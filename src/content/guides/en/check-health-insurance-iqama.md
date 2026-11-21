@@ -1,5 +1,6 @@
 ---
 title: "Check your health insurance by iqama, border number or passport"
+seoTitle: "Check health insurance by iqama or border number"
 description: "Free online checks for medical insurance in Saudi Arabia: the Council of Health Insurance inquiry and the Insurance Authority check, by iqama, border number or passport."
 hub: health
 lang: en

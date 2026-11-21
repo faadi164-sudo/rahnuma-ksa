@@ -1,5 +1,6 @@
 ---
 title: "Renew your Saudi driving licence on Absher: medical, fees and late penalty"
+seoTitle: "Renew a Saudi driving licence on Absher"
 description: "Renew a Saudi driving licence online: Efada medical check, SAR 40 a year for 2, 5 or 10 years, pay fines first, and what happens if your licence has already expired."
 hub: driving
 lang: en
@@ -12,8 +13,8 @@ draft: false
 sources:
   - name: "Saudi Life Guide — Absher driving licence renewal: SAR 40 a year, medical required (Ministry of Interior fee schedule)"
     url: "https://saudilifeguide.com/?p=1863"
-  - name: "Wego — Saudi driving licence renewal: 180-day window, Efada report, no unpaid violations"
-    url: "https://blog.wego.com/saudi-driving-license/"
+  - name: "Driving Test KSA — Renew a Saudi driving licence: under 180 days left, Efada medical check"
+    url: "https://drivingtestksa.com/renew-driving-license"
   - name: "YallaMotor — Licence renewal in KSA: SAR 40 a year, SAR 100 a year late fee (2026)"
     url: "https://www.yallamotor.com/news/driving-license-cost-renewal-2026-side-by-side-uae-ksa-qatar-egypt-55426"
   - name: "KSA Expats — Replacing an old licence when returning on a new visa (SAR 100 per year expired)"

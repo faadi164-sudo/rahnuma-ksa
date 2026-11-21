@@ -1,5 +1,6 @@
 ---
 title: "Permanent family visa: bring your wife and children to live in Saudi Arabia"
+seoTitle: "Permanent family visa for Saudi Arabia"
 description: "How to apply for a permanent family (residence) visa on Absher: who qualifies, the SAR 2,000 fee, attested documents, stamping, and getting the family's iqamas."
 hub: family
 lang: en

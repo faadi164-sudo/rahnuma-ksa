@@ -68,7 +68,7 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Transfer without consent (8 cases) | Listed in the guide | SG 600308 | A |
 | 2025 amendments in force | 19 Feb 2025; 38 articles amended, 7 deleted, 2 added | Clyde & Co; Teamed | B |
 | Resignation process | Via Qiwa; employer replies in 30 days or deemed accepted; delay up to 60 days with reasons; withdraw within 7 days | [Clyde & Co](https://www.clydeco.com/zh/insights/2025/03/ksa-labour-law-amendments-resignations) | B |
-| Notice by employee, open-ended contract | 30 days (employer: 60) | Rödl & Partner; Al Tamimi | B |
+| Notice by employee, open-ended contract | 30 days (employer: 60) | Al Tamimi; Clyde & Co | B |
 | Probation maximum | 180 days | Teamed | B |
 | Maternity leave | 12 weeks | Al Tamimi | B |
 | Annual leave | 21 days; 30 after 5 years | Astrolabs | B |
@@ -181,7 +181,7 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 | Justification window | Employer 10 days to justify; employee 3 days to accept/reject; silence = accepted | ARY (MHRSD) | A |
 | Enforcement request | Wages unpaid 30 days after due → Najiz enforcement request; contract documented in Qiwa | ARY; Middle East Briefing | A |
 | Escalation | 2 months: most services suspended; 3 months: all suspended + transfer without consent | ARY; People Matters | A |
-| Mudad alerts | Deductions over 50%; unreasonable wages | Right Compound; GPA (citing Saudi Gazette) | B |
+| Mudad alerts | Deductions over 50%; unreasonable wages | Saudi Gazette; GPA | B |
 | Friendly settlement | Mandatory before court; usually 2 sessions within 21 working days; referral then Najiz | Global Law Experts; Indian Embassy Riyadh | B |
 | Claim deadline | 12 months | Saudi Life Guide | B |
 | 19911 languages | Arabic, English, Hindi, Urdu and others | Commoner Law | B |

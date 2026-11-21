@@ -1,5 +1,6 @@
 ---
 title: "Son turning 18 on your family iqama: companion status, fees and the age-25 rule"
+seoTitle: "Son turning 18 on your family iqama"
 description: "When your son turns 18 he becomes a 'companion' on your iqama: the SAR 400 monthly fee continues, and from 25 he must move to an employer's sponsorship."
 hub: family
 lang: en

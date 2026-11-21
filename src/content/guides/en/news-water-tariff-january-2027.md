@@ -1,5 +1,6 @@
 ---
 title: "New home water prices from 1 January 2027: SAR 1 to SAR 6 per cubic metre plus a fixed charge"
+seoTitle: "New home water prices from 1 January 2027"
 description: "From 1 January 2027 homes pay SAR 1–6 per cubic metre of water in four tiers, wastewater at half that rate, and a fixed monthly charge from SAR 30 by meter size."
 hub: housing
 lang: en

@@ -1,5 +1,6 @@
 ---
 title: "Final exit from Saudi Arabia: visa conditions and a checklist before you leave"
+seoTitle: "Final exit from Saudi Arabia: conditions and checklist"
 description: "Conditions for a final exit visa, who issues it, the 60-day window, and everything to settle before you leave Saudi Arabia for good."
 hub: visas
 lang: en
