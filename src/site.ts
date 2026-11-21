@@ -1,6 +1,6 @@
 // One place for site-wide settings. Change these before launch.
 export const SITE = {
-  name: 'Rahnuma KSA',
+  name: 'Living KSA',
   tagline: 'Saudi expat guide',
   description:
     'Step-by-step guides for expats in Saudi Arabia: iqama, visas, Absher, labor law and daily life. Official sources and a last-checked date on every guide. In English and Urdu.',

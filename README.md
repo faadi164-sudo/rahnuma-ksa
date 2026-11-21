@@ -1,4 +1,4 @@
-# Rahnuma KSA
+# Living KSA (livingksa.com)
 
 Step-by-step guides for expats in Saudi Arabia, in English and Urdu. Built with [Astro](https://astro.build) and published free on GitHub Pages.
 
@@ -19,7 +19,7 @@ One-time setup: **Settings → Pages → Build and deployment → Source: GitHub
 ### Custom domain (later)
 
 1. Buy the domain (e.g. on Porkbun) and point it to GitHub Pages (Settings → Pages → Custom domain shows the DNS records).
-2. Add a repository variable `CUSTOM_DOMAIN` (Settings → Secrets and variables → Actions → Variables), e.g. `rahnumaksa.com`.
+2. Add a repository variable `CUSTOM_DOMAIN` (Settings → Secrets and variables → Actions → Variables), e.g. `livingksa.com`.
 3. Push any change; the site rebuilds at the new address.
 
 ## Add a guide
