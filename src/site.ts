@@ -7,7 +7,7 @@ export const SITE = {
   descriptionUr:
     'سعودی عرب میں مقیم افراد کے لیے مرحلہ وار رہنمائی: اقامہ، ویزا، ابشر اور لیبر قانون۔ ہر رہنمائی میں سرکاری ذریعہ اور آخری تصدیق کی تاریخ۔',
   // TODO before launch: your real details.
-  owner: '[Your name]',
+  owner: 'Fawad Ahmed',
   email: 'hello@example.com',
   whatsappUrl: '#whatsapp',
   // Turn on only after AdSense approval.
