@@ -1,0 +1,201 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+interface Props { lang?: 'en' | 'ur' }
+const { lang = 'en' } = Astro.props;
+const ur = lang === 'ur';
+const L = (en: string, u: string) => (ur ? u : en);
+
+const sources = [
+  { name: 'Ministry of Human Resources and Social Development — End-of-service award', url: 'https://hrsd.gov.sa/en/knowledge-centre/articles/317' },
+  { name: 'Ministry of Human Resources — Saudi Labor Law (English text)', url: 'https://www.hrsd.gov.sa/sites/default/files/2023-02/Labor.pdf' },
+  { name: 'Qoyod — Articles 80 and 81: dismissal without award, and leaving without notice while keeping full rights', url: 'https://www.qoyod.com/en/learn/article-80-81-saudi-labor-law-dismissal/' },
+];
+const S = ur
+  ? {
+      sar: 'ریال', enter: 'اپنی تاریخیں اور تنخواہ درج کریں۔', order: 'کام کا آخری دن شروع کی تاریخ کے بعد ہونا چاہیے۔',
+      full: 'آجر نے ختم کیا یا معاہدہ ختم ہوا: پورا ایوارڈ', r0: '2 سال سے کم میں استعفیٰ: کوئی ایوارڈ نہیں',
+      r13: '2 سے 5 سال بعد استعفیٰ: ایک تہائی', r23: '5 سے 10 سال بعد استعفیٰ: دو تہائی', r1: '10 سال سے زیادہ بعد استعفیٰ: پورا ایوارڈ',
+      a80: 'دفعہ 80 کے تحت برطرفی: کوئی ایوارڈ نہیں',
+      a80warn: 'دفعہ 80 کی برطرفی کی سخت شرائط ہیں، جیسے تحقیقات۔ اگر آپ متفق نہیں تو لیبر کیس درج کر سکتے ہیں۔',
+      art: 'پورا ایوارڈ (دفعہ {a})',
+      sub: '{y} سال، {m} ماہ اور {d} دن کی ملازمت کے لیے ({t} سال)۔',
+      first: 'پہلے {y} سال × آدھا مہینہ', later: 'بعد کے {y} سال × ایک مہینہ', fullRow: 'پورا ایوارڈ', get: 'آپ کو ملے گا',
+    }
+  : {
+      sar: 'SAR', enter: 'Enter your dates and wage.', order: 'The last working day must be after the start date.',
+      full: 'Employer ended or contract ended: full award', r0: 'Resigned under 2 years: no award',
+      r13: 'Resigned after 2–5 years: one third', r23: 'Resigned after 5–10 years: two thirds', r1: 'Resigned after 10+ years: full award',
+      a80: 'Article 80 dismissal: no award',
+      a80warn: 'Article 80 dismissals have strict conditions, such as an investigation. If you dispute it, you can file a labor claim.',
+      art: 'Full award (Article {a})',
+      sub: 'For {y} years, {m} months and {d} days of service ({t} years).',
+      first: 'First {y} years × ½ month', later: 'Later {y} years × 1 month', fullRow: 'Full award', get: 'You receive',
+    };
+---
+<ToolLayout
+  lang={lang}
+  title={L('End-of-service calculator (Saudi labor law)', 'اینڈ آف سروس کیلکولیٹر (سعودی لیبر قانون)')}
+  description={L(
+    'Calculate your end-of-service award in Saudi Arabia: half a month per year for the first five years, a full month after that, and the resignation reductions.',
+    'سعودی عرب میں اپنا اینڈ آف سروس ایوارڈ معلوم کریں: پہلے پانچ سال ہر سال کا آدھا مہینہ، اس کے بعد پورا مہینہ، اور استعفیٰ کی صورت میں کٹوتی۔',
+  )}
+  slug="end-of-service-calculator"
+  intro={L(
+    'Enter your dates, last monthly wage and why the job is ending. The calculator applies Articles 84, 85 and 87 of the Saudi labor law.',
+    'اپنی تاریخیں، آخری ماہانہ تنخواہ اور ملازمت ختم ہونے کی وجہ درج کریں۔ یہ کیلکولیٹر سعودی لیبر قانون کی دفعات 84، 85 اور 87 کے مطابق حساب کرتا ہے۔',
+  )}
+  sources={sources}
+  lastChecked={L('10 November 2026', '10 نومبر 2026')}
+>
+  <script type="application/json" id="tool-i18n" set:html={JSON.stringify(S)} />
+  <div class="tool-grid">
+    <form class="form-card" id="eos-form" onsubmit="return false">
+      <h2>{L('Your job', 'آپ کی ملازمت')}</h2>
+      <div class="field-row">
+        <div class="field">
+          <label for="start">{L('Start date', 'شروع کی تاریخ')}</label>
+          <input id="start" type="date" required />
+        </div>
+        <div class="field">
+          <label for="end">{L('Last working day', 'کام کا آخری دن')}</label>
+          <input id="end" type="date" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="wage">{L('Last monthly wage (SAR)', 'آخری ماہانہ تنخواہ (ریال)')}</label>
+        <input id="wage" type="number" min="0" step="1" inputmode="decimal" placeholder={L('e.g. 6000', 'مثلاً 6000')} />
+        <p class="hint">{L('Basic salary plus regular allowances such as housing and transport.', 'بنیادی تنخواہ اور رہائش و ٹرانسپورٹ جیسے باقاعدہ الاؤنسز۔')}</p>
+      </div>
+      <div class="field">
+        <label for="reason">{L('Why is the job ending?', 'ملازمت کیوں ختم ہو رہی ہے؟')}</label>
+        <select id="reason">
+          <option value="employer">{L('Employer ended the contract, or the fixed-term contract ended', 'آجر نے معاہدہ ختم کیا، یا مقررہ مدت کا معاہدہ ختم ہوا')}</option>
+          <option value="resign">{L('I resigned', 'میں نے استعفیٰ دیا')}</option>
+          <option value="art81">{L('I left because the employer broke the contract (Article 81)', 'آجر کی معاہدے کی خلاف ورزی کی وجہ سے چھوڑا (دفعہ 81)')}</option>
+          <option value="women">{L('Woman resigning within 6 months of marriage or 3 months of giving birth', 'خاتون کا شادی کے 6 ماہ یا بچے کی پیدائش کے 3 ماہ کے اندر استعفیٰ')}</option>
+          <option value="force">{L('Force majeure beyond my control', 'میرے اختیار سے باہر ناگزیر حالات')}</option>
+          <option value="art80">{L('Dismissed for serious misconduct (Article 80)', 'سنگین بدانتظامی پر برطرفی (دفعہ 80)')}</option>
+        </select>
+      </div>
+    </form>
+
+    <div class="result-card" aria-live="polite">
+      <h2>{L('Your end-of-service award', 'آپ کا اینڈ آف سروس ایوارڈ')}</h2>
+      <div class="result-big" id="eos-total">{L('SAR 0', '0 ریال')}</div>
+      <p class="result-sub" id="eos-sub">{S.enter}</p>
+      <table class="breakdown">
+        <thead><tr><th>{L('Item', 'مد')}</th><th>{L('Amount', 'رقم')}</th></tr></thead>
+        <tbody id="eos-rows"></tbody>
+      </table>
+      <p class="warn" id="eos-warn" hidden></p>
+      <p class="result-note">{L(
+        'Your employer must pay within one week of the contract ending, or two weeks if you resigned.',
+        'آجر پر لازم ہے کہ معاہدہ ختم ہونے کے ایک ہفتے کے اندر، یا استعفیٰ کی صورت میں دو ہفتوں کے اندر ادائیگی کرے۔',
+      )}</p>
+    </div>
+  </div>
+
+  <Fragment slot="notes">
+    {ur ? (
+      <>
+        <h2>حساب کیسے ہوتا ہے</h2>
+        <ul>
+          <li><strong>پورا ایوارڈ:</strong> پہلے پانچ سالوں میں ہر سال کے لیے آدھے مہینے کی تنخواہ، پھر ہر اگلے سال کے لیے ایک مہینے کی تنخواہ۔ سال کا کچھ حصہ تناسب سے شمار ہوتا ہے۔</li>
+          <li><strong>استعفیٰ کی صورت میں:</strong> 2 سال سے کم پر کچھ نہیں؛ 2 سے 5 سال پر ایوارڈ کا ایک تہائی؛ 5 سے 10 سال پر دو تہائی؛ 10 سال کے بعد پورا ایوارڈ۔</li>
+          <li><strong>استعفیٰ پر بھی پورا ایوارڈ:</strong> ناگزیر حالات، اور وہ خاتون جو شادی کے چھ ماہ یا بچے کی پیدائش کے تین ماہ کے اندر استعفیٰ دے۔</li>
+          <li><strong>کون سی تنخواہ:</strong> آپ کی آخری تنخواہ، باقاعدہ الاؤنسز سمیت۔</li>
+        </ul>
+        <p>بغیر تنخواہ کی چھٹی، قانون سے زیادہ دینے والی معاہدے کی شرائط، اور تنازعات رقم بدل سکتے ہیں۔ اگر آجر متفق نہ ہو تو آپ وزارت کی لیبر تنازعات کی سروس پر دعویٰ درج کر سکتے ہیں۔</p>
+      </>
+    ) : (
+      <>
+        <h2>How it's calculated</h2>
+        <ul>
+          <li><strong>Full award:</strong> half a month's wage for each of the first five years, then one month's wage for each later year. Part years count in proportion.</li>
+          <li><strong>If you resign:</strong> nothing under 2 years; one third of the award for 2 to 5 years; two thirds for 5 to 10 years; the full award after 10 years.</li>
+          <li><strong>Full award even on resignation:</strong> force majeure, and a woman who resigns within six months of marrying or three months of giving birth.</li>
+          <li><strong>Wage used:</strong> your last wage, including regular allowances.</li>
+        </ul>
+        <p>Unpaid leave, contract terms that give you more than the law, and disputes can change the amount. If your employer disagrees, you can file a claim through the Ministry's labor dispute service.</p>
+      </>
+    )}
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const S = JSON.parse(document.getElementById('tool-i18n')!.textContent!) as Record<string, string>;
+  const ur = document.documentElement.lang === 'ur';
+  const fill = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k]));
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const fmt = (n: number) => {
+    const a = Math.round(n).toLocaleString('en-US');
+    return ur ? `${a} ${S.sar}` : `${S.sar} ${a}`;
+  };
+  const today = new Date();
+  $<HTMLInputElement>('end').value = today.toISOString().slice(0, 10);
+
+  function duration(a: Date, b: Date) {
+    let y = b.getFullYear() - a.getFullYear();
+    let m = b.getMonth() - a.getMonth();
+    let d = b.getDate() - a.getDate();
+    if (d < 0) { m -= 1; d += new Date(b.getFullYear(), b.getMonth(), 0).getDate(); }
+    if (m < 0) { y -= 1; m += 12; }
+    return { y, m, d };
+  }
+
+  function clear(msg: string) {
+    $('eos-total').textContent = fmt(0);
+    $('eos-sub').textContent = msg;
+    $('eos-rows').innerHTML = '';
+  }
+
+  function calc() {
+    const startV = $<HTMLInputElement>('start').value;
+    const endV = $<HTMLInputElement>('end').value;
+    const wage = Number($<HTMLInputElement>('wage').value) || 0;
+    const reason = $<HTMLSelectElement>('reason').value;
+    const warn = $<HTMLElement>('eos-warn');
+    warn.hidden = true;
+    if (!startV || !endV || !wage) return clear(S.enter);
+    const a = new Date(startV + 'T00:00:00');
+    const b = new Date(endV + 'T00:00:00');
+    if (b <= a) return clear(S.order);
+    const days = Math.round((b.getTime() - a.getTime()) / 86400000) + 1;
+    const years = days / 365;
+    const first = Math.min(years, 5) * 0.5 * wage;
+    const later = Math.max(years - 5, 0) * wage;
+    const full = first + later;
+
+    let share = 1;
+    let shareLabel = S.full;
+    if (reason === 'resign') {
+      if (years < 2) { share = 0; shareLabel = S.r0; }
+      else if (years < 5) { share = 1 / 3; shareLabel = S.r13; }
+      else if (years < 10) { share = 2 / 3; shareLabel = S.r23; }
+      else { share = 1; shareLabel = S.r1; }
+    } else if (reason === 'art80') {
+      share = 0; shareLabel = S.a80;
+      warn.textContent = S.a80warn;
+      warn.hidden = false;
+    } else if (reason === 'women' || reason === 'force' || reason === 'art81') {
+      shareLabel = fill(S.art, { a: reason === 'art81' ? '81' : '87' });
+    }
+
+    const total = full * share;
+    const d = duration(a, b);
+    $('eos-total').textContent = fmt(total);
+    $('eos-sub').textContent = fill(S.sub, { y: d.y, m: d.m, d: d.d, t: years.toFixed(2) });
+    const rows: [string, string][] = [
+      [fill(S.first, { y: Math.min(years, 5).toFixed(2) }), fmt(first)],
+      [fill(S.later, { y: Math.max(years - 5, 0).toFixed(2) }), fmt(later)],
+      [S.fullRow, fmt(full)],
+      [shareLabel, share === 1 ? '100%' : share === 0 ? '0%' : `${Math.round(share * 100)}%`],
+      [S.get, fmt(total)],
+    ];
+    $('eos-rows').innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+  }
+  document.getElementById('eos-form')!.addEventListener('input', calc);
+  document.getElementById('eos-form')!.addEventListener('change', calc);
+  calc();
+</script>

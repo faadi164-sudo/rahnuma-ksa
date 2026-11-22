@@ -1,0 +1,145 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+interface Props { lang?: 'en' | 'ur' }
+const { lang = 'en' } = Astro.props;
+const ur = lang === 'ur';
+const L = (en: string, u: string) => (ur ? u : en);
+
+const sources = [
+  { name: 'HRSD — Annual leave: at least 21 days, 30 days after 5 consecutive years, paid in advance', url: 'https://hrsd.gov.sa/en/knowledge-centre/articles/321' },
+  { name: 'Qoyod — Annual leave balance under Articles 109 and 111 (pay for unused days and part years)', url: 'https://www.qoyod.com/en/learn/annual-leave-balance-saudi-labor-law/' },
+  { name: 'HD Law Firm — How much annual leave you get in Saudi Arabia', url: 'https://hd-lawfirm.com.sa/?p=27345' },
+  { name: 'Jisr — Leave accruals under Articles 109, 110 and 111', url: 'https://www.jisr.net/en/glossary/leave-accruals' },
+];
+const S = ur
+  ? {
+      sar: 'ریال', days: 'سالانہ {d} دن', contract: 'آپ کا معاہدہ {c} دن دیتا ہے، جو قانونی کم از کم {l} دن سے زیادہ ہے۔',
+      five: 'اس آجر کے ساتھ آپ کے 5 یا زیادہ سال ہیں، اس لیے کم از کم 30 دن ہیں۔',
+      under: '5 سال مکمل ہونے تک کم از کم 21 دن ہیں ({r} سال باقی)۔',
+      daily: 'یومیہ اجرت (ماہانہ ÷ 30)', pay: '{d} دن کی چھٹی کی تنخواہ', perMonth: 'ہر کام کے مہینے پر ملنے والی چھٹی',
+      perMonthVal: '{v} دن', cash: 'ملازمت چھوڑنے پر {u} بچی ہوئی چھٹیوں کی رقم',
+    }
+  : {
+      sar: 'SAR', days: '{d} days a year', contract: 'Your contract gives {c} days, more than the legal minimum of {l}.',
+      five: 'You have 5 or more years with this employer, so the minimum is 30 days.',
+      under: 'The minimum is 21 days until you complete 5 years ({r} to go).',
+      daily: 'Daily wage (monthly ÷ 30)', pay: 'Leave pay for {d} days', perMonth: 'Leave earned per month worked',
+      perMonthVal: '{v} days', cash: 'Cash for {u} unused days if you leave',
+    };
+---
+<ToolLayout
+  lang={lang}
+  title={L('Annual leave calculator', 'سالانہ چھٹی کیلکولیٹر')}
+  description={L(
+    'Work out your annual leave in Saudi Arabia: 21 or 30 days under Article 109, the leave pay, and the cash value of unused days when you leave your job (Article 111).',
+    'سعودی عرب میں اپنی سالانہ چھٹی کا حساب لگائیں: دفعہ 109 کے تحت 21 یا 30 دن، چھٹی کی تنخواہ، اور ملازمت چھوڑنے پر بچی چھٹیوں کی رقم (دفعہ 111)۔',
+  )}
+  slug="annual-leave-calculator"
+  intro={L(
+    'See how many days of annual leave you are owed, what your leave pay should be, and what unused days are worth when your job ends.',
+    'دیکھیں کہ آپ کی کتنی سالانہ چھٹیاں بنتی ہیں، چھٹی کی تنخواہ کتنی ہونی چاہیے، اور ملازمت ختم ہونے پر بچی چھٹیوں کی کتنی رقم بنتی ہے۔',
+  )}
+  sources={sources}
+  lastChecked={L('21 November 2026', '21 نومبر 2026')}
+>
+  <script type="application/json" id="tool-i18n" set:html={JSON.stringify(S)} />
+  <div class="tool-grid">
+    <form class="form-card" id="leave-form" onsubmit="return false">
+      <h2>{L('Your details', 'آپ کی تفصیل')}</h2>
+      <div class="field">
+        <label for="wage">{L('Monthly wage (SAR)', 'ماہانہ تنخواہ (ریال)')}</label>
+        <input id="wage" type="number" min="0" step="50" value="6000" inputmode="decimal" />
+        <p class="hint">{L('Basic salary plus fixed allowances such as housing and transport.', 'بنیادی تنخواہ اور رہائش و ٹرانسپورٹ جیسے مقررہ الاؤنسز۔')}</p>
+      </div>
+      <div class="field">
+        <label for="years">{L('Years with your current employer', 'موجودہ آجر کے ساتھ سال')}</label>
+        <input id="years" type="number" min="0" max="50" step="0.5" value="3" inputmode="decimal" />
+      </div>
+      <div class="field">
+        <label for="contract">{L('Days in your contract (if more than the law)', 'معاہدے میں درج دن (اگر قانون سے زیادہ ہوں)')}</label>
+        <input id="contract" type="number" min="0" max="60" step="1" value="" placeholder={L('Leave empty to use the legal minimum', 'قانونی کم از کم کے لیے خالی چھوڑ دیں')} inputmode="numeric" />
+      </div>
+      <div class="field">
+        <label for="unused">{L('Unused leave days you still have', 'آپ کی بچی ہوئی چھٹیاں')}</label>
+        <input id="unused" type="number" min="0" max="365" step="0.5" value="10" inputmode="decimal" />
+        <p class="hint">{L('Your balance is usually shown on your HR system or payslip.', 'آپ کا بیلنس عموماً ایچ آر سسٹم یا تنخواہ کی سلپ پر درج ہوتا ہے۔')}</p>
+      </div>
+    </form>
+
+    <div class="result-card" aria-live="polite">
+      <h2>{L('Your annual leave', 'آپ کی سالانہ چھٹی')}</h2>
+      <div class="result-big" id="days">{L('21 days', '21 دن')}</div>
+      <p class="result-sub" id="sub"></p>
+      <table class="breakdown">
+        <thead><tr><th>{L('Item', 'مد')}</th><th>{L('Amount', 'رقم')}</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <Fragment slot="notes">
+    {ur ? (
+      <>
+        <h2>حساب کیسے ہوتا ہے</h2>
+        <ul>
+          <li><strong>حق (دفعہ 109):</strong> سالانہ کم از کم 21 دن، اور ایک ہی آجر کے ساتھ لگاتار 5 سال مکمل ہونے پر کم از کم 30 دن۔ معاہدہ زیادہ دے سکتا ہے، کم کبھی نہیں۔</li>
+          <li><strong>یومیہ اجرت:</strong> ماہانہ تنخواہ ÷ 30۔</li>
+          <li><strong>چھٹی کی تنخواہ:</strong> یومیہ اجرت × چھٹی کے دن۔ یہ چھٹی شروع ہونے سے پہلے پیشگی ادا ہونی چاہیے۔</li>
+          <li><strong>ملازمت ختم ہونے پر بچی چھٹیاں (دفعہ 111):</strong> یومیہ اجرت کے حساب سے نقد ادا ہوتی ہیں، سال کے کچھ حصے کا تناسب بھی شامل ہے۔</li>
+        </ul>
+        <p>ملازمت کے دوران قانون یہ توقع رکھتا ہے کہ آپ چھٹی لیں، اس کے بدلے رقم نہ لیں۔ چھٹی کی تاریخیں آجر طے کر سکتا ہے، اور قانون کی حدود میں اسے مؤخر بھی کر سکتا ہے۔</p>
+      </>
+    ) : (
+      <>
+        <h2>How it's calculated</h2>
+        <ul>
+          <li><strong>Entitlement (Article 109):</strong> at least 21 days a year, rising to at least 30 days once you complete 5 consecutive years with the same employer. A contract can give more, never less.</li>
+          <li><strong>Daily wage:</strong> monthly wage ÷ 30.</li>
+          <li><strong>Leave pay:</strong> daily wage × leave days. It should be paid in advance, before the leave starts.</li>
+          <li><strong>Unused days when the job ends (Article 111):</strong> paid in cash at the daily wage, including a share for part of a year.</li>
+        </ul>
+        <p>While you are still employed, the law expects you to take your leave rather than cash it in. The employer can set the dates of your leave, and can postpone it within the limits of the law.</p>
+      </>
+    )}
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const S = JSON.parse(document.getElementById('tool-i18n')!.textContent!) as Record<string, string>;
+  const ur = document.documentElement.lang === 'ur';
+  const fill = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k]));
+  const num = (id: string) => Math.max(0, Number((document.getElementById(id) as HTMLInputElement).value) || 0);
+  const amount = (n: number) => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const sar = (n: number) => (ur ? `${amount(n)} ${S.sar}` : `${S.sar} ${amount(n)}`);
+  const form = document.getElementById('leave-form') as HTMLFormElement;
+
+  function calc() {
+    const wage = num('wage');
+    const years = num('years');
+    const contract = num('contract');
+    const unused = num('unused');
+    const legal = years >= 5 ? 30 : 21;
+    const days = Math.max(legal, contract);
+    const daily = wage / 30;
+
+    document.getElementById('days')!.textContent = fill(S.days, { d: days });
+    document.getElementById('sub')!.textContent = contract > legal
+      ? fill(S.contract, { c: contract, l: legal })
+      : years >= 5
+        ? S.five
+        : fill(S.under, { r: Math.max(0, 5 - years) });
+    const rows: [string, string][] = [
+      [S.daily, sar(daily)],
+      [fill(S.pay, { d: days }), sar(daily * days)],
+      [S.perMonth, fill(S.perMonthVal, { v: (days / 12).toFixed(2) })],
+    ];
+    if (unused) rows.push([fill(S.cash, { u: unused }), sar(daily * unused)]);
+    document.getElementById('rows')!.innerHTML = rows
+      .map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`)
+      .join('');
+  }
+  form.addEventListener('input', calc);
+  form.addEventListener('change', calc);
+  calc();
+</script>

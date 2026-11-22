@@ -1,0 +1,169 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+interface Props { lang?: 'en' | 'ur' }
+const { lang = 'en' } = Astro.props;
+const ur = lang === 'ur';
+const L = (en: string, u: string) => (ur ? u : en);
+
+const sources = [
+  { name: 'Middle East Briefing — Iqama fees: SAR 650 a year, work permit SAR 800 a month, dependents SAR 400 a month', url: 'https://www.middleeastbriefing.com/news/saudi-arabia-iqama-residence-permit-what-businesses-need-to-know' },
+  { name: "Saudi Gazette — Dependents' fee payable quarterly; employer pays SR800 a month work permit fee", url: 'https://saudigazette.com.sa/article/613358' },
+  { name: 'Saudi Gazette — Expat and dependent levy schedule (2017)', url: 'https://www.saudigazette.com.sa/article/181421' },
+  { name: 'Wego — Iqama fee by period, SAR 700 levy where Saudis are not outnumbered, domestic workers SAR 600', url: 'https://blog.wego.com/iqama-renewal/' },
+  { name: 'Absher — Ministry of Interior', url: 'https://www.absher.sa' },
+];
+const S = ur
+  ? {
+      sar: 'ریال', none: 'فیملی کا کوئی فرد شامل نہیں کیا گیا۔',
+      sub: '{f} {fw} × 400 ریال × {m} مہینے۔ یعنی ماہانہ {pm}۔', member: 'فرد', members: 'افراد',
+      dep: 'ڈیپنڈنٹ فیس ({f} × 400 ریال × {m})', iqama: 'آپ کی اقامہ فیس، {m} مہینے (آجر)',
+      levy: 'ورک پرمٹ لیوی ({r} ریال × {m}) (آجر)', total: 'کل، تمام فیسیں',
+      employer: 'آپ کے اپنے اقامہ اور ورک پرمٹ کے {e} آجر کو ادا کرنے چاہییں۔ یہ آپ کی تنخواہ سے نہیں کاٹے جا سکتے۔',
+    }
+  : {
+      sar: 'SAR', none: 'No family members added.',
+      sub: "{f} family {fw} × SAR 400 × {m} months. That's {pm} a month.", member: 'member', members: 'members',
+      dep: 'Dependent fee ({f} × SAR 400 × {m})', iqama: 'Your iqama fee, {m} months (employer)',
+      levy: 'Work permit levy (SAR {r} × {m}) (employer)', total: 'Total, all fees',
+      employer: 'Your employer should pay {e} for your own iqama and work permit. These must not be deducted from your salary.',
+    };
+---
+<ToolLayout
+  lang={lang}
+  title={L('Iqama and dependent fee calculator', 'اقامہ اور فیملی فیس کیلکولیٹر')}
+  description={L(
+    'Work out iqama fees in Saudi Arabia: the SAR 650 iqama fee, SAR 800 work permit levy and SAR 400 a month for each dependent, for 3 to 12 months.',
+    'سعودی عرب میں اقامہ کی فیس کا حساب: 650 ریال اقامہ فیس، 800 ریال ورک پرمٹ لیوی، اور ہر ڈیپنڈنٹ کے لیے 400 ریال ماہانہ، 3 سے 12 ماہ کے لیے۔',
+  )}
+  slug="iqama-fee-calculator"
+  intro={L(
+    'See what you pay for your family and what your employer pays for your iqama and work permit, for 3, 6, 9 or 12 months.',
+    'دیکھیں کہ 3، 6، 9 یا 12 ماہ کے لیے آپ اپنی فیملی کے لیے کتنا ادا کرتے ہیں اور آپ کا آجر آپ کے اقامہ اور ورک پرمٹ کے لیے کتنا ادا کرتا ہے۔',
+  )}
+  sources={sources}
+  lastChecked={L('10 November 2026', '10 نومبر 2026')}
+>
+  <script type="application/json" id="tool-i18n" set:html={JSON.stringify(S)} />
+  <div class="tool-grid">
+    <form class="form-card" id="iqama-form" onsubmit="return false">
+      <h2>{L('Your details', 'آپ کی تفصیل')}</h2>
+      <div class="field">
+        <span class="label">{L('Renewal period', 'تجدید کی مدت')}</span>
+        <div class="seg" role="radiogroup" aria-label={L('Renewal period', 'تجدید کی مدت')}>
+          <label><input type="radio" name="months" value="3" /> {L('3 months', '3 ماہ')}</label>
+          <label><input type="radio" name="months" value="6" /> {L('6 months', '6 ماہ')}</label>
+          <label><input type="radio" name="months" value="9" /> {L('9 months', '9 ماہ')}</label>
+          <label><input type="radio" name="months" value="12" checked /> {L('12 months', '12 ماہ')}</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="worker">{L('Your job type', 'آپ کی ملازمت کی قسم')}</label>
+        <select id="worker" name="worker">
+          <option value="private">{L('Private-sector employee', 'نجی شعبے کا ملازم')}</option>
+          <option value="domestic">{L('Domestic worker (house driver, maid)', 'گھریلو ملازم (ہاؤس ڈرائیور، ملازمہ)')}</option>
+        </select>
+      </div>
+      <div class="field" id="levy-field">
+        <label for="levy">{L("Your employer's Saudi and expat staff", 'آپ کے آجر کے سعودی اور غیر ملکی ملازمین')}</label>
+        <select id="levy" name="levy">
+          <option value="800">{L('More expats than Saudis (SAR 800 a month)', 'سعودیوں سے زیادہ غیر ملکی (800 ریال ماہانہ)')}</option>
+          <option value="700">{L('Saudis equal to or more than expats (SAR 700 a month)', 'سعودی، غیر ملکیوں کے برابر یا زیادہ (700 ریال ماہانہ)')}</option>
+        </select>
+        <p class="hint">{L('Not sure? Leave the first option. Most employers pay SAR 800.', 'یقین نہیں؟ پہلا آپشن رہنے دیں۔ زیادہ تر آجر 800 ریال ادا کرتے ہیں۔')}</p>
+      </div>
+      <div class="field">
+        <label for="family">{L('Family members on your iqama', 'آپ کے اقامہ پر فیملی کے افراد')}</label>
+        <input id="family" name="family" type="number" min="0" max="20" step="1" value="0" inputmode="numeric" />
+        <p class="hint">{L('Wife, children, and companions such as parents or sons over 18. Each one is SAR 400 a month.', 'بیوی، بچے، اور والدین یا 18 سال سے بڑے بیٹوں جیسے مرافقین۔ ہر ایک کے 400 ریال ماہانہ۔')}</p>
+      </div>
+    </form>
+
+    <div class="result-card" aria-live="polite">
+      <h2>{L('You pay for your family', 'آپ اپنی فیملی کے لیے ادا کرتے ہیں')}</h2>
+      <div class="result-big" id="you-total">{L('SAR 0', '0 ریال')}</div>
+      <p class="result-sub" id="you-sub">{S.none}</p>
+      <table class="breakdown">
+        <thead><tr><th>{L('Item', 'مد')}</th><th>{L('Amount', 'رقم')}</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="result-note" id="employer-note"></p>
+      <p class="warn">{L(
+        "Not included: each family member's own iqama document fee and health insurance, which Absher shows when you pay. Renewing a family member who is outside Saudi Arabia costs double.",
+        'شامل نہیں: فیملی کے ہر فرد کی اپنی اقامہ دستاویز کی فیس اور ہیلتھ انشورنس، جو ادائیگی کے وقت ابشر دکھاتا ہے۔ سعودی عرب سے باہر موجود فیملی ممبر کی تجدید دگنی قیمت پر ہوتی ہے۔',
+      )}</p>
+    </div>
+  </div>
+
+  <Fragment slot="notes">
+    {ur ? (
+      <>
+        <h2>حساب کیسے ہوتا ہے</h2>
+        <ul>
+          <li><strong>اقامہ فیس (ملازم):</strong> نجی شعبے کے ملازمین کے لیے سالانہ 650 ریال (3، 6 اور 9 ماہ کے لیے 163، 325 اور 488 ریال)۔ گھریلو ملازمین: سالانہ 600 ریال، تجدید سالانہ۔</li>
+          <li><strong>ورک پرمٹ لیوی:</strong> 800 ریال ماہانہ، یا 700 ریال جہاں آجر کے سعودی ملازمین تعداد میں کم نہ ہوں۔ گھریلو ملازمین پر لاگو نہیں۔</li>
+          <li><strong>ڈیپنڈنٹ اور مرافق فیس:</strong> آپ کے اقامہ پر ہر فرد کے لیے 400 ریال ماہانہ۔</li>
+        </ul>
+        <p>لیبر قانون کی دفعہ 40 کے تحت ملازم کی اقامہ فیس، ورک پرمٹ لیوی اور تاخیر سے تجدید کے جرمانے آجر ادا کرتا ہے۔ ڈیپنڈنٹ فیس آپ کی ذمہ داری ہے، الا یہ کہ معاہدے میں کچھ اور لکھا ہو۔</p>
+      </>
+    ) : (
+      <>
+        <h2>How it's calculated</h2>
+        <ul>
+          <li><strong>Iqama fee (worker):</strong> SAR 650 a year for private-sector workers (SAR 163, 325 and 488 for 3, 6 and 9 months). Domestic workers: SAR 600 a year, renewed yearly.</li>
+          <li><strong>Work permit levy:</strong> SAR 800 a month, or SAR 700 where the employer's Saudi staff are not outnumbered. Not charged for domestic workers.</li>
+          <li><strong>Dependent and companion fee:</strong> SAR 400 a month for each person on your iqama.</li>
+        </ul>
+        <p>Under Article 40 of the labor law, the employer pays the worker's iqama fee, work permit levy and any late-renewal fines. The dependent fee is yours unless your contract says otherwise.</p>
+      </>
+    )}
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const S = JSON.parse(document.getElementById('tool-i18n')!.textContent!) as Record<string, string>;
+  const ur = document.documentElement.lang === 'ur';
+  const fill = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k]));
+  const IQAMA_FEE: Record<string, Record<number, number>> = {
+    private: { 3: 163, 6: 325, 9: 488, 12: 650 },
+    domestic: { 12: 600 },
+  };
+  const form = document.getElementById('iqama-form') as HTMLFormElement;
+  const fmt = (n: number) => (ur ? `${n.toLocaleString('en-US')} ${S.sar}` : `${S.sar} ${n.toLocaleString('en-US')}`);
+
+  function calc() {
+    const worker = (form.querySelector('#worker') as HTMLSelectElement).value;
+    const radios = form.querySelectorAll<HTMLInputElement>('input[name="months"]');
+    // Domestic workers' iqamas are renewed for a full year.
+    radios.forEach((r) => {
+      r.disabled = worker === 'domestic' && r.value !== '12';
+      if (worker === 'domestic' && r.value === '12') r.checked = true;
+    });
+    const months = Number((form.querySelector('input[name="months"]:checked') as HTMLInputElement).value);
+    const levyRate = Number((form.querySelector('#levy') as HTMLSelectElement).value);
+    const family = Math.max(0, Math.min(20, Math.floor(Number((form.querySelector('#family') as HTMLInputElement).value) || 0)));
+    (document.getElementById('levy-field') as HTMLElement).hidden = worker === 'domestic';
+
+    const iqama = IQAMA_FEE[worker][months];
+    const levy = worker === 'domestic' ? 0 : levyRate * months;
+    const dep = 400 * months * family;
+
+    document.getElementById('you-total')!.textContent = fmt(dep);
+    document.getElementById('you-sub')!.textContent = family
+      ? fill(S.sub, { f: family, fw: family > 1 ? S.members : S.member, m: months, pm: fmt(Math.round(dep / months)) })
+      : S.none;
+
+    const rows: [string, number][] = [];
+    if (family) rows.push([fill(S.dep, { f: family, m: months }), dep]);
+    rows.push([fill(S.iqama, { m: months }), iqama]);
+    if (levy) rows.push([fill(S.levy, { r: levyRate, m: months }), levy]);
+    rows.push([S.total, dep + iqama + levy]);
+    document.getElementById('rows')!.innerHTML = rows
+      .map(([k, v]) => `<tr><td>${k}</td><td>${fmt(v)}</td></tr>`)
+      .join('');
+    document.getElementById('employer-note')!.textContent = fill(S.employer, { e: fmt(iqama + levy) });
+  }
+  form.addEventListener('input', calc);
+  form.addEventListener('change', calc);
+  calc();
+</script>

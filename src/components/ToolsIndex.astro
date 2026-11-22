@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import { url } from '../site';
+import { TOOLS } from '../data/tools';
+
+interface Props { lang?: 'en' | 'ur' }
+const { lang = 'en' } = Astro.props;
+const ur = lang === 'ur';
+const L = (en: string, u: string) => (ur ? u : en);
+const base = ur ? 'ur/' : '';
+---
+<Base
+  lang={lang}
+  title={L('Free tools for expats in Saudi Arabia', 'سعودی عرب میں مقیم افراد کے لیے مفت ٹولز')}
+  description={L(
+    'Free calculators and lookups for expats in Saudi Arabia: iqama and dependent fees, end-of-service award, exit re-entry visa fees, overtime, annual leave, postal codes and Hijri dates.',
+    'سعودی عرب میں مقیم افراد کے لیے مفت کیلکولیٹرز: اقامہ اور فیملی فیس، اینڈ آف سروس، ایگزٹ ری انٹری ویزا فیس، اوور ٹائم، سالانہ چھٹی، پوسٹل کوڈ اور ہجری تاریخ۔',
+  )}
+  path={`${base}tools/`}
+  altPath={`${ur ? '' : 'ur/'}tools/`}
+>
+  <div class="page-head">
+    <div class="container">
+      <nav aria-label={L('Breadcrumb', 'راستہ')}><ol class="breadcrumb"><li><a href={url(base)}>{L('Home', 'ہوم')}</a></li></ol></nav>
+      <h1>{L('Free tools', 'مفت ٹولز')}</h1>
+      <p class="sub">{L(
+        'Quick answers in seconds. Results are estimates to help you plan; each tool links the official source.',
+        'چند سیکنڈ میں جواب۔ نتائج منصوبہ بندی کے لیے اندازہ ہیں؛ ہر ٹول میں سرکاری ذریعے کا لنک موجود ہے۔',
+      )}</p>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 32px; padding-bottom: 56px">
+    <div class="cards">
+      {TOOLS.map((tool) => (
+        <a class="card" href={url(`${base}tools/${tool.slug}/`)}>
+          <span class="icon"><Icon name={tool.icon} size={28} /></span>
+          <h2 style="font-size: 18px">{L(tool.en, tool.ur)}</h2>
+          <p>{L(tool.desc, tool.descUr)}</p>
+          <span class="badge badge-green">{L('Open tool', 'ٹول کھولیں')}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

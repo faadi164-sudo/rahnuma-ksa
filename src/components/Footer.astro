@@ -26,13 +26,13 @@ const year = new Date().getFullYear();
       </nav>
       <nav aria-label={t.tools}>
         <strong>{t.tools}</strong>
-        <a href={url('tools/iqama-fee-calculator/')}>{L('Iqama fee calculator', 'اقامہ فیس کیلکولیٹر')}</a>
-        <a href={url('tools/end-of-service-calculator/')}>{L('End-of-service calculator', 'اختتامِ سروس کیلکولیٹر')}</a>
-        <a href={url('tools/postal-code-finder/')}>{L('Postal code finder', 'پوسٹل کوڈ')}</a>
-        <a href={url('tools/hijri-converter/')}>{L('Hijri converter', 'ہجری کیلنڈر')}</a>
-        <a href={url('tools/exit-reentry-visa-fee-calculator/')}>{L('Exit re-entry visa fees', 'ایگزٹ ری انٹری ویزا فیس')}</a>
-        <a href={url('tools/overtime-calculator/')}>{L('Overtime calculator', 'اوور ٹائم کیلکولیٹر')}</a>
-        <a href={url('tools/annual-leave-calculator/')}>{L('Annual leave calculator', 'سالانہ چھٹی کیلکولیٹر')}</a>
+        <a href={url(`${ur ? 'ur/' : ''}tools/iqama-fee-calculator/`)}>{L('Iqama fee calculator', 'اقامہ فیس کیلکولیٹر')}</a>
+        <a href={url(`${ur ? 'ur/' : ''}tools/end-of-service-calculator/`)}>{L('End-of-service calculator', 'اینڈ آف سروس کیلکولیٹر')}</a>
+        <a href={url(`${ur ? 'ur/' : ''}tools/postal-code-finder/`)}>{L('Postal code finder', 'پوسٹل کوڈ')}</a>
+        <a href={url(`${ur ? 'ur/' : ''}tools/hijri-converter/`)}>{L('Hijri converter', 'ہجری کیلنڈر')}</a>
+        <a href={url(`${ur ? 'ur/' : ''}tools/exit-reentry-visa-fee-calculator/`)}>{L('Exit re-entry visa fees', 'ایگزٹ ری انٹری ویزا فیس')}</a>
+        <a href={url(`${ur ? 'ur/' : ''}tools/overtime-calculator/`)}>{L('Overtime calculator', 'اوور ٹائم کیلکولیٹر')}</a>
+        <a href={url(`${ur ? 'ur/' : ''}tools/annual-leave-calculator/`)}>{L('Annual leave calculator', 'سالانہ چھٹی کیلکولیٹر')}</a>
       </nav>
       <nav aria-label={t.about}>
         <strong>{t.about}</strong>

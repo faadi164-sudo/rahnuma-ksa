@@ -1,0 +1,218 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+import { url } from '../../site';
+
+interface Props { lang?: 'en' | 'ur' }
+const { lang = 'en' } = Astro.props;
+const ur = lang === 'ur';
+const L = (en: string, u: string) => (ur ? u : en);
+
+const sources = [
+  { name: 'Wikipedia — Postal codes in Saudi Arabia (structure of the 5-digit code and its regions)', url: 'https://en.wikipedia.org/wiki/Postal_codes_in_Saudi_Arabia' },
+  { name: 'Saudi National Address Open Dataset by Yasser Al-Samman (city and district names, MIT licence)', url: 'https://github.com/yasseralsamman/saudi-national-address' },
+  { name: 'Saudi Post (SPL) — National Address', url: 'https://splonline.com.sa' },
+];
+const S = ur
+  ? {
+      loading: 'مقامات لوڈ ہو رہے ہیں…', count: '{n} شہر اور محلے۔ کم از کم 2 حروف لکھیں۔',
+      none: 'کوئی نتیجہ نہیں۔ دوسرا ہجّا آزمائیں، یا عربی میں تلاش کریں۔',
+      district: '{c} کا محلہ', city: 'شہر یا قصبہ', region: '{r}',
+      starts: 'اس ریجن کے پوسٹل کوڈ {d} سے شروع ہوتے ہیں', more: 'مزید {n} نتائج۔ محدود کرنے کے لیے مزید حروف لکھیں۔',
+      enter: '5 ہندسوں کا کوڈ درج کریں۔', notSaudi: 'سعودی کوڈ نہیں', notSaudiSub: 'سعودی نیشنل ایڈریس کے کوڈ 1 سے 8 تک کسی ہندسے سے شروع ہوتے ہیں۔',
+      decode: '{f} سے شروع ہونے والے کوڈ اس علاقے کے ہیں۔', extra: ' {x} اضافی نمبر ہے جو عمارت کی نشاندہی کرتا ہے۔', check: ' درست محلہ SPL ایپ میں دیکھیں۔',
+      g1: 'ریاض ریجن', g2: 'مکہ ریجن', g3: 'مشرقی صوبہ', g4: 'مدینہ اور تبوک ریجن', g5: 'قصیم اور حائل ریجن', g6: 'عسیر، نجران اور الباحہ ریجن', g7: 'شمالی سرحدی اور الجوف ریجن', g8: 'جازان ریجن',
+    }
+  : {
+      loading: 'Loading places…', count: '{n} cities and districts. Type at least 2 letters.',
+      none: 'No match. Try another spelling, or search in Arabic.',
+      district: 'District in {c}', city: 'City or town', region: '{r} region',
+      starts: 'Postal codes in this region start with {d}', more: '{n} more. Type more letters to narrow it down.',
+      enter: 'Enter a 5-digit code.', notSaudi: 'Not a Saudi code', notSaudiSub: 'Saudi National Address codes start with 1 to 8.',
+      decode: 'Codes starting with {f} belong to this area.', extra: ' {x} is the additional number that pinpoints the building.', check: ' Check the exact district in the SPL app.',
+      g1: 'Riyadh Region', g2: 'Makkah Region', g3: 'Eastern Province', g4: 'Madinah and Tabuk regions', g5: 'Qassim and Hail regions', g6: 'Asir, Najran and Al Baha regions', g7: 'Northern Borders and Al Jawf regions', g8: 'Jazan Region',
+    };
+const guideHref = url(`${ur ? 'ur/' : ''}guides/absher-registration-and-nafath/`);
+---
+<ToolLayout
+  lang={lang}
+  title={L('Saudi postal code finder', 'سعودی پوسٹل کوڈ تلاش کریں')}
+  description={L(
+    'Find the postal region of any Saudi city or district, check which region a postal code belongs to, and get your exact National Address postal code.',
+    'کسی بھی سعودی شہر یا محلے کا پوسٹل ریجن معلوم کریں، چیک کریں کہ کوئی پوسٹل کوڈ کس ریجن کا ہے، اور اپنے نیشنل ایڈریس کا درست پوسٹل کوڈ حاصل کریں۔',
+  )}
+  slug="postal-code-finder"
+  intro={L(
+    'Every district in Saudi Arabia has its own 5-digit postal code, and the first digit tells you the region. Search 8,300 cities and districts, decode a code, and get your exact one.',
+    'سعودی عرب کے ہر محلے کا اپنا 5 ہندسوں کا پوسٹل کوڈ ہے، اور پہلا ہندسہ ریجن بتاتا ہے۔ 8,300 شہروں اور محلوں میں تلاش کریں، کوئی کوڈ پہچانیں، اور اپنا درست کوڈ حاصل کریں۔',
+  )}
+  sources={sources}
+  lastChecked={L('11 November 2026', '11 نومبر 2026')}
+>
+  <script type="application/json" id="tool-i18n" set:html={JSON.stringify(S)} />
+  <div class="tool-grid">
+    <div class="form-card">
+      <h2>{L('Search a city or district', 'شہر یا محلہ تلاش کریں')}</h2>
+      <div class="field">
+        <label for="q">{L('City or district (English or Arabic)', 'شہر یا محلہ (انگریزی یا عربی میں)')}</label>
+        <input id="q" type="search" placeholder={L('e.g. Hofuf, Al Olaya, الخبر', 'مثلاً Hofuf، Al Olaya، الخبر')} autocomplete="off" data-src={url('data/places.json')} />
+        <p class="hint" id="q-status">{L('Type at least 2 letters.', 'کم از کم 2 حروف لکھیں۔')}</p>
+      </div>
+      <ul class="place-results" id="results" aria-live="polite"></ul>
+    </div>
+
+    <div>
+      <form class="form-card" id="decode" onsubmit="return false">
+        <h2>{L('Which region is this code?', 'یہ کوڈ کس ریجن کا ہے؟')}</h2>
+        <div class="field">
+          <label for="code">{L('Postal code', 'پوسٹل کوڈ')}</label>
+          <input id="code" type="text" inputmode="numeric" maxlength="10" placeholder={L('e.g. 31952 or 31952-1234', 'مثلاً 31952 یا 31952-1234')} dir="ltr" />
+        </div>
+        <div class="result-card" aria-live="polite">
+          <div class="result-big" id="code-out" style="font-size:26px">…</div>
+          <p class="result-sub" id="code-sub">{S.enter}</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h2>{L('Get your exact postal code', 'اپنا درست پوسٹل کوڈ حاصل کریں')}</h2>
+    {ur ? (
+      <ol class="prose" style="font-size:16px">
+        <li><strong>SPL (سعودی پوسٹ) ایپ</strong> یا splonline.com.sa کھولیں اور نفاذ سے لاگ ان کریں۔ آپ کے رجسٹرڈ نیشنل ایڈریس میں آپ کا درست پوسٹل کوڈ اور اضافی نمبر درج ہوتا ہے۔</li>
+        <li>ابھی نیشنل ایڈریس نہیں؟ SPL ایپ میں رجسٹر کریں۔ پارسل، بینک اور بہت سی سرکاری سروسز کے لیے یہ ضروری ہے۔</li>
+        <li>آپ کا مالک مکان، آجر کا ایچ آر یا آپ کا ایجار معاہدہ بھی عمارت کا پتہ دکھاتا ہے۔</li>
+      </ol>
+    ) : (
+      <ol class="prose" style="font-size:16px">
+        <li>Open the <strong>SPL (Saudi Post) app</strong> or splonline.com.sa and log in with Nafath. Your registered National Address shows your exact postal code and additional number.</li>
+        <li>No National Address yet? Register it in the SPL app. You need it for parcels, banks and many government services.</li>
+        <li>Your landlord, employer's HR or your Ejar contract also shows the building's address.</li>
+      </ol>
+    )}
+    <p class="hint">{L("See our guide on Absher and Nafath if you can't log in.", 'اگر لاگ ان نہیں ہو رہا تو ابشر اور نفاذ پر ہماری رہنمائی دیکھیں۔')} <a href={guideHref}>{L('Absher and Nafath guide', 'ابشر اور نفاذ کی رہنمائی')}</a></p>
+  </div>
+
+  <Fragment slot="notes">
+    {ur ? (
+      <>
+        <h2>سعودی پوسٹل کوڈ کیسے کام کرتے ہیں</h2>
+        <ul>
+          <li>پوسٹل کوڈ 5 ہندسوں کا ہوتا ہے۔ <strong>پہلا ہندسہ</strong> ریجن ہے، اگلے دو مرکزی ڈاک خانے کا علاقہ، اور آخری دو محلہ یا زون۔</li>
+          <li>نیشنل ایڈریس میں ڈیش کے بعد 4 مزید ہندسے (اضافی نمبر) ہوتے ہیں، مثلاً 31952-1234۔</li>
+          <li>بڑے شہروں کے درجنوں کوڈ ہیں۔ مثال کے طور پر ریاض میں 11xxx سے 14xxx تک کے کوڈ ہیں۔</li>
+          <li>پرانے پی او باکس کوڈ (جیسے ریاض 11564) نیشنل ایڈریس کے کوڈ سے مختلف ہو سکتے ہیں۔ ڈیلیوری کے لیے نیشنل ایڈریس کا کوڈ استعمال کریں۔</li>
+        </ul>
+      </>
+    ) : (
+      <>
+        <h2>How Saudi postal codes work</h2>
+        <ul>
+          <li>A postal code has 5 digits. The <strong>first digit</strong> is the region, the next two the main post office area, and the last two the district or zone.</li>
+          <li>The National Address adds a hyphen and 4 more digits (the additional number), for example 31952-1234.</li>
+          <li>Big cities have dozens of codes. Riyadh, for example, uses codes from 11xxx to 14xxx.</li>
+          <li>Old P.O. Box codes (such as Riyadh 11564) can differ from National Address codes. Use your National Address code for deliveries.</li>
+        </ul>
+      </>
+    )}
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const S = JSON.parse(document.getElementById('tool-i18n')!.textContent!) as Record<string, string>;
+  const ur = document.documentElement.lang === 'ur';
+  const fill = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k]));
+  // First digit of the National Address postal code for each region (region_id from the dataset).
+  const DIGIT: Record<number, number> = { 1: 1, 2: 2, 5: 3, 3: 4, 7: 4, 4: 5, 8: 5, 6: 6, 11: 6, 12: 6, 9: 7, 13: 7, 10: 8 };
+  type Data = { regions: [number, string, string][]; cities: Record<string, [string, string]>; places: [string, string, number, number][] };
+  let data: Data | null = null;
+  let loading: Promise<Data> | null = null;
+  const sizes: Record<number, number> = {};
+  const input = document.getElementById('q') as HTMLInputElement;
+
+  function load(): Promise<Data> {
+    if (data) return Promise.resolve(data);
+    if (!loading) {
+      document.getElementById('q-status')!.textContent = S.loading;
+      loading = fetch(input.dataset.src!)
+        .then((r) => r.json())
+        .then((d: Data) => {
+          data = d;
+          // Rank districts of bigger cities (more districts) first.
+          for (const p of d.places) if (p[3]) sizes[p[3]] = (sizes[p[3]] ?? 0) + 1;
+          document.getElementById('q-status')!.textContent = fill(S.count, { n: d.places.length.toLocaleString('en-US') });
+          return d;
+        });
+    }
+    return loading;
+  }
+
+  const norm = (s: string) => s.toLowerCase()
+    .replace(/[ً-ْـ]/g, '')
+    .replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي')
+    .replace(/\bdist\.?/g, '').replace(/^(al|el|ad|ar|as|ash|at|az|an|adh|ath)[\s-]+/g, '').replace(/\b(al|el)[\s-]+/g, '')
+    .replace(/^ال/, '').replace(/^حي\s+/, '').replace(/\s+ال/g, ' ')
+    .replace(/[^a-z0-9؀-ۿ ]/g, '').replace(/ee/g, 'i').replace(/oo|ou/g, 'u').replace(/aa/g, 'a').replace(/\s+/g, ' ').trim();
+
+  // Common English spellings that differ from the dataset's.
+  const ALIASES: Record<string, string> = {
+    hofuf: 'hafuf', hufuf: 'hafuf', hasa: 'ahsa', mecca: 'makkah', makka: 'makkah', medina: 'madinah', madina: 'madinah',
+    jizan: 'jazan', gizan: 'jazan', buraydah: 'buraidah', buraida: 'buraidah', unaizah: 'unayzah', onaizah: 'unayzah', unaiza: 'unayzah',
+    abqaiq: 'buqayq', dawadmi: 'duwadimi', duwadmi: 'duwadimi', qunfudah: 'qunfidhah', nairiyah: 'nuayriyah', nuairiyah: 'nuayriyah',
+    hafr: 'hafar', alula: 'ula', 'khamis mushait': 'khamis mushayt', rass: 'rass', bisha: 'bishah', baha: 'bahah', jeddah: 'jeddah', jedda: 'jeddah', jiddah: 'jeddah',
+  };
+
+  const list = document.getElementById('results')!;
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
+
+  async function search() {
+    const raw = norm(input.value);
+    if (raw.length < 2) { list.innerHTML = ''; return; }
+    const qs = [raw];
+    for (const [k, v] of Object.entries(ALIASES)) if (raw === k || raw.startsWith(k + ' ')) qs.push(raw.replace(k, v));
+    const d = await load();
+    const regionName = (id: number) => {
+      const r = d.regions.find((x) => x[0] === id);
+      return r ? (ur ? r[2] : r[1]) : '';
+    };
+    const scored: { p: [string, string, number, number]; s: number }[] = [];
+    for (const p of d.places) {
+      const en = norm(p[0]); const ar = norm(p[1]);
+      let s = -1;
+      for (const q of qs) {
+        let k = -1;
+        if (en === q || ar === q) k = 0;
+        else if (en.startsWith(q) || ar.startsWith(q)) k = 1;
+        else if (en.includes(q) || ar.includes(q)) k = 2;
+        if (k >= 0 && (s < 0 || k < s)) s = k;
+      }
+      if (s >= 0) scored.push({ p, s: s * 10 + (p[3] ? 1 : 0) });
+    }
+    scored.sort((a, b) => a.s - b.s || (sizes[b.p[3]] ?? 0) - (sizes[a.p[3]] ?? 0) || a.p[0].length - b.p[0].length);
+    const top = scored.slice(0, 25);
+    if (!top.length) { list.innerHTML = `<li>${S.none}</li>`; return; }
+    list.innerHTML = top.map(({ p }) => {
+      const digit = DIGIT[p[2]];
+      const city = p[3] ? d.cities[String(p[3])] : null;
+      const kind = city ? fill(S.district, { c: esc(ur ? city[1] : city[0]) }) : S.city;
+      return `<li><span><span class="pname"><span lang="en" dir="ltr">${esc(p[0])}</span> · <span lang="ar">${esc(p[1])}</span></span><span class="pmeta">${kind} · ${esc(fill(S.region, { r: regionName(p[2]) }))}</span></span><span class="pcode" dir="ltr" title="${fill(S.starts, { d: digit })}">${digit}xxxx</span></li>`;
+    }).join('') + (scored.length > 25 ? `<li class="pmeta">${fill(S.more, { n: scored.length - 25 })}</li>` : '');
+  }
+  let t: number | undefined;
+  input.addEventListener('focus', () => { void load(); }, { once: true });
+  input.addEventListener('input', () => { clearTimeout(t); t = window.setTimeout(search, 150); });
+
+  // Decode
+  const code = document.getElementById('code') as HTMLInputElement;
+  code.addEventListener('input', () => {
+    const v = code.value.replace(/\s/g, '');
+    const m = v.match(/^(\d{5})(?:-?(\d{4}))?$/);
+    const out = document.getElementById('code-out')!; const sub = document.getElementById('code-sub')!;
+    if (!m) { out.textContent = '…'; sub.textContent = S.enter; return; }
+    const first = Number(m[1][0]);
+    const group = S['g' + first];
+    if (!group) { out.textContent = S.notSaudi; sub.textContent = S.notSaudiSub; return; }
+    out.textContent = group;
+    sub.textContent = fill(S.decode, { f: first }) + (m[2] ? fill(S.extra, { x: m[2] }) : '') + S.check;
+  });
+</script>

@@ -52,7 +52,7 @@ def frontmatter(path):
 hubs_src = (ROOT / 'src' / 'data' / 'hubs.ts').read_text(encoding='utf-8')
 HUBS = {m[0]: {'en': m[1], 'ur': m[2]} for m in re.findall(r"slug: '([^']+)', en: '([^']+)', ur: '([^']+)'", hubs_src)}
 tools_src = (ROOT / 'src' / 'data' / 'tools.ts').read_text(encoding='utf-8')
-TOOLS = re.findall(r"slug: '([^']+)',\s*icon: '[^']+',\s*en: '([^']+)'", tools_src)
+TOOLS = re.findall(r"slug: '([^']+)',\s*icon: '[^']+',\s*en: '([^']+)',\s*ur: '([^']+)'", tools_src)
 
 cards = []  # (output path, lang, kicker, title, photo key)
 cards.append((OUT / 'default-en.jpg', 'en', 'Saudi expat guide', 'Saudi procedures, explained step by step', 'home'))
@@ -67,8 +67,9 @@ for lang in ('en', 'ur'):
         hub = HUBS.get(f['hub'], {'en': '', 'ur': ''})[lang]
         kicker = ('News · ' if f['type'] == 'news' and lang == 'en' else '') + hub
         cards.append((OUT / lang / f'{md.stem}.jpg', lang, kicker, f['title'], f['hub']))
-for slug, name in TOOLS:
+for slug, name, name_ur in TOOLS:
     cards.append((OUT / 'en' / f'tool-{slug}.jpg', 'en', 'Free calculator', name, 'home'))
+    cards.append((OUT / 'ur' / f'tool-{slug}.jpg', 'ur', 'مفت کیلکولیٹر', name_ur, 'home-rtl'))
 
 TEMPLATE = """<!doctype html><html lang="{lang}"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@600;700&display=block" rel="stylesheet">

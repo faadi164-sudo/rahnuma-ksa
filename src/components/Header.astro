@@ -20,7 +20,7 @@ const topicBase = lang === 'ur' ? 'ur/topics/' : 'topics/';
   <div class="container">
     <span class="note"><Icon name="shield" size={16} color="#9FD3BE" />{t.trustNote}</span>
     <div class="links">
-      <a href={url('tools/hijri-converter/')}>{t.hijri}</a>
+      <a href={url(`${lang === 'ur' ? 'ur/' : ''}tools/hijri-converter/`)}>{t.hijri}</a>
       <span class="lang-switch">
         <a class="en" lang="en" href={enHref} aria-current={lang === 'en' ? 'page' : undefined}>English</a>
         <span aria-hidden="true">|</span>
@@ -52,7 +52,7 @@ const topicBase = lang === 'ur' ? 'ur/topics/' : 'topics/';
         <span class="label-short">WhatsApp</span>
       </a>
     ) : (
-      <a class="btn btn-primary header-cta" href={url(lang === 'ur' ? 'tools/' : 'tools/')}>
+      <a class="btn btn-primary header-cta" href={url(lang === 'ur' ? 'ur/tools/' : 'tools/')}>
         <Icon name="calculator" size={18} />
         <span class="label-long">{lang === 'ur' ? 'مفت کیلکولیٹرز' : 'Free calculators'}</span>
         <span class="label-short">{lang === 'ur' ? 'کیلکولیٹر' : 'Tools'}</span>

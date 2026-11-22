@@ -1,0 +1,157 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+interface Props { lang?: 'en' | 'ur' }
+const { lang = 'en' } = Astro.props;
+const ur = lang === 'ur';
+const L = (en: string, u: string) => (ur ? u : en);
+
+const sources = [
+  { name: 'HRSD — Overtime: hourly wage plus 50% of basic wage; holiday hours count as overtime; 720-hour yearly limit', url: 'https://hrsd.gov.sa/en/knowledge-centre/articles/313' },
+  { name: 'Qoyod — Overtime calculator under Article 107 (actual hourly wage plus 50% of basic hourly wage)', url: 'https://www.qoyod.com/en/calculators/overtime-calculator/' },
+  { name: 'Jisr — Overtime under Article 107 and how the hourly wage is worked out', url: 'https://www.jisr.net/en/glossary/overtime' },
+];
+// Strings used by the script below.
+const S = ur
+  ? {
+      sar: 'ریال', hourly: 'اصل فی گھنٹہ اجرت', half: 'بنیادی فی گھنٹہ اجرت کا 50%', rate: 'ہر اوور ٹائم گھنٹے کی رقم',
+      normal: 'عام دنوں کا اوور ٹائم ({h} گھنٹے)', holiday: 'چھٹی کے دن کے گھنٹے ({h} گھنٹے)', total: 'کل اوور ٹائم',
+      sub: '{h} اوور ٹائم {hw} × {r} فی گھنٹہ۔', hour: 'گھنٹہ', hours: 'گھنٹے',
+      warn: 'ایک مہینے کے لیے یہ بہت زیادہ اوور ٹائم ہے۔ سالانہ حد 720 گھنٹے ہے، الا یہ کہ آپ تحریری طور پر زیادہ پر راضی ہوں۔',
+    }
+  : {
+      sar: 'SAR', hourly: 'Actual hourly wage', half: '50% of basic hourly wage', rate: 'Pay for each overtime hour',
+      normal: 'Normal-day overtime ({h} h)', holiday: 'Holiday hours ({h} h)', total: 'Total overtime pay',
+      sub: '{h} overtime {hw} × {r} per hour.', hour: 'hour', hours: 'hours',
+      warn: 'That is a lot of overtime for one month. The yearly limit is 720 hours unless you agree to more in writing.',
+    };
+---
+<ToolLayout
+  lang={lang}
+  title={L('Overtime pay calculator (Article 107)', 'اوور ٹائم کیلکولیٹر (دفعہ 107)')}
+  description={L(
+    'Work out overtime pay in Saudi Arabia under Article 107: the hourly wage plus 50% of the basic hourly wage, for normal days and public holidays, in riyals.',
+    'سعودی عرب میں دفعہ 107 کے تحت اوور ٹائم کا حساب: فی گھنٹہ اجرت اور بنیادی فی گھنٹہ اجرت کا 50%، عام دنوں اور سرکاری چھٹیوں کے لیے، ریال میں۔',
+  )}
+  slug="overtime-calculator"
+  intro={L(
+    'Enter your basic salary, allowances and overtime hours to see what each overtime hour is worth and what you should be paid this month.',
+    'اپنی بنیادی تنخواہ، الاؤنسز اور اوور ٹائم کے گھنٹے درج کریں اور دیکھیں کہ ہر اوور ٹائم گھنٹے کی کتنی رقم بنتی ہے اور اس مہینے آپ کو کتنا ملنا چاہیے۔',
+  )}
+  sources={sources}
+  lastChecked={L('21 November 2026', '21 نومبر 2026')}
+>
+  <script type="application/json" id="tool-i18n" set:html={JSON.stringify(S)} />
+  <div class="tool-grid">
+    <form class="form-card" id="ot-form" onsubmit="return false">
+      <h2>{L('Your salary and hours', 'آپ کی تنخواہ اور گھنٹے')}</h2>
+      <div class="field">
+        <label for="basic">{L('Basic monthly salary (SAR)', 'ماہانہ بنیادی تنخواہ (ریال)')}</label>
+        <input id="basic" type="number" min="0" step="50" value="4000" inputmode="decimal" />
+      </div>
+      <div class="field">
+        <label for="allow">{L('Monthly allowances (SAR)', 'ماہانہ الاؤنسز (ریال)')}</label>
+        <input id="allow" type="number" min="0" step="50" value="1500" inputmode="decimal" />
+        <p class="hint">{L('Housing, transport and other fixed allowances. Check your contract or Qiwa.', 'رہائش، ٹرانسپورٹ اور دوسرے مقررہ الاؤنسز۔ اپنا معاہدہ یا قوی دیکھیں۔')}</p>
+      </div>
+      <div class="field">
+        <label for="daily">{L('Normal working hours a day', 'روزانہ عام کام کے گھنٹے')}</label>
+        <select id="daily">
+          <option value="8" selected>{L('8 hours (standard)', '8 گھنٹے (معمول)')}</option>
+          <option value="6">{L('6 hours (Muslim workers in Ramadan)', '6 گھنٹے (رمضان میں مسلمان ملازمین)')}</option>
+          <option value="9">{L('9 hours', '9 گھنٹے')}</option>
+          <option value="7">{L('7 hours', '7 گھنٹے')}</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="hours">{L('Overtime hours on normal days', 'عام دنوں میں اوور ٹائم کے گھنٹے')}</label>
+        <input id="hours" type="number" min="0" max="400" step="0.5" value="10" inputmode="decimal" />
+      </div>
+      <div class="field">
+        <label for="holiday">{L('Hours worked on public holidays or Eid', 'سرکاری چھٹی یا عید پر کام کے گھنٹے')}</label>
+        <input id="holiday" type="number" min="0" max="400" step="0.5" value="0" inputmode="decimal" />
+        <p class="hint">{L('Every hour worked on an official holiday counts as overtime.', 'سرکاری چھٹی کے دن کام کا ہر گھنٹہ اوور ٹائم شمار ہوتا ہے۔')}</p>
+      </div>
+    </form>
+
+    <div class="result-card" aria-live="polite">
+      <h2>{L('Overtime pay this month', 'اس مہینے کا اوور ٹائم')}</h2>
+      <div class="result-big" id="total">{L('SAR 0', '0 ریال')}</div>
+      <p class="result-sub" id="sub"></p>
+      <table class="breakdown">
+        <thead><tr><th>{L('Item', 'مد')}</th><th>{L('Amount', 'رقم')}</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="warn" id="warn" hidden></p>
+    </div>
+  </div>
+
+  <Fragment slot="notes">
+    {ur ? (
+      <>
+        <h2>حساب کیسے ہوتا ہے</h2>
+        <ul>
+          <li><strong>اصل فی گھنٹہ اجرت</strong> = (بنیادی تنخواہ + الاؤنسز) ÷ 30 ÷ روزانہ کام کے گھنٹے۔</li>
+          <li><strong>بنیادی فی گھنٹہ اجرت</strong> = بنیادی تنخواہ ÷ 30 ÷ روزانہ کام کے گھنٹے۔</li>
+          <li><strong>ہر اوور ٹائم گھنٹہ</strong> = اصل فی گھنٹہ اجرت + بنیادی فی گھنٹہ اجرت کا 50% (دفعہ 107)۔</li>
+        </ul>
+        <p>بہت سے لوگ "فی گھنٹہ اجرت × 1.5" استعمال کرتے ہیں۔ یہ صرف اس وقت درست ہے جب آپ کی پوری تنخواہ بنیادی ہو اور کوئی الاؤنس نہ ہو۔ الاؤنسز ہوں تو قانون کے مطابق رقم زیادہ بنتی ہے۔</p>
+        <p>اوور ٹائم عموماً روزانہ 8 گھنٹے یا ہفتہ وار 48 گھنٹے کے بعد شروع ہوتا ہے (رمضان میں مسلمان ملازمین کے لیے روزانہ 6 یا ہفتہ وار 36 گھنٹے)۔ اوور ٹائم کی حد سالانہ 720 گھنٹے ہے، الا یہ کہ آپ زیادہ پر راضی ہوں، اور آپ کی رضامندی سے آجر اوور ٹائم کی رقم کے بدلے تنخواہ والی چھٹیاں دے سکتا ہے۔ کچھ انتظامی اور دوسرے عہدے مستثنیٰ ہیں، اس لیے اپنا معاہدہ دیکھیں۔</p>
+      </>
+    ) : (
+      <>
+        <h2>How it's calculated</h2>
+        <ul>
+          <li><strong>Actual hourly wage</strong> = (basic salary + allowances) ÷ 30 ÷ daily working hours.</li>
+          <li><strong>Basic hourly wage</strong> = basic salary ÷ 30 ÷ daily working hours.</li>
+          <li><strong>Each overtime hour</strong> = actual hourly wage + 50% of the basic hourly wage (Article 107).</li>
+        </ul>
+        <p>Many people use "hourly wage × 1.5". That gives the same answer only when your whole salary is basic pay with no allowances. With allowances, the law pays more.</p>
+        <p>Overtime normally starts after 8 hours a day or 48 hours a week (6 hours a day or 36 a week for Muslim workers in Ramadan). Overtime is capped at 720 hours a year unless you agree to more, and with your consent the employer can give paid days off instead of overtime pay. Some managerial and other roles are excluded, so check your contract.</p>
+      </>
+    )}
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const S = JSON.parse(document.getElementById('tool-i18n')!.textContent!) as Record<string, string>;
+  const ur = document.documentElement.lang === 'ur';
+  const num = (id: string) => Math.max(0, Number((document.getElementById(id) as HTMLInputElement).value) || 0);
+  const amount = (n: number) => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const fmt = (n: number) => (ur ? `${amount(n)} ${S.sar}` : `${S.sar} ${amount(n)}`);
+  const fill = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k]));
+  const form = document.getElementById('ot-form') as HTMLFormElement;
+
+  function calc() {
+    const basic = num('basic');
+    const allow = num('allow');
+    const daily = num('daily') || 8;
+    const hours = num('hours');
+    const holiday = num('holiday');
+    const actualHourly = (basic + allow) / 30 / daily;
+    const basicHourly = basic / 30 / daily;
+    const rate = actualHourly + 0.5 * basicHourly;
+    const totalHours = hours + holiday;
+    const total = rate * totalHours;
+
+    document.getElementById('total')!.textContent = fmt(total);
+    document.getElementById('sub')!.textContent = fill(S.sub, { h: totalHours, hw: totalHours === 1 ? S.hour : S.hours, r: fmt(rate) });
+    const rows: [string, number][] = [
+      [S.hourly, actualHourly],
+      [S.half, 0.5 * basicHourly],
+      [S.rate, rate],
+    ];
+    if (hours) rows.push([fill(S.normal, { h: hours }), rate * hours]);
+    if (holiday) rows.push([fill(S.holiday, { h: holiday }), rate * holiday]);
+    rows.push([S.total, total]);
+    document.getElementById('rows')!.innerHTML = rows
+      .map(([k, v]) => `<tr><td>${k}</td><td>${fmt(v)}</td></tr>`)
+      .join('');
+    const warn = document.getElementById('warn')!;
+    warn.hidden = totalHours <= 60;
+    warn.textContent = S.warn;
+  }
+  form.addEventListener('input', calc);
+  form.addEventListener('change', calc);
+  calc();
+</script>

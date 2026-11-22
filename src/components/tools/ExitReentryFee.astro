@@ -1,0 +1,169 @@
+---
+import ToolLayout from '../../layouts/ToolLayout.astro';
+
+interface Props { lang?: 'en' | 'ur' }
+const { lang = 'en' } = Astro.props;
+const ur = lang === 'ur';
+const L = (en: string, u: string) => (ur ? u : en);
+
+const sources = [
+  { name: 'Gulf News — No refunds for cancelled exit and re-entry visas (Jawazat fees, 2025)', url: 'https://gulfnews.com/world/gulf/saudi/saudi-arabia-no-refunds-for-canceled-exit-and-re-entry-visas-1.500163506' },
+  { name: 'Saudi Gazette — Re-entry visa and residency renewal fees doubled for expats outside Saudi Arabia (30 Dec 2022)', url: 'https://saudigazette.com.sa/article/628476' },
+  { name: 'Saudi Gazette — Conditions for exit and re-entry visas (17 Jan 2024)', url: 'https://saudigazette.com.sa/article/639701' },
+  { name: 'Absher — Ministry of Interior', url: 'https://www.absher.sa' },
+];
+const S = ur
+  ? {
+      sar: 'ریال', monthsNew: 'کتنے مہینے؟', monthsExt: 'مزید کتنے مہینے چاہییں؟',
+      base: 'بنیادی فیس ({b} مہینوں تک)', extra: '{n} اضافی {mw} × {r} ریال', month: 'مہینہ', months: 'مہینے',
+      subNew: '{t} ویزا، {m} {mw} کے لیے: فی فرد {f}۔', single: 'سنگل', multiple: 'ملٹیپل',
+      ext: '{m} {mw} × {r} ریال (بیرون ملک دگنی)',
+      subExt: 'بیرون ملک سے {t} ویزا میں توسیع: فی فرد {f}۔ سعودی عرب کے اندر یہ {h} ہوتی۔',
+      people: '× {p} افراد', total: 'کل',
+    }
+  : {
+      sar: 'SAR', monthsNew: 'How many months?', monthsExt: 'Extra months needed',
+      base: 'Base fee (up to {b} months)', extra: '{n} extra {mw} × SAR {r}', month: 'month', months: 'months',
+      subNew: '{t} visa for {m} {mw}: {f} per person.', single: 'Single', multiple: 'Multiple',
+      ext: '{m} {mw} × SAR {r} (doubled abroad)',
+      subExt: 'Extending a {t} visa from abroad: {f} per person. Inside Saudi Arabia it would be {h}.',
+      people: '× {p} people', total: 'Total',
+    };
+---
+<ToolLayout
+  lang={lang}
+  title={L('Exit re-entry visa fee calculator', 'ایگزٹ ری انٹری ویزا فیس کیلکولیٹر')}
+  description={L(
+    'Work out the exit re-entry visa fee in Saudi Arabia: single SAR 200 for 2 months, multiple SAR 500 for 3 months, extra months, family members, and extensions from abroad.',
+    'سعودی عرب میں ایگزٹ ری انٹری ویزا کی فیس: سنگل 2 ماہ کے لیے 200 ریال، ملٹیپل 3 ماہ کے لیے 500 ریال، اضافی مہینے، فیملی، اور بیرون ملک سے توسیع۔',
+  )}
+  slug="exit-reentry-visa-fee-calculator"
+  intro={L(
+    'See what a single or multiple exit re-entry visa costs for the months you need, for yourself and your family, or what it costs to extend one from outside Saudi Arabia.',
+    'دیکھیں کہ مطلوبہ مہینوں کے لیے آپ اور آپ کی فیملی کا سنگل یا ملٹیپل ایگزٹ ری انٹری ویزا کتنے کا بنتا ہے، یا سعودی عرب سے باہر رہتے ہوئے توسیع کتنے کی ہوگی۔',
+  )}
+  sources={sources}
+  lastChecked={L('21 November 2026', '21 نومبر 2026')}
+>
+  <script type="application/json" id="tool-i18n" set:html={JSON.stringify(S)} />
+  <div class="tool-grid">
+    <form class="form-card" id="visa-form" onsubmit="return false">
+      <h2>{L('Your trip', 'آپ کا سفر')}</h2>
+      <div class="field">
+        <span class="label">{L('What do you need?', 'آپ کو کیا چاہیے؟')}</span>
+        <div class="seg" role="radiogroup" aria-label={L('New visa or extension', 'نیا ویزا یا توسیع')}>
+          <label><input type="radio" name="mode" value="new" checked /> {L('New visa', 'نیا ویزا')}</label>
+          <label><input type="radio" name="mode" value="extend" /> {L('Extend from abroad', 'بیرون ملک سے توسیع')}</label>
+        </div>
+      </div>
+      <div class="field">
+        <span class="label">{L('Visa type', 'ویزا کی قسم')}</span>
+        <div class="seg" role="radiogroup" aria-label={L('Visa type', 'ویزا کی قسم')}>
+          <label><input type="radio" name="type" value="single" checked /> {L('Single (one trip)', 'سنگل (ایک سفر)')}</label>
+          <label><input type="radio" name="type" value="multiple" /> {L('Multiple (several trips)', 'ملٹیپل (کئی سفر)')}</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="months" id="months-label">{L('How many months?', 'کتنے مہینے؟')}</label>
+        <input id="months" name="months" type="number" min="1" max="24" step="1" value="2" inputmode="numeric" />
+        <p class="hint" id="months-hint">{L('Must end before your iqama expires.', 'اقامہ ختم ہونے سے پہلے مکمل ہونا ضروری ہے۔')}</p>
+      </div>
+      <div class="field">
+        <label for="people">{L('How many people?', 'کتنے افراد؟')}</label>
+        <input id="people" name="people" type="number" min="1" max="15" step="1" value="1" inputmode="numeric" />
+        <p class="hint">{L('Each traveller, including each child, needs their own visa.', 'ہر مسافر کو، ہر بچے سمیت، الگ ویزا درکار ہے۔')}</p>
+      </div>
+    </form>
+
+    <div class="result-card" aria-live="polite">
+      <h2>{L('Total fee', 'کل فیس')}</h2>
+      <div class="result-big" id="total">{L('SAR 0', '0 ریال')}</div>
+      <p class="result-sub" id="sub"></p>
+      <table class="breakdown">
+        <thead><tr><th>{L('Item', 'مد')}</th><th>{L('Amount', 'رقم')}</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="warn">{L(
+        'The fee is not refunded if you cancel the visa. Unpaid traffic fines, a passport with less than 90 days left, or unpaid family fees will stop the visa from being issued.',
+        'ویزا منسوخ کرنے پر فیس واپس نہیں ہوتی۔ بقایا ٹریفک جرمانے، 90 دن سے کم میعاد والا پاسپورٹ، یا فیملی کی بقایا فیس ہو تو ویزا جاری نہیں ہوگا۔',
+      )}</p>
+    </div>
+  </div>
+
+  <Fragment slot="notes">
+    {ur ? (
+      <>
+        <h2>حساب کیسے ہوتا ہے</h2>
+        <ul>
+          <li><strong>سنگل ایگزٹ ری انٹری:</strong> 2 ماہ تک 200 ریال، پھر ہر اضافی مہینے کے 100 ریال۔</li>
+          <li><strong>ملٹیپل ایگزٹ ری انٹری:</strong> 3 ماہ تک 500 ریال، پھر ہر اضافی مہینے کے 200 ریال۔</li>
+          <li><strong>سعودی عرب سے باہر رہتے ہوئے توسیع:</strong> فیس دگنی ہو جاتی ہے، یعنی سنگل ویزا کے لیے 200 ریال ماہانہ اور ملٹیپل کے لیے 400 ریال ماہانہ۔</li>
+        </ul>
+        <p>اضافی مہینے صرف اقامہ کی باقی میعاد کے اندر شامل ہو سکتے ہیں۔ ویزا کفیل ابشر پر (فیملی کے افراد کے لیے)، آجر ابشر بزنس یا مقیم پر جاری کرتا ہے، یا ملازم ابشر پر اس کی درخواست دیتا ہے۔</p>
+      </>
+    ) : (
+      <>
+        <h2>How it's calculated</h2>
+        <ul>
+          <li><strong>Single exit re-entry:</strong> SAR 200 for up to 2 months, then SAR 100 for each extra month.</li>
+          <li><strong>Multiple exit re-entry:</strong> SAR 500 for up to 3 months, then SAR 200 for each extra month.</li>
+          <li><strong>Extending from outside Saudi Arabia:</strong> the fee is doubled, so SAR 200 a month for a single visa and SAR 400 a month for a multiple visa.</li>
+        </ul>
+        <p>Extra months can only be added within the iqama's remaining validity. The visa is issued by the sponsor on Absher (family members), by the employer on Absher Business or Muqeem, or requested by the worker on Absher.</p>
+      </>
+    )}
+  </Fragment>
+</ToolLayout>
+
+<script>
+  const S = JSON.parse(document.getElementById('tool-i18n')!.textContent!) as Record<string, string>;
+  const ur = document.documentElement.lang === 'ur';
+  const fill = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k]));
+  const form = document.getElementById('visa-form') as HTMLFormElement;
+  const fmt = (n: number) => (ur ? `${n.toLocaleString('en-US')} ${S.sar}` : `${S.sar} ${n.toLocaleString('en-US')}`);
+  const val = (sel: string) => (form.querySelector(sel) as HTMLInputElement).value;
+  const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, Math.floor(n) || lo));
+  const mw = (n: number) => (n === 1 ? S.month : S.months);
+
+  function newVisaFee(type: string, months: number) {
+    if (type === 'single') return 200 + Math.max(0, months - 2) * 100;
+    return 500 + Math.max(0, months - 3) * 200;
+  }
+
+  function calc() {
+    const mode = val('input[name="mode"]:checked');
+    const type = val('input[name="type"]:checked');
+    const months = clamp(Number(val('#months')), 1, 24);
+    const people = clamp(Number(val('#people')), 1, 15);
+    document.getElementById('months-label')!.textContent = mode === 'new' ? S.monthsNew : S.monthsExt;
+    const typeName = type === 'single' ? S.single : S.multiple;
+
+    const rows: [string, number][] = [];
+    let each: number;
+    if (mode === 'new') {
+      each = newVisaFee(type, months);
+      const baseMonths = type === 'single' ? 2 : 3;
+      const base = type === 'single' ? 200 : 500;
+      const rate = type === 'single' ? 100 : 200;
+      rows.push([fill(S.base, { b: baseMonths }), base]);
+      const extra = Math.max(0, months - baseMonths);
+      if (extra) rows.push([fill(S.extra, { n: extra, r: rate, mw: mw(extra) }), extra * rate]);
+      document.getElementById('sub')!.textContent = fill(S.subNew, { t: typeName, m: months, mw: mw(months), f: fmt(each) });
+    } else {
+      const rate = type === 'single' ? 200 : 400;
+      each = months * rate;
+      rows.push([fill(S.ext, { m: months, r: rate, mw: mw(months) }), each]);
+      document.getElementById('sub')!.textContent = fill(S.subExt, { t: ur ? typeName : typeName.toLowerCase(), f: fmt(each), h: fmt(each / 2) });
+    }
+    if (people > 1) rows.push([fill(S.people, { p: people }), each * (people - 1)]);
+    const total = each * people;
+    rows.push([S.total, total]);
+    document.getElementById('total')!.textContent = fmt(total);
+    document.getElementById('rows')!.innerHTML = rows
+      .map(([k, v]) => `<tr><td>${k}</td><td>${fmt(v)}</td></tr>`)
+      .join('');
+  }
+  form.addEventListener('input', calc);
+  form.addEventListener('change', calc);
+  calc();
+</script>

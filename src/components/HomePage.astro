@@ -119,7 +119,7 @@ const schema = [
       </div>
       <div class="cards">
         {TOOLS.map((tool) => (
-          <a class="card" href={url(`tools/${tool.slug}/`)}>
+          <a class="card" href={url(`${ur ? 'ur/' : ''}tools/${tool.slug}/`)}>
             <span class="icon"><Icon name={tool.icon} size={28} /></span>
             <h3>{L(tool.en, tool.ur)}</h3>
             <p>{L(tool.desc, tool.descUr)}</p>

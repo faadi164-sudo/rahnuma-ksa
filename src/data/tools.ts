@@ -20,9 +20,9 @@ export const TOOLS: Tool[] = [
     slug: 'end-of-service-calculator',
     icon: 'calculator',
     en: 'End-of-service calculator',
-    ur: 'اختتامِ سروس کیلکولیٹر',
+    ur: 'اینڈ آف سروس کیلکولیٹر',
     desc: 'Your end-of-service award under the Saudi labor law, for resignation or termination.',
-    descUr: 'استعفیٰ یا برطرفی پر سعودی لیبر قانون کے مطابق آپ کا اختتامِ سروس ایوارڈ۔',
+    descUr: 'استعفیٰ یا برطرفی پر سعودی لیبر قانون کے مطابق آپ کا اینڈ آف سروس ایوارڈ۔',
   },
   {
     slug: 'postal-code-finder',
