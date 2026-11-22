@@ -95,7 +95,8 @@ const urPath = lang === 'ur' ? path : altPath;
     {/* Fonts load without blocking the first paint. The Urdu font is only requested on Urdu pages. */}
     <link rel="preload" as="style" href={fontsHref} onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href={fontsHref} /></noscript>
-    {/* After AdSense approval: add the AdSense script here and set SITE.adsEnabled = true. */}
+    {/* AdSense site verification. The ad script itself is added only after approval (SITE.adsEnabled). */}
+    {SITE.adsensePublisher && <meta name="google-adsense-account" content={SITE.adsensePublisher} />}
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   </head>
   <body>

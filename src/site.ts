@@ -12,6 +12,8 @@ export const SITE = {
   whatsappUrl: '',
   // Google tag (Google Analytics 4 property "Living KSA (livingksa.com)").
   googleTagId: 'GTM-P3CLL7QQ',
+  // AdSense publisher ID (verification meta tag and ads.txt). Ads load only when adsEnabled is true.
+  adsensePublisher: 'ca-pub-8037431918456738',
   // Turn on only after AdSense approval.
   adsEnabled: false,
 };
