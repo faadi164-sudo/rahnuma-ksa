@@ -7,7 +7,7 @@ lang: en
 type: guide
 quickAnswer: "Residents with a valid iqama register personally on the Nusuk app or nusuk.sa, check eligibility, choose a package from a licensed Hajj company and pay through SADAD to get a Hajj permit. Priority goes to people who have not performed Hajj before. In 2026 registration opened in early Ramadan; Hajj 1448 is expected around 15 May 2027 (Day of Arafah on the Umm al-Qura calendar)."
 published: 2026-11-13
-lastChecked: 2026-11-13
+lastChecked: 2026-11-22
 translationKey: hajj-residents
 draft: false
 sources:
@@ -19,6 +19,8 @@ sources:
     url: "https://saudigazette.com.sa/article/660481"
   - name: "Okaz — Domestic pilgrims must be at least 15; registration through licensed companies on Nusuk (2026)"
     url: "https://www.okaz.com.sa/local/na/2237531"
+  - name: "Wego — Is Hajj 2027 registration open? Nusuk has not yet announced the 1448 dates (Nov 2026)"
+    url: "https://blog.wego.com/can-you-register-for-hajj-2027/"
   - name: "Wego — Local Hajj 2026: registration 23 Feb, package payment from 4 Mar"
     url: "https://blog.wego.com/local-hajj/"
 faq:
@@ -38,7 +40,7 @@ faq:
 
 ## Step by step
 
-1. **Watch for the announcement.** For 1447 (2026), registration opened on 23 February (early Ramadan).
+1. **Watch for the announcement.** For 1447 (2026), registration opened on 23 February (early Ramadan). As of November 2026, the Ministry has not announced the 1448 dates.
 2. **Create a Nusuk account** on the app or nusuk.sa and enter your details yourself.
 3. **Check eligibility.** Nusuk confirms whether you can book.
 4. **Choose a package.** Packages come only from licensed Hajj companies listed in Nusuk. They differ by camp location, tent type and transport.

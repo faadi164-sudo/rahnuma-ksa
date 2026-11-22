@@ -280,3 +280,14 @@ Checked 10 November 2026. Every guide is `draft: true` until you verify its fact
 - Self-Deportation Platform: official steps, fees and whether an entry ban applies.
 - Driving licence restriction codes (no reliable source found yet).
 - Official Moroor violations table (primary source) to replace the B-graded traffic list.
+
+## Batch 12 — Ramadan 2027 (checked 22 Nov 2026)
+
+| Fact | Value | Source | Grade |
+| --- | --- | --- | --- |
+| Ramadan hours | Muslims: at most 6 h/day or 36 h/week (Art. 98); breaks not counted (Art. 102) | [HRSD Labor Law](https://www.hrsd.gov.sa/en/node/5576008), [Qoyod](https://www.qoyod.com/en/glossary/statutory-working-hours/) | A |
+| Non-Muslim staff | Reduction not legally required; many employers apply it to all | [PwC](https://www.pwc.com/m1/en/tax/documents/2018/ramadan-in-gcc-what-employers-need-to-know.pdf), [Saudi Expatriates](https://saudi-expatriates.com/2019/03/ramadan-working-hours-as-per-saudi-labor-law.html) | B |
+| 1 Ramadan 1448 | Mon 8 Feb 2027 (Umm al-Qura, expected) | [Ajel](https://ajel.sa/guide/ramadan/working-hours) | B (sighting) |
+| Eating in public | Interior Ministry: non-Muslims must not eat, drink or smoke in public, incl. streets and workplaces; deportation warned | [Arab News 2014](https://www.arabnews.com/news/593401), [Arab News PK 2026](https://www.arabnews.pk/node/2634595) | B |
+| Zakat al-Fitr | One sa' (about 3 kg) of staple food per person, before Eid prayer; cash figures in sources conflict (15/25/30) so not stated | [Saudipedia](https://saudipedia.com/en/zakat-al-fitr-in-saudi-arabia) | A |
+| Hajj 1448 registration | Not announced as of Nov 2026; 1447 opened 6 Ramadan (23 Feb 2026), packages 15 Ramadan (4 Mar) | [Wego](https://blog.wego.com/can-you-register-for-hajj-2027/), [Saudi Gazette](https://saudigazette.com.sa/article/659173/saudi-arabia/saudi-arabia-opens-registration-for-domestic-pilgrims-for-hajj-2026) | A |
