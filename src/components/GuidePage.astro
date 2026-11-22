@@ -36,7 +36,7 @@ const schema: object[] = [
     inLanguage: lang,
     datePublished: d.published.toISOString(),
     dateModified: d.lastChecked.toISOString(),
-    author: { '@type': 'Person', name: SITE.owner },
+    author: { '@type': 'Organization', name: SITE.name, url: Astro.site?.href },
     publisher: { '@type': 'Organization', name: SITE.name },
     mainEntityOfPage: abs(path),
     citation: d.sources.map((s) => s.url),

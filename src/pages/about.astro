@@ -1,12 +1,25 @@
 ---
 import Prose from '../layouts/Prose.astro';
+import { getCollection } from 'astro:content';
 import { SITE, url, HAS_EMAIL } from '../site';
+import { TOOLS } from '../data/tools';
+
+const guides = await getCollection('guides', (g) => !g.data.draft);
+const en = guides.filter((g) => g.data.lang === 'en').length;
+const ur = guides.filter((g) => g.data.lang === 'ur').length;
 ---
-<Prose title="About us" description={`Who writes ${SITE.name} and why: practical, checked guides for expats in Saudi Arabia.`} path="about/">
+<Prose title="About us" description={`What ${SITE.name} is and how it works: practical, checked guides for expats in Saudi Arabia, in English and Urdu.`} path="about/">
   <p>{SITE.name} explains Saudi procedures step by step for expats: iqama, visas, Absher, labor law, driving and daily life. Every guide links the official source it relies on and shows the date it was last checked. The most-used guides are also available in Urdu.</p>
 
-  <h2>Who writes the guides</h2>
-  <p>{SITE.name} is written by {SITE.owner}. <!-- TODO: two or three lines about yourself: how long you have lived in Saudi Arabia, your professional background, and why you started the site. Real first-hand experience is what readers and Google trust. --></p>
+  <h2>Why this site exists</h2>
+  <p>Most official information about Saudi procedures is in Arabic or spread across several government portals, and much of what gets forwarded in WhatsApp groups is out of date. {SITE.name} puts each procedure in one place: what you need, the steps in order, the fees, and the mistakes that cost people time and money. It is written in Saudi Arabia for people who live and work here.</p>
+
+  <h2>What you will find</h2>
+  <ul>
+    <li>{en} step-by-step guides in English, and {ur} in Urdu, with more Urdu guides added every week.</li>
+    <li>{TOOLS.length} free calculators, including iqama fees, end-of-service benefit, exit re-entry visa fees, overtime and annual leave.</li>
+    <li>Short news updates when a fee, rule or deadline changes.</li>
+  </ul>
 
   <h2>How we work</h2>
   <ul>

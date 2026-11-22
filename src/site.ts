@@ -6,10 +6,9 @@ export const SITE = {
     'Step-by-step guides for expats in Saudi Arabia: iqama, visas, Absher, labor law and daily life. Official sources and a last-checked date on every guide. In English and Urdu.',
   descriptionUr:
     'سعودی عرب میں مقیم افراد کے لیے مرحلہ وار رہنمائی: اقامہ، ویزا، ابشر اور لیبر قانون۔ ہر رہنمائی میں سرکاری ذریعہ اور آخری تصدیق کی تاریخ۔',
-  // TODO before launch: your real details.
-  owner: 'Fawad Ahmed',
-  // Leave empty until real ones exist; the site hides email and WhatsApp links while they are empty.
-  email: '',
+  // Forwarded to the owner's inbox by Porkbun email forwarding.
+  email: 'hello@livingksa.com',
+  // Leave empty until a channel exists; the site hides WhatsApp links while it is empty.
   whatsappUrl: '',
   // Google tag (Google Analytics 4 property "Living KSA (livingksa.com)").
   googleTagId: 'GTM-P3CLL7QQ',
