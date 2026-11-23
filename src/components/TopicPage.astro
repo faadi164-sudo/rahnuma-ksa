@@ -6,6 +6,7 @@ import { SITE, url, formatDate, HAS_WHATSAPP } from '../site';
 import { type Hub } from '../data/hubs';
 import { getGuides, guidePath } from '../lib/guides';
 import { T } from '../i18n';
+import { HUB_INTROS } from '../data/hub-intros';
 
 interface Props {
   hub: Hub;
@@ -20,6 +21,17 @@ const translatedKeys = new Set(guides.map((g) => g.data.translationKey).filter(B
 const englishOnly = ur
   ? (await getGuides('en')).filter((g) => g.data.hub === hub.slug && !(g.data.translationKey && translatedKeys.has(g.data.translationKey)))
   : [];
+const intro = HUB_INTROS[hub.slug];
+// "Start here" links: a guide in this language if it exists, else the English one; or a calculator.
+const allEn = await getGuides('en');
+const start = intro.start.map((key) => {
+  if (key.startsWith('tools/')) {
+    return { href: url(`${ur ? 'ur/' : ''}${key}/`), title: ur ? 'اقامہ فیس کیلکولیٹر' : 'Iqama fee calculator', en: false };
+  }
+  const own = guides.find((g) => g.id.split('/').pop() === key);
+  const g = own ?? allEn.find((x) => x.id.split('/').pop() === key);
+  return g ? { href: url(guidePath(g)), title: g.data.title, en: ur && !own } : null;
+}).filter(Boolean) as { href: string; title: string; en: boolean }[];
 const path = `${ur ? 'ur/' : ''}topics/${hub.slug}/`;
 const altPath = `${ur ? '' : 'ur/'}topics/${hub.slug}/`;
 ---
@@ -28,7 +40,7 @@ const altPath = `${ur ? '' : 'ur/'}topics/${hub.slug}/`;
   path={path}
   altPath={altPath}
   title={ur ? hub.ur : hub.en}
-  description={ur ? `${hub.ur}: سعودی عرب میں مقیم افراد کے لیے مرحلہ وار رہنمائی۔` : hub.blurb}
+  description={ur ? `${hub.ur}: ${intro.blurbUr}` : hub.blurb}
 >
   <div class="page-head has-photo">
     <PhotoBg name={hub.slug} />
@@ -37,10 +49,22 @@ const altPath = `${ur ? '' : 'ur/'}topics/${hub.slug}/`;
         <ol class="breadcrumb"><li><a href={url(ur ? 'ur/' : '')}>{t.home}</a></li></ol>
       </nav>
       <h1>{ur ? hub.ur : hub.en}</h1>
-      {!ur && <p class="sub">{hub.blurb}</p>}
+      <p class="sub">{ur ? intro.blurbUr : hub.blurb}</p>
     </div>
   </div>
   <div class="container" style="padding-top: 32px; padding-bottom: 56px; max-width: 900px">
+    <section class="prose hub-intro">
+      {(ur ? intro.ur : intro.en).map((para) => <p>{para}</p>)}
+      {start.length > 0 && (
+        <>
+          <h2>{ur ? 'یہاں سے شروع کریں' : 'Start here'}</h2>
+          <ul>
+            {start.map((s) => <li><a href={s.href} lang={s.en ? 'en' : undefined} dir={s.en ? 'ltr' : undefined}>{s.title}</a></li>)}
+          </ul>
+        </>
+      )}
+      <h2>{ur ? 'اس موضوع پر تمام رہنمائیاں' : 'All guides on this topic'}</h2>
+    </section>
     {guides.length > 0 && (
       <div class="link-list">
         {guides.map((g) => (

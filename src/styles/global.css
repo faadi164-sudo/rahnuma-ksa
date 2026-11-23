@@ -320,3 +320,9 @@ a.card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(11, 110,
 .hero.has-photo .chips .label { color: #dbe8e2; }
 .hero.has-photo .chip { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.35); color: #fff; }
 .hero.has-photo .chip:hover { background: #fff; border-color: #fff; color: var(--accent-dark); }
+
+/* Topic page introduction */
+.hub-intro { margin-bottom: 18px; }
+.hub-intro p { margin: 0 0 14px; }
+.hub-intro h2 { font-size: 20px; margin: 26px 0 10px; }
+.hub-intro ul { margin: 0 0 6px; }
