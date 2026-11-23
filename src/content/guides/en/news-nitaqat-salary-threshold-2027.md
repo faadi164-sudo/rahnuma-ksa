@@ -74,4 +74,4 @@ You can check an employer's band through the Ministry of Human Resources inquiry
 
 1. Check your employer's Nitaqat band on Qiwa, and check it again after 25 April 2027.
 2. Make sure your own contract is documented on Qiwa. A documented contract is one of the conditions for moving jobs.
-3. If your employer drops to red, read our guide to changing jobs without your employer's consent.
+3. If your employer drops to red, read our [guide to changing jobs without your employer's consent](/guides/job-transfer-without-employer-consent/).

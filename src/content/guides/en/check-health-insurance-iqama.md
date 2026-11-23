@@ -80,7 +80,7 @@ An employer that doesn't insure covered staff and family, or stops paying, must 
 
 ## Visitors on a visit visa
 
-Visitors need their own cover. Every visit visa, and every extension, comes with medical insurance that covers emergencies only, up to SAR 100,000 per visitor, starting from the day they enter Saudi Arabia. It isn't a full health policy, so routine treatment is paid separately. To check a visitor's cover, use the Insurance Authority's **Visit Visa Travel Insurance Inquiry** with the passport number used for the visa. See our guide to visit visa medical insurance.
+Visitors need their own cover. Every visit visa, and every extension, comes with medical insurance that covers emergencies only, up to SAR 100,000 per visitor, starting from the day they enter Saudi Arabia. It isn't a full health policy, so routine treatment is paid separately. To check a visitor's cover, use the Insurance Authority's **Visit Visa Travel Insurance Inquiry** with the passport number used for the visa. See our [guide to visit visa medical insurance](/guides/visit-visa-medical-insurance/).
 
 ## If something is wrong
 

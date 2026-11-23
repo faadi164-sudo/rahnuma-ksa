@@ -73,5 +73,5 @@ Doubling use from 30 to 60 m³ more than triples the bill, because every cubic m
 
 - **See the bill** in the NWC app or the NWC e-branch, registered with your iqama.
 - **Pay through SADAD** in your bank app under National Water Company.
-- **Put the account in your name.** NWC and Ejar link water meters to registered leases, so the bill can be issued in the tenant's name. See our guide to the water bill.
+- **Put the account in your name.** NWC and Ejar link water meters to registered leases, so the bill can be issued in the tenant's name. See our [guide to the water bill](/guides/water-bill-nwc/).
 - **Watch the first 2027 bills** for a sudden jump, and check for leaks before you dispute it.

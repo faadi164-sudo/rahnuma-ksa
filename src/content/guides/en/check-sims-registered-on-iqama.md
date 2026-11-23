@@ -70,7 +70,7 @@ A common situation: you bought a SIM in your name for your wife, a son or a dome
 - **Banks** also need a number in the account holder's own name to open an account online.
 - **Fines and misuse** on that line come back to you.
 
-Once they have an iqama, get them a SIM in their own name, update their Absher number, then cancel the line on your iqama. See our guide to changing the mobile number in Absher.
+Once they have an iqama, get them a SIM in their own name, update their Absher number, then cancel the line on your iqama. See our [guide to changing the mobile number in Absher](/guides/absher-change-mobile-number/).
 
 ## Before a final exit
 

@@ -73,5 +73,5 @@ Up to 6,000 kWh, every kWh costs 3 halalas more. Summer months with heavy air-co
 
 - **Pay through SADAD** in your bank app. Saudi Energy is biller code 002 at most banks, and partial payments are accepted.
 - **Don't let arrears build up.** Power can be disconnected once unpaid bills go above SAR 1,000.
-- **Put the meter in the right name.** Ejar requires utility meters to be linked to the person using the property, and Saudi Energy asks for a meter declaration as owner or tenant. With a registered lease, the account can move into your name. See our guide to the electricity account.
+- **Put the meter in the right name.** Ejar requires utility meters to be linked to the person using the property, and Saudi Energy asks for a meter declaration as owner or tenant. With a registered lease, the account can move into your name. See our [guide to the electricity account](/guides/electricity-account-sec/).
 - **Check the first 2027 bill** against the rates above, especially if it covers days in both December and January.

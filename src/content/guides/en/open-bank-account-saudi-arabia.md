@@ -80,7 +80,7 @@ Banks also may not demand a minimum amount to open a current account, or close i
 - **Salary.** Give your IBAN to HR. Salaries are paid through the Wage Protection System (Mudad), which flags late payments, so the account your employer has on file must be correct.
 - **Government fees.** Pay iqama renewals, dependent fees and exit re-entry visas in the government payments section of your app.
 - **Bills.** Electricity, water and phone bills are paid through SADAD in the same app. Electricity is biller code 002 at most banks.
-- **Money home.** Compare the amount your family receives, not just the fee. See our guide to sending money home.
+- **Money home.** Compare the amount your family receives, not just the fee. See our [guide to sending money home](/guides/send-money-home-from-saudi-arabia/).
 - **Pakistanis.** A Roshan Digital Account lets you hold an account in Pakistan, opened online and funded from abroad.
 
 ## Common mistakes

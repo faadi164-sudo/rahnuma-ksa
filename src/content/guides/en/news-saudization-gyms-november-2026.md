@@ -61,7 +61,7 @@ This decision sets a share for specific jobs. Separately, every employer has an 
 - **Stay:** the rule sets a 15% Saudi share in these jobs, so expats can still fill the rest.
 - **Move to another gym:** job transfers through Qiwa need, among other conditions, a year with your current employer, a documented contract and notice to the employer. Some cases, such as unpaid salaries for three months or a red-band employer, allow a transfer without consent.
 - **Change role:** if you move into a job outside the 12, your employer can request a profession change on Qiwa.
-- **Leave:** if your job ends, check your end-of-service benefit with our calculator.
+- **Leave:** if your job ends, check your end-of-service benefit with our [end-of-service calculator](/tools/end-of-service-calculator/).
 
 ## Other Saudization dates to watch
 
