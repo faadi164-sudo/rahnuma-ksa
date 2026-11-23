@@ -1,7 +1,7 @@
 ---
 title: "Lost or damaged Saudi driving licence: how to get a replacement (SAR 100)"
 seoTitle: "Replace a lost Saudi driving licence (SAR 100)"
-description: "Replace a lost, stolen or damaged Saudi driving licence: pay the SAR 100 fee, apply on Absher or at Muroor, and use your digital licence or a licence report meanwhile."
+description: "Replace a lost, stolen or damaged Saudi driving licence: pay the SAR 100 fee, apply on Absher or at Muroor, and use your digital licence in the meantime."
 hub: driving
 lang: en
 type: guide

@@ -1,7 +1,7 @@
 ---
 title: "Renew your Saudi driving licence on Absher: medical, fees and late penalty"
 seoTitle: "Renew a Saudi driving licence on Absher"
-description: "Renew a Saudi driving licence online: Efada medical check, SAR 40 a year for 2, 5 or 10 years, pay fines first, and what happens if your licence has already expired."
+description: "Renew a Saudi driving licence online: Efada medical check, SAR 40 a year for 2, 5 or 10 years, fines paid first, and what to do if it has expired."
 hub: driving
 lang: en
 type: guide

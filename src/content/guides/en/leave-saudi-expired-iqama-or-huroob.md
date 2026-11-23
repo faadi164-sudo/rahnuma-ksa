@@ -1,7 +1,7 @@
 ---
 title: "Leaving Saudi Arabia with an expired iqama or a huroob report: your legal options"
 seoTitle: "Leave Saudi Arabia with an expired iqama or huroob"
-description: "A final exit needs a valid iqama. How to leave legally if your iqama has expired or you are reported absent: employer renewal, transfer, Ministry, embassy or Jawazat."
+description: "A final exit needs a valid iqama. How to leave legally if your iqama has expired or you're reported absent: renewal, transfer, Ministry, embassy or Jawazat."
 hub: iqama
 lang: en
 type: guide

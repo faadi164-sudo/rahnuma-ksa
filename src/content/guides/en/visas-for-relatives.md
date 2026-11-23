@@ -1,7 +1,7 @@
 ---
 title: "Bringing relatives to visit Saudi Arabia: family visit visa, e-visa or Umrah visa?"
 seoTitle: "Visas for relatives visiting Saudi Arabia"
-description: "Compare the ways relatives can visit you in Saudi Arabia: family visit visa, tourist e-visa, the package visa pilot for Pakistanis and Indians, and the Umrah visa."
+description: "Ways relatives can visit you in Saudi Arabia: family visit visa, tourist e-visa, the package visa pilot for Pakistanis and Indians, and the Umrah visa."
 hub: visas
 lang: en
 type: guide

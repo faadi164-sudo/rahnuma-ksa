@@ -1,7 +1,7 @@
 ---
 title: "Pakistani and Indian community schools in Saudi Arabia: where they are and how to apply"
 seoTitle: "Pakistani and Indian schools in Saudi Arabia"
-description: "Pakistan International Schools and the Indian embassy-linked CBSE schools across Saudi Arabia: cities, curricula, typical fees and the documents you need to apply."
+description: "Pakistan International Schools and the Indian embassy-linked CBSE schools in Saudi Arabia: cities, curricula, typical fees and documents to apply."
 hub: family
 lang: en
 type: guide

@@ -1,7 +1,7 @@
 ---
 title: "Saudization tracker: which jobs are being localised, and when"
 seoTitle: "Saudization tracker: jobs being localised"
-description: "Dates and rates for recent Saudization decisions, including procurement, gyms, project management and the Nitaqat salary threshold, and what each means for expat workers."
+description: "Dates and rates for recent Saudization decisions: procurement, gyms, project management and the Nitaqat salary threshold, and what each means for expats."
 hub: work
 lang: en
 type: guide

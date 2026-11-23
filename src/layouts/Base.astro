@@ -97,6 +97,8 @@ const urPath = lang === 'ur' ? path : altPath;
     <noscript><link rel="stylesheet" href={fontsHref} /></noscript>
     {/* AdSense site verification. The ad script itself is added only after approval (SITE.adsEnabled). */}
     {SITE.adsensePublisher && <meta name="google-adsense-account" content={SITE.adsensePublisher} />}
+    {/* The AdSense script also shows Google's consent message (published for livingksa.com) to visitors in the EEA, UK and Switzerland. */}
+    {SITE.adsEnabled && SITE.adsensePublisher && <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisher}`} crossorigin="anonymous" />}
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   </head>
   <body>

@@ -1,7 +1,7 @@
 ---
 title: "Check your employment contract on Qiwa, and approve, reject or ask for changes"
 seoTitle: "Check your employment contract on Qiwa"
-description: "See the contract your employer registered on Qiwa, compare salary and job title with what you signed, and approve, reject or request an amendment. Free for workers."
+description: "See the contract your employer registered on Qiwa, compare salary and job title with what you signed, and approve, reject or ask for changes. Free."
 hub: work
 lang: en
 type: guide

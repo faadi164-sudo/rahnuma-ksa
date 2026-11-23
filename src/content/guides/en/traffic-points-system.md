@@ -1,7 +1,7 @@
 ---
 title: "Saudi traffic points system: points per violation and when your licence is suspended"
 seoTitle: "Saudi traffic points system explained"
-description: "How Saudi traffic points work: 24 for drifting or drink-driving, 12 for red lights, and licence suspension at 24 points for 3 months, 6 months, a year or for good."
+description: "How Saudi traffic points work: 24 for drifting or drink-driving, 12 for red lights, and suspension at 24 points for 3 months, 6 months, a year or for good."
 hub: driving
 lang: en
 type: guide

@@ -1,7 +1,7 @@
 ---
 title: "Hire a maid or house driver through Musaned: eligibility, costs and steps"
 seoTitle: "Hire a maid or driver through Musaned: costs, steps"
-description: "How expats hire a domestic worker on Musaned: who qualifies, the SAR 2,000 visa fee, recruitment costs by country, the e-contract and paying salary through Musaned."
+description: "Hire a domestic worker on Musaned: who qualifies, the SAR 2,000 visa fee, recruitment costs by country, the e-contract and paying salary through Musaned."
 hub: family
 lang: en
 type: guide

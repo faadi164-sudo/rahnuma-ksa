@@ -1,7 +1,7 @@
 ---
 title: "Renew your car registration (istimara) on Absher: Fahas, insurance and fees"
 seoTitle: "Renew your istimara on Absher: Fahas and fees"
-description: "Renew your istimara online: valid Fahas inspection, active insurance, fines paid, SAR 100 a year through SADAD, then renew in Absher. What to do if it has expired."
+description: "Renew your istimara online: valid Fahas, active insurance, fines paid and SAR 100 a year through SADAD, then renew in Absher. What to do if it expired."
 hub: driving
 lang: en
 type: guide

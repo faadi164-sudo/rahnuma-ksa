@@ -1,7 +1,7 @@
 ---
 title: "Absher Reports: get a vehicle, licence, accident or violations report and verify it"
 seoTitle: "Absher Reports: vehicle, licence and violation reports"
-description: "Issue official Absher Reports for a vehicle, driving licence, traffic accidents or violations, print them, and check a report someone sends you using its QR code."
+description: "Issue official Absher Reports for a vehicle, driving licence, accidents or violations, print them, and verify a report someone sends you by its QR code."
 hub: absher
 lang: en
 type: guide

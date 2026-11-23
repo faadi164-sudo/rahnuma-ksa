@@ -1,7 +1,7 @@
 ---
 title: "Final exit for your wife and children only (while you stay in Saudi Arabia)"
 seoTitle: "Final exit for your wife and children only"
-description: "How to issue a final exit visa on Absher for dependents who are leaving for good while you keep working, the conditions, and the SAR 1,000 fine if they don't leave."
+description: "Issue a final exit visa on Absher for family members leaving for good while you keep working: the conditions, and the SAR 1,000 fine if they don't leave."
 hub: family
 lang: en
 type: guide

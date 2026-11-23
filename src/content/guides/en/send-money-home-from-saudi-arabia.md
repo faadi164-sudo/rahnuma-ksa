@@ -1,7 +1,7 @@
 ---
 title: "How to send money home from Saudi Arabia (Pakistan, India and more)"
 seoTitle: "How to send money home from Saudi Arabia"
-description: "Ways to send money from Saudi Arabia: bank apps, exchange-house apps and digital wallets. How to compare the real cost, what details you need, and avoiding scams."
+description: "Send money from Saudi Arabia with bank apps, exchange-house apps or digital wallets: compare the real cost, the details you need, and avoiding scams."
 hub: money
 lang: en
 type: guide

@@ -1,7 +1,7 @@
 ---
 title: "Ramadan 2027 in Saudi Arabia: expected dates, working hours and rules for expats"
 seoTitle: "Ramadan 2027 in Saudi Arabia: dates and work hours"
-description: "Ramadan 1448 is expected to start on 8 February 2027. Working hours for Muslim staff, overtime, eating in public, Umrah permits, Zakat al-Fitr and the Eid holiday."
+description: "Ramadan 1448 is expected to start on 8 February 2027. Working hours, eating in public, Umrah permits, Zakat al-Fitr and the Eid holiday for expats."
 hub: hajj-umrah
 lang: en
 type: guide

@@ -1,7 +1,7 @@
 ---
 title: "NICOP, NADRA and Pakistan consulate appointments in Saudi Arabia"
 seoTitle: "NICOP and NADRA services in Saudi Arabia"
-description: "How Pakistanis in Saudi Arabia renew or apply for a NICOP online with the Pak-ID app or at the Riyadh embassy and Jeddah consulate NADRA desks, and book appointments."
+description: "Renew or apply for a NICOP from Saudi Arabia: online with the Pak-ID app, or at the NADRA desks in the Riyadh embassy and Jeddah consulate, with fees."
 hub: embassy
 lang: en
 type: guide

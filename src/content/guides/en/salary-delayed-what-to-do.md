@@ -1,7 +1,7 @@
 ---
 title: "Salary delayed in Saudi Arabia? Your rights under the wage protection rules"
 seoTitle: "Salary delayed in Saudi Arabia? Your rights"
-description: "What happens when your salary is late: Mudad alerts, accepting or rejecting the employer's excuse, the 30-day enforcement request and changing jobs after 3 unpaid months."
+description: "Salary late? Mudad alerts, accepting or rejecting the employer's excuse, the 30-day enforcement request, and changing jobs after 3 unpaid months."
 hub: work
 lang: en
 type: guide

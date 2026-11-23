@@ -126,12 +126,12 @@ export const HUB_INTROS: Record<HubSlug, HubIntro> = {
   health: {
     en: [
       'You can check whether your health insurance is active with the Council of Health Insurance (CHI) inquiry or the Insurance Authority’s Check Health Insurance service, using your iqama number, a border number if you are new, or a passport number for visit, Umrah and Hajj visas.',
-      'Whether your employer also covers your family depends on your contract. If it doesn’t, you buy a policy for them, which their iqamas need.',
+      'In the private sector, your employer must insure you, your wife, sons up to 25 and unmarried, non-working daughters. Parents and siblings you sponsor are not included, so you buy their policy yourself.',
       'Visitors are covered differently: every visit visa and every extension needs medical insurance, which covers emergencies only, up to SAR 100,000 per visitor, from the day they enter Saudi Arabia.',
     ],
     ur: [
       'آپ کی ہیلتھ انشورنس فعال ہے یا نہیں، یہ کونسل آف ہیلتھ انشورنس (CHI) کی انکوائری یا انشورنس اتھارٹی کی چیک ہیلتھ انشورنس سروس سے معلوم کریں۔ اس کے لیے اپنا اقامہ نمبر، نئے آنے والے ہوں تو بارڈر نمبر، اور وزٹ، عمرہ یا حج ویزا کے لیے پاسپورٹ نمبر استعمال کریں۔',
-      'آجر آپ کی فیملی کی انشورنس بھی دیتا ہے یا نہیں، یہ آپ کے معاہدے پر منحصر ہے۔ اگر نہیں دیتا تو آپ ان کے لیے پالیسی خریدتے ہیں، جو ان کے اقامہ کے لیے ضروری ہے۔',
+      'نجی شعبے میں آجر پر لازم ہے کہ وہ آپ، آپ کی بیوی، 25 سال تک کے بیٹوں اور غیر شادی شدہ، غیر ملازمت پیشہ بیٹیوں کی انشورنس کرے۔ آپ کی کفالت میں والدین اور بہن بھائی اس میں شامل نہیں، ان کی پالیسی آپ کو خود خریدنی ہوتی ہے۔',
       'وزیٹرز کا معاملہ الگ ہے: ہر وزٹ ویزا اور ہر توسیع کے لیے میڈیکل انشورنس ضروری ہے، جو صرف ایمرجنسی کا احاطہ کرتی ہے، فی وزیٹر 100,000 ریال تک، اور سعودی عرب میں داخلے کے دن سے شروع ہوتی ہے۔',
     ],
     blurbUr: 'آپ کی ہیلتھ انشورنس کیا کور کرتی ہے اور اسے کیسے چیک کریں۔',

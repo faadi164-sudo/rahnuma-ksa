@@ -3,7 +3,7 @@ export const SITE = {
   name: 'Living KSA',
   tagline: 'Saudi expat guide',
   description:
-    'Step-by-step guides for expats in Saudi Arabia: iqama, visas, Absher, labor law and daily life. Official sources and a last-checked date on every guide. In English and Urdu.',
+    'Step-by-step guides for expats in Saudi Arabia on iqama, visas, Absher, work and daily life, in English and Urdu, with official sources and a last-checked date.',
   descriptionUr:
     'سعودی عرب میں مقیم افراد کے لیے مرحلہ وار رہنمائی: اقامہ، ویزا، ابشر اور لیبر قانون۔ ہر رہنمائی میں سرکاری ذریعہ اور آخری تصدیق کی تاریخ۔',
   // Forwarded to the owner's inbox by Porkbun email forwarding.

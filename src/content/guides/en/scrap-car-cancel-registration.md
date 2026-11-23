@@ -1,7 +1,7 @@
 ---
 title: "Scrap a car and cancel its registration in Saudi Arabia (vehicle drop on Absher)"
 seoTitle: "Scrap a car and cancel its registration (Absher)"
-description: "Remove a wrecked or unwanted car from your iqama: take it to an authorised scrap centre, approve the cancellation with the Absher code, and clear it before final exit."
+description: "Remove a wrecked or unwanted car from your iqama: take it to an authorised scrap centre, approve with the Absher code, and clear it before final exit."
 hub: driving
 lang: en
 type: guide

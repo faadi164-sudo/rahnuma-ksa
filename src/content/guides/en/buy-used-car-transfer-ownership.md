@@ -1,7 +1,7 @@
 ---
 title: "Buy or sell a used car in Saudi Arabia: checks, Absher transfer and fees"
 seoTitle: "Buy or sell a used car in Saudi Arabia: Absher transfer"
-description: "How to check a used car before buying, then transfer ownership on Absher's Vehicle Sale service with escrow payment. Fees: SAR 150 transfer plus SAR 230 service."
+description: "Check a used car before buying, then transfer ownership with Absher's Vehicle Sale service and escrow payment. Fees: SAR 150 transfer plus SAR 230 service."
 hub: driving
 lang: en
 type: guide

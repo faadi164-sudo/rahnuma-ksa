@@ -1,6 +1,6 @@
 ---
 title: "How to bring a newborn baby to Saudi Arabia"
-description: "Two ways to bring a baby born abroad to Saudi Arabia: a visa on arrival when both parents are residents, or a visa stamped before travel. Plus the steps after you land."
+description: "Bring a baby born abroad to Saudi Arabia: a visa on arrival when both parents are residents, or a visa before travel. Plus the steps after you land."
 hub: family
 lang: en
 type: guide

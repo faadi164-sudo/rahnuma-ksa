@@ -1,7 +1,7 @@
 ---
 title: "How to renew your family's iqama on Absher (even if they are abroad)"
 seoTitle: "Renew your family's iqama on Absher"
-description: "Step-by-step renewal of dependents' and domestic workers' iqamas on Absher, what to pay first, and how renewal works while family members are outside Saudi Arabia."
+description: "Renew your dependents' and domestic workers' iqamas on Absher: what to pay first, the steps, and how renewal works while family members are abroad."
 hub: iqama
 lang: en
 type: guide

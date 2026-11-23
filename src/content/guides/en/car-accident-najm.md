@@ -1,7 +1,7 @@
 ---
 title: "Car accident in Saudi Arabia: what to do, Najm and insurance claims"
 seoTitle: "Car accident in Saudi Arabia: Najm and insurance claims"
-description: "What to do after a car accident in Saudi Arabia: stay safe, call Najm (199033) for insured cars or Moroor (993) otherwise, document the scene and claim insurance."
+description: "After a car accident in Saudi Arabia: stay safe, call Najm (199033) for insured cars or Moroor (993) otherwise, record the scene and claim on insurance."
 hub: driving
 lang: en
 type: guide

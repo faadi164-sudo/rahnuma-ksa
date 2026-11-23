@@ -1,7 +1,7 @@
 ---
 title: "Change the profession on your iqama: Qiwa steps, SAR 1,000 fee and restricted jobs"
 seoTitle: "Change the profession on your iqama (Qiwa, SAR 1,000)"
-description: "How to change the profession on your iqama: employer requests it in Qiwa, you approve, SAR 1,000 fee, accreditation for regulated jobs, and titles you can't choose."
+description: "Change the profession on your iqama: your employer requests it in Qiwa, you approve, SAR 1,000 fee, accreditation for regulated jobs, and restricted titles."
 hub: work
 lang: en
 type: guide
